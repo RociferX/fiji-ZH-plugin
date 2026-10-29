@@ -1,0 +1,21 @@
+# key<TAB>English title<TAB>Chinese title<TAB>English purpose<TAB>Chinese purpose<TAB>English usage<TAB>Chinese usage
+rectangle	Rectangle	矩形选区	Select a rectangular region for measurement, cropping or processing.	框选矩形区域，用于测量、裁剪或后续处理。	Drag to select. Alt-click or long-click to switch variants.	拖动创建选区；Alt 单击或长按可切换同组工具。
+roundrect	Rounded Rectangle	圆角矩形选区	Select a rectangle with rounded corners.	创建带圆角的矩形选区。	Alt-click or long-click to switch rectangle variants.	Alt 单击或长按可切换矩形工具变体。
+rotrect	Rotated Rectangle	旋转矩形选区	Select an oriented rectangular region.	创建可调整方向的矩形选区。	Alt-click or long-click to switch rectangle variants.	Alt 单击或长按可切换矩形工具变体。
+oval	Oval	椭圆选区	Select an oval or circular region for measurement or processing.	框选椭圆或圆形区域，用于测量或处理。	Alt-click or long-click to switch oval variants.	Alt 单击或长按可切换椭圆工具变体。
+ellipse	Rotated Ellipse	旋转椭圆选区	Select an ellipse with an adjustable orientation.	创建可调整方向的椭圆选区。	Alt-click or long-click to switch oval variants.	Alt 单击或长按可切换椭圆工具变体。
+brush	Selection Brush	选区画笔	Paint an irregular selection without changing image pixels.	通过涂抹创建不规则选区，保持图像像素不变。	Alt-click or long-click to switch oval-group tools.	Alt 单击或长按可切换椭圆组中的工具。
+polygon	Polygon	多边形选区	Select a region by placing polygon vertices.	逐点设置顶点，创建多边形选区。	Click to add vertices; double-click to finish.	单击添加顶点，双击结束。
+freehand	Freehand Selection	自由选区	Trace the boundary of an irregular region.	沿目标边界勾画不规则选区。	Hold the mouse button and drag along the boundary.	按住鼠标沿边界拖动。
+line	Straight Line	直线工具	Draw a line for distance measurements or an intensity profile.	绘制直线，用于测量距离或提取强度曲线。	Alt-click or long-click to choose lines or arrows.	Alt 单击或长按可选择线条或箭头工具。
+arrow	Arrow	箭头工具	Annotate a direction or position with an arrow selection.	用箭头选区标注方向或位置。	Alt-click or long-click to switch line-group tools.	Alt 单击或长按可切换线工具变体。
+polyline	Segmented Line	折线工具	Draw a connected series of straight line segments.	绘制连续折线，用于路径长度测量或强度分析。	Alt-click or long-click to switch line-group tools.	Alt 单击或长按可切换线工具变体。
+freeline	Freehand Line	自由曲线工具	Trace a curved path for length measurements or a profile.	沿曲线路径绘制，用于长度测量或强度分析。	Alt-click or long-click to switch line-group tools.	Alt 单击或长按可切换线工具变体。
+angle	Angle	角度工具	Measure the angle formed by two connected line segments.	测量相连的两条线段之间的夹角。	Place three points to define the angle.	依次指定三个点来定义夹角。
+point	Point	点工具	Mark a point to record its position or intensity.	标记单个点，记录位置或灰度信息。	Alt-click or long-click to switch point modes; double-click to configure.	Alt 单击或长按可切换点模式；双击可配置。
+multipoint	Multi-point	多点工具	Mark multiple points for counting or coordinate measurements.	标记多个点，用于计数或坐标测量。	Alt-click or long-click to switch point modes; double-click to configure.	Alt 单击或长按可切换点模式；双击可配置。
+wand	Wand	魔棒工具	Trace a region boundary based on image pixel values.	根据像素值追踪区域边界，创建选区。	Click inside the region to trace its boundary.	在目标区域内单击以追踪边界。
+text	Text	文字工具	Create a text selection for image annotations.	创建文字选区，为图像添加文字标注。	Double-click the tool to configure text settings.	双击工具可配置文字设置。
+zoom	Magnifying Glass	放大镜	Zoom the image view without changing image data.	调整图像显示倍率，保持图像数据不变。	Use + and - to zoom. Alt-click or long-click opens the zoom menu.	可用 + 和 - 调整倍率；Alt 单击或长按可打开缩放菜单。
+hand	Hand	抓手工具	Pan across an image when it is larger than the viewing window.	平移查看超出窗口范围的图像。	You can also hold Space and drag to pan.	也可按住空格键并拖动来平移视图。
+dropper	Color Picker	取色器	Sample an image color for subsequent drawing or annotations.	从图像中取样颜色，用于后续绘制或标注。	Click an image position to sample its color.	在图像中单击需要取样的位置。

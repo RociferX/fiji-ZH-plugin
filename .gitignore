@@ -1,0 +1,13 @@
+/downloads/
+/Fiji/
+/Fiji.app/
+/build/
+*.log
+hs_err_pid*.log
+__pycache__/
+
+# Local OpenJDK reference sources; not used to build the language pack.
+/tools/FontConfiguration.java
+/tools/FontDescriptor.java
+/tools/WFontConfiguration.java
+/dist/

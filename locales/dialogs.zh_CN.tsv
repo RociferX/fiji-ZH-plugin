@@ -1,0 +1,1743 @@
+# English caption<TAB>Chinese display. @Window title/Caption overrides a caption.
+ OK 	 确定 
+OK	确定
+Cancel	取消
+Help	帮助
+About Control Panel...	关于控制面板…
+Tool Switcher and Loader	工具切换与加载
+Batch Process Help	批处理帮助
+Coordinates Help	坐标帮助
+Apply Macro to Table Help	结果表宏运算帮助
+Preview	预览
+ Preview	 预览
+Reset	重置
+Auto	自动
+Apply	应用
+Set	设置
+Gaussian Blur	高斯模糊
+Sigma (Radius):	标准差（半径）：
+Sigma (Radius)	标准差（半径）
+Scaled Units	使用标定单位
+Threshold	阈值
+Dark background	深色背景
+Don't reset range	保留当前范围
+Stack histogram	使用整个堆栈的直方图
+B&C	亮度与对比度
+Brightness	亮度
+Contrast	对比度
+Minimum	最小值
+Maximum	最大值
+Channels	通道
+Composite	合成
+Color	彩色
+Grayscale	灰度
+Analyze Particles	粒子分析
+Size (pixel^2):	面积范围（像素²）：
+Circularity:	圆度：
+Show:	显示方式：
+Nothing	无
+Outlines	轮廓
+Bare Outlines	仅轮廓
+Ellipses	椭圆
+Masks	掩膜
+Count Masks	计数掩膜
+Overlay	叠加层
+Overlay Outlines	叠加轮廓
+Overlay Masks	叠加掩膜
+Display results	显示结果
+Clear results	清空结果
+Summarize	汇总
+Add to Manager	添加到 ROI 管理器
+Exclude on edges	排除边缘对象
+Include holes	包含孔洞
+Record starts	记录起点
+ROI Manager	ROI 管理器
+Add [t]	添加 [t]
+Update	更新
+Delete	删除
+Rename...	重命名…
+Measure	测量
+Deselect	取消选择
+Properties...	属性…
+Flatten [F]	合并叠加层 [F]
+Show All	显示全部
+Labels	标签
+More »	更多 »
+Set Scale	设置比例尺
+Distance in pixels:	像素距离：
+Known distance:	已知距离：
+Pixel aspect ratio:	像素宽高比：
+Unit of length:	长度单位：
+Global	全局应用
+Click to Remove Scale	移除比例尺
+Set Measurements	设置测量项
+Area	面积
+Mean gray value	平均灰度值
+Standard deviation	标准差
+Modal gray value	众数灰度值
+Min & max gray value	最小与最大灰度值
+Centroid	质心
+Center of mass	灰度重心
+Perimeter	周长
+Bounding rectangle	外接矩形
+Fit ellipse	拟合椭圆
+Shape descriptors	形状描述参数
+Feret's diameter	费雷特直径
+Integrated density	积分密度
+Median	中位数
+Skewness	偏度
+Kurtosis	峰度
+Area fraction	面积分数
+Stack position	堆栈位置
+Limit to threshold	限定在阈值内
+Display label	显示标签
+Invert Y coordinates	反转 Y 坐标
+Scientific notation	科学计数法
+Add to overlay	添加到叠加层
+Redirect to:	重定向到：
+Decimal places:	小数位数：
+None	无
+Z Projection	Z 投影
+Start slice:	起始切片：
+Stop slice:	结束切片：
+Projection type:	投影方式：
+Average Intensity	平均强度
+Max Intensity	最大强度
+Min Intensity	最小强度
+Sum Slices	切片求和
+Standard Deviation	标准差
+Subtract Background	减去背景
+Rolling ball radius:	滚动球半径：
+Light background	浅色背景
+Create background (don't subtract)	生成背景（保留原图）
+Sliding paraboloid	滑动抛物面
+Disable smoothing	禁用平滑
+Scale: <no scale>	比例尺：未设置
+NaN empty cells	空单元格填入 NaN
+Decimal places (0-9):	小数位数（0–9）：
+Composite ROIs	复合 ROI
+Raw values	原始数值
+16-bit histogram	16 位直方图
+Set Threshold Levels	设置阈值范围
+Lower threshold level:	阈值下限：
+Upper threshold level:	阈值上限：
+Set Display Range	设置显示范围
+@Threshold/Default	默认
+@Threshold/Red	红色
+@Threshold/B&W	黑白
+@Threshold/Over/Under	上下限外
+@Subtract Background/pixels	像素
+@Set Scale/Scale:	比例尺：
+@Set Scale/pixels/	像素/
+Minimum displayed value:	显示下限：
+Maximum displayed value:	显示上限：
+Unsigned 16-bit range:	无符号 16 位范围：
+Propagate to all other open images	同步到其他所有已打开图像
+Propagate to the other channel of this image	同步到本图像的另一通道
+@Set Display Range/Propagate to all other {n} channel images	同步到其他所有 {n} 通道图像
+@Set Display Range/Propagate to the other {n} channels of this image	同步到本图像的其他 {n} 个通道
+@Set Display Range/Automatic	自动
+@Set Display Range/8-bit (0-255)	8 位（0–255）
+@Set Display Range/10-bit (0-1023)	10 位（0–1023）
+@Set Display Range/12-bit (0-4095)	12 位（0–4095）
+@Set Display Range/14-bit (0-16383)	14 位（0–16383）
+@Set Display Range/15-bit (0-32767)	15 位（0–32767）
+@Set Display Range/16-bit (0-65535)	16 位（0–65535）
+ZProjection	Z 投影
+Projection type	投影方式
+All time frames	所有时间帧
+Resize	调整图像尺寸
+Width (pixels):	宽度（像素）：
+Height (pixels):	高度（像素）：
+Depth (images):	深度（图像数）：
+Depth (slices):	深度（切片数）：
+Time (frames):	时间（帧数）：
+Constrain aspect ratio	保持宽高比
+Average when downsizing	缩小时取平均
+Interpolation:	插值方式：
+Bilinear	双线性
+Bicubic	双三次
+Rotate	旋转
+Angle:	角度：
+Grid lines:	网格线数：
+Fill with background color	用背景色填充
+Enlarge image	扩大图像尺寸
+Resize Image Canvas	调整图像画布
+Resize Stack Canvas	调整堆栈画布
+Width:	宽度：
+Height:	高度：
+Position:	位置：
+pixels	像素
+Zero Fill	填充为零
+Top-Left	左上
+Top-Center	上方居中
+Top-Right	右上
+Center-Left	左侧居中
+Center	居中
+Center-Right	右侧居中
+Bottom-Left	左下
+Bottom-Center	下方居中
+Bottom-Right	右下
+Duplicate	复制图像
+Title:	标题：
+Ignore selection	忽略选区
+Duplicate stack	复制堆栈
+Duplicate hyperstack	复制超堆栈
+Range:	范围：
+Channels (c):	通道（c）：
+Slices (z):	切片（z）：
+Frames (t):	时间帧（t）：
+Pixel width:	像素宽度：
+Pixel height:	像素高度：
+Voxel depth:	体素深度：
+Frame interval:	帧间隔：
+Origin (pixels):	原点（像素）：
+@Image Properties/Note: c*z*t must equal {n}	提示：c×z×t 必须等于 {n}
+Enhance Contrast	增强对比度
+Saturated pixels:	饱和像素比例：
+Normalize	归一化
+Update entire image	更新整幅图像
+Update all when normalizing	归一化时更新全部像素
+Equalize histogram	直方图均衡化
+Use stack histogram	使用堆栈直方图
+@Enhance Contrast/Process all {n} slices	处理全部 {n} 张切片
+Scale Bar	比例尺标注
+@Scale Bar/Width in {unit}:	宽度（{unit}）：
+@Scale Bar/Height in {unit}:	高度（{unit}）：
+Thickness in pixels:	线条厚度（像素）：
+Font size:	字号：
+Color:	颜色：
+Background:	背景：
+Location:	位置：
+Horizontal	水平
+Vertical	垂直
+Bold Text	粗体文字
+Hide Text	隐藏文字
+Serif Font	衬线字体
+Label all slices	标注全部切片
+Remove Scale Bar	移除比例尺
+Upper Right	右上
+Lower Right	右下
+Lower Left	左下
+Upper Left	左上
+At Selection	选区位置
+@Scale Bar/White	白色
+@Scale Bar/Black	黑色
+@Scale Bar/Light Gray	浅灰色
+@Scale Bar/Gray	灰色
+@Scale Bar/Dark Gray	深灰色
+@Scale Bar/Red	红色
+@Scale Bar/Green	绿色
+@Scale Bar/Blue	蓝色
+@Scale Bar/Yellow	黄色
+@Median/Median	中值滤波
+@Median/Median...	中值滤波…
+@Mean/Mean	均值滤波
+@Mean/Mean...	均值滤波…
+@Minimum/Minimum	最小值滤波
+@Minimum/Minimum...	最小值滤波…
+@Maximum/Maximum	最大值滤波
+@Maximum/Maximum...	最大值滤波…
+@Variance/Variance	方差滤波
+@Variance/Variance...	方差滤波…
+Unsharp Mask	锐化蒙版
+Unsharp Mask...	锐化蒙版…
+Radius	半径
+Radius:	半径：
+Radius (Sigma)	半径（标准差）
+Mask Weight (0.1-0.9)	蒙版权重（0.1–0.9）
+Binary Options	二值化选项
+Iterations (1-100):	迭代次数（1–100）：
+Count (1-8):	邻域计数（1–8）：
+Black background	黑色背景
+Pad edges when eroding	腐蚀时填充边界
+EDM output:	欧氏距离图输出：
+Do:	执行操作：
+@Binary Options/Overwrite	覆盖原图
+@Binary Options/8-bit	8 位
+@Binary Options/16-bit	16 位
+@Binary Options/32-bit	32 位
+@Binary Options/Erode	腐蚀
+@Binary Options/Dilate	膨胀
+@Binary Options/Open	开运算
+@Binary Options/Close	闭运算
+@Binary Options/Outline	轮廓
+@Binary Options/Fill Holes	填充孔洞
+@Binary Options/Skeletonize	骨架化
+# v0.7 ROI, channels, stacks, processing and preferences
+Properties	选区属性
+ROI Properties	ROI 属性
+Selection Properties	选区属性
+Add to Overlay	添加到叠加层
+Overlay Options	叠加层选项
+Name:	名称：
+Group:	分组：
+Position (c,z,t):	位置（c,z,t）：
+Stroke color:	轮廓颜色：
+Stroke (point) color:	轮廓（点）颜色：
+Stroke width:	轮廓线宽：
+Fill color:	填充颜色：
+Show on all Slices	在所有切片上显示
+New overlay	新建叠加层
+Set stack positions	设置堆栈位置
+Current overlay is hidden	当前叠加层已隐藏
+No overlay	无叠加层
+Show labels	显示标签
+Hide	隐藏
+Antialiased text	文字抗锯齿
+Justification:	文字对齐：
+Left	左对齐
+Right	右对齐
+Point type:	点类型：
+Size:	大小：
+Image ROI Properties	图像 ROI 属性
+Opacity (0-100%):	不透明度（0–100%）：
+Transparent background	透明背景
+Create Image ROI	创建图像 ROI
+Image:	图像：
+Image to add:	要添加的图像：
+X location:	X 位置：
+Y location:	Y 位置：
+Zero transparent	零值透明
+Font size	字号
+Use names as labels	使用名称作为标签
+Draw backgrounds	绘制标签背景
+Bold	粗体
+ROI Manager Action	ROI 管理器操作
+Rename	重命名
+Rename As:	重命名为：
+Options	选项
+Associate "Show All" ROIs with slices	将“显示全部”的 ROI 关联到切片
+Restore ROIs centered	居中恢复 ROI
+Use ROI names as labels	使用 ROI 名称作为标签
+Remove	移除
+Remove positions for:	移除以下位置信息：
+Channels c:	通道 c：
+Slices z:	切片 z：
+Frames t:	时间帧 t：
+Scale	缩放
+X scale factor:	X 缩放系数：
+Y scale factor:	Y 缩放系数：
+Centered	以中心缩放
+Rotate around image center	围绕图像中心旋转
+Translate	平移
+X offset (pixels):	X 偏移（像素）：
+Y offset (pixels):	Y 偏移（像素）：
+Composite Max	合成最大值
+Composite Min	合成最小值
+Composite Invert	反相合成
+Merge Channels	合并通道
+C1 (red):	C1（红色）：
+C2 (green):	C2（绿色）：
+C3 (blue):	C3（蓝色）：
+C4 (gray):	C4（灰色）：
+C5 (cyan):	C5（青色）：
+C6 (magenta):	C6（品红）：
+C7 (yellow):	C7（黄色）：
+Create composite	创建合成图像
+Keep source images	保留源图像
+Ignore source LUTs	忽略源图像查找表
+Threshold Color	颜色阈值
+Thresholding method:	自动阈值方法：
+Threshold color:	阈值标记颜色：
+Color space:	颜色空间：
+Hue	色相
+Saturation	饱和度
+Pass	通过范围内像素
+Original	原图
+Filtered	筛选结果
+Select	生成选区
+Sample	选区采样
+Stack	处理堆栈
+Macro	生成宏
+Red	红色
+Green	绿色
+Blue	蓝色
+White	白色
+Black	黑色
+B&W	黑白
+Substack Maker	提取子堆栈
+Slices:	切片范围：
+Delete slices from original stack	从原堆栈删除切片
+Do not create substack	不创建子堆栈
+Enter a range (e.g. 2-14), a range with increment\n(e.g. 1-100-2) or a list (e.g. 7,9,25,27)	输入范围（如 2-14）、带步长的范围\n（如 1-100-2）或列表（如 7,9,25,27）
+Concatenator	串接图像与堆栈
+All open windows	所有已打开的图像
+Image1:	图像 1：
+Image2:	图像 2：
+Keep original images	保留原图像
+Open as 4D image	以四维图像打开
+Convert to HyperStack	转换为超堆栈
+Order:	维度顺序：
+Display Mode:	显示模式：
+Convert RGB to 3 Channel Hyperstack	将 RGB 转换为三通道超堆栈
+xyczt(default)	xyczt（默认）
+Image Calculator	图像计算器
+Operation:	运算：
+Create new window	创建新窗口
+32-bit (float) result	32 位浮点结果
+@Image Calculator/Add	相加
+@Image Calculator/Subtract	相减
+@Image Calculator/Multiply	相乘
+@Image Calculator/Divide	相除
+@Image Calculator/AND	按位与
+@Image Calculator/OR	按位或
+@Image Calculator/XOR	按位异或
+@Image Calculator/Min	最小值
+@Image Calculator/Max	最大值
+@Image Calculator/Average	平均值
+@Image Calculator/Difference	绝对差值
+@Image Calculator/Copy	复制
+@Image Calculator/Transparent-zero	零值透明复制
+3D Gaussian Blur	三维高斯模糊
+X sigma:	X 标准差：
+Y sigma:	Y 标准差：
+Z sigma:	Z 标准差：
+3D Mean	三维均值滤波
+3D Median	三维中值滤波
+3D Minimum	三维最小值滤波
+3D Maximum	三维最大值滤波
+3D Variance	三维方差滤波
+X radius:	X 半径：
+Y radius:	Y 半径：
+Z radius:	Z 半径：
+Remove Outliers	去除离群值
+Threshold:	阈值：
+Which outliers	离群值类型
+Bright	亮点
+Dark	暗点
+FFT Bandpass Filter	FFT 带通滤波
+Filter large structures down to	滤除大于以下尺寸的结构
+Filter small structures up to	滤除小于以下尺寸的结构
+Suppress stripes:	抑制条纹：
+Tolerance of direction:	方向容差：
+Autoscale after filtering	滤波后自动调整显示范围
+Saturate image when autoscaling	自动调整时允许像素饱和
+Display filter	显示滤波器
+Process entire stack	处理整个堆栈
+Convolver	卷积
+Kernel:	卷积核：
+Normalize Kernel	归一化卷积核
+Open...	打开…
+Save...	保存…
+Appearance	外观
+Interpolate zoomed images	缩放图像时插值
+Open images at 100%	以 100% 比例打开图像
+Black canvas	黑色画布
+No image border	隐藏图像边框
+Use inverting lookup table	使用反相查找表
+Auto contrast stacks	自动调整堆栈对比度
+IJ window always on top	主窗口始终置顶
+Cancel button on right	取消按钮置于右侧
+16-bit range:	16 位显示范围：
+Menu font size:	菜单字号：
+points	磅
+Setting size>17 may not work on Windows	Windows 下大于 17 磅的字号可能无效
+GUI scale (0.5-3.0):	界面缩放（0.5–3.0）：
+Set to 1.5 to double size of tool icons, or 2.5 to triple	设为 1.5 可使工具图标增至两倍，2.5 可增至三倍
+Arrow Tool	箭头工具
+Style:	样式：
+Outline	轮廓
+Double head	双向箭头
+Keep after adding to overlay	添加到叠加层后保留
+Colors	颜色设置
+Foreground:	前景色：
+Selection:	选区颜色：
+Compile and Run	编译与运行
+Target:	目标 Java 版本：
+Generate debugging info (javac -g)	生成调试信息（javac -g）
+Library JAR files (e.g., imagescience.jar) should\nbe located in either plugins/jars or plugins/lib.\n \nThe javac command line will be displayed in\nthe Log window if ImageJ is in debug mode.	库 JAR 文件（如 imagescience.jar）应放在\nplugins/jars 或 plugins/lib 中。\n \n启用调试模式后，javac 命令行会显示在日志窗口。
+Conversion Options	类型转换选项
+Scale when converting	转换时缩放数值范围
+Calibrate	标定
+Weighted RGB conversions	加权 RGB 转换
+Full range 16-bit inversions	按完整 16 位范围反相
+DICOM Options	DICOM 选项
+Open as 32-bit float	以 32 位浮点打开
+Ignore rescale slope	忽略重缩放斜率
+Fixed Z slope and intercept	固定 Z 斜率与截距
+Orthogonal views	正交视图
+Rotate YZ	旋转 YZ 视图
+Flip XZ	翻转 XZ 视图
+I/O Options	输入与输出选项
+JPEG quality (0-100):	JPEG 质量（0–100）：
+GIF and PNG transparent index:	GIF 与 PNG 透明色索引：
+File extension for tables (.csv, .tsv or .txt):	表格扩展名（.csv、.tsv 或 .txt）：
+Use JFileChooser to open/save	使用 Java 文件选择器打开与保存
+Use file chooser to import sequences	使用文件选择器导入序列
+Save TIFF and raw in Intel byte order	以 Intel 字节序保存 TIFF 与原始数据
+Skip dialog when opening .raw files	打开 .raw 文件时跳过对话框
+Results Table Options	结果表选项
+Copy column headers	复制列标题
+Copy row numbers	复制行号
+Save column headers	保存列标题
+Save row numbers	保存行号
+Default Line Width	默认线宽
+Line width:	线宽：
+Sets the default line selection width.\nPress 'y' (Edit>Selection>Properties)\nto change the width of the current\nline selection.	设置线选区的默认宽度。\n按 y（编辑 > 选区 > 属性）\n可修改当前线选区的宽度。
+Memory (64-bit)	内存与线程（64 位）
+Memory (32-bit)	内存与线程（32 位）
+Maximum memory:	最大内存：
+Parallel threads:	并行线程数：
+Keep multiple undo buffers	保留多个撤销缓冲区
+Run garbage collector on status bar click	点击状态栏时回收内存
+Miscellaneous Options	其他选项
+Divide by zero value:	除以零的结果：
+Use pointer cursor	使用指针光标
+Hide "Process Stack?" dialog	隐藏“处理堆栈？”对话框
+Require control key for shortcuts	快捷键需要按住 Ctrl
+Move isolated plugins to Misc. menu	将独立插件移至其他菜单
+Run single instance listener	启用单实例监听
+Enhanced line tool	增强线工具
+Reverse CZT order of ">" and "<"	反转 > 与 < 键的 CZT 顺序
+Save window locations	保存窗口位置
+Non-blocking filter dialogs	使用非阻塞滤波对话框
+Debug mode	调试模式
+Plot Defaults	绘图默认设置
+---------- Plot Defaults ---------	---------- 绘图默认设置 ----------
+Draw ticks	绘制刻度
+Auto-close	自动关闭
+List values	列出数值
+------- Profile Plot Options -------	------- 灰度剖面绘图选项 -------
+Fixed y-axis scale	固定 Y 轴范围
+Minimum Y:	Y 轴最小值：
+Maximum Y:	Y 轴最大值：
+Interpolate	插值
+Live	实时更新
+Point Tool	点工具
+Type:	类型：
+Auto-measure	自动测量
+Auto-next slice	自动切换下一切片
+Label points	标注点
+Show on all slices	在所有切片上显示
+Counter:	计数器：
+Proxy Settings	代理服务器设置
+Proxy server:	代理服务器：
+Port:	端口：
+Or, use system proxy settings	或使用系统代理设置
+ROI Defaults	ROI 默认设置
+Color predefined if group>0	分组大于 0 时使用预设颜色
+0 = no group	0 = 未分组
+Rounded Rectangle Tool	圆角矩形工具
+Corner diameter:	圆角直径：
+Startup Macro	启动宏
+Macro code contained in this text area\nexecutes when ImageJ starts up.	此文本框中的宏代码会在 ImageJ 启动时执行。
+Add code:	添加代码：
+[Select from list]	[从列表选择]
+Set default directory	设置默认目录
+10-bit (0-1023) range	10 位范围（0–1023）
+12-bit (0-4095) range	12 位范围（0–4095）
+Splash Screen	启动画面
+Bolder selections	加粗选区
+Flip FITS images	翻转 FITS 图像
+Calibrate conversions	标定类型转换
+Wand Tool	魔棒工具
+Tolerance:	容差：
+Mode:	模式：
+Enable Thresholding	启用阈值
+Smooth if thresholded	启用阈值时平滑轮廓
+Thresholded objects are traced and "Tolerance"\nis ignored when thresholding is enabled.	启用阈值后将追踪阈值对象，\n并忽略容差设置。
+Threshold...	阈值…
+Legacy	传统模式
+4-connected	四连通
+8-connected	八连通
+Error	错误
+Warning	提示
+Save Changes?	保存更改？
+Save Changes	保存更改
+Save	保存
+Don't Save	不保存
+Yes	是
+No	否
+Discard	丢弃
+Save as Overlay	保存为叠加层
+Reset Preferences	重置首选项
+Preferences will be reset when ImageJ restarts.	ImageJ 重启后将重置首选项。
+Process Stack?	处理堆栈？
+Process all slices?	处理全部切片？
+There are no images open.	没有打开的图像。
+No images are open.	没有打开的图像。
+No windows are open.	没有打开的窗口。
+Selection required	需要选区。
+This command requires a selection.	此命令需要选区。
+The active image does not have a selection.	当前图像没有选区。
+The ROI Manager is empty.	ROI 管理器为空。
+Delete all items on the list?	删除列表中的全部 ROI？
+Replace items on the list?	替换列表中的 ROI？
+Exactly one item in the list must be selected.	请在列表中选择一个 ROI。
+Overlay required	需要叠加层。
+ROI Manager is not open	ROI 管理器尚未打开。
+ROI Manager is empty	ROI 管理器为空。
+The command requires at least two open images.	此命令至少需要两幅已打开的图像。
+Please select at least 2 images	请至少选择两幅图像。
+Two or more windows must be open	至少需要两个已打开的图像窗口。
+Stack required	需要图像堆栈。
+RGB images not supported	不支持 RGB 图像。
+Composite color images not supported	不支持多通道合成图像。
+5D hyperstacks are currently not supported	目前不支持五维超堆栈。
+Invalid input number	输入的数值无效。
+The number entered was invalid.	输入的数值无效。
+Kernel must be have odd width and height	卷积核的宽和高必须为奇数。
+Spatial domain image required	需要空间域图像。
+The Color Thresholder only works with RGB images.\nUse Image>Type>RGB Color to convert to RGB.	颜色阈值工具仅适用于 RGB 图像。\n请通过 图像 > 类型 > RGB 彩色 转换图像。
+Requires at least one source image or stack.	至少需要一幅源图像或堆栈。
+The source stacks must have the same number of images.	源堆栈必须包含相同数量的图像。
+The source images or stacks must have the same width and height.	源图像或堆栈的宽和高必须一致。
+The source images must have the same bit depth.	源图像必须具有相同的位深。
+channels x slices x frames <> stack size	通道数 × 切片数 × 时间帧数必须等于堆栈大小。
+Are you sure you want to quit ImageJ?	确定退出 ImageJ？
+@Status/3D filtering	三维滤波
+@Status/Z blurring	Z 方向模糊
+@Status/Convolving	卷积
+@Status/Gaussian Blur	高斯模糊
+@Status/Median	中值滤波
+@Status/Mean	均值滤波
+@Status/Minimum	最小值滤波
+@Status/Maximum	最大值滤波
+@Status/Variance	方差滤波
+@Status/Converting colour space...	正在转换颜色空间…
+@Status/Extracting brightness	正在提取亮度
+@Status/Filter in frequency domain	正在频域滤波
+@Status/Inverse transform	正在执行逆变换
+@Status/Crop and convert to original type	正在裁剪并恢复原图类型
+@Status/Setting brightness	正在设置亮度
+@Status/Selection required	需要选区
+@Status/No RGB image	没有 RGB 图像
+@Status/No Image	没有图像
+Font:	字体：
+Just:	对齐：
+Bkgd:	背景：
+Close	关闭
+Plain	常规
+Italic	斜体
+Bold+Italic	粗斜体
+Serif	衬线字体
+SansSerif	无衬线字体
+Monospaced	等宽字体
+red	红色
+green	绿色
+blue	蓝色
+magenta	品红
+cyan	青色
+yellow	黄色
+orange	橙色
+black	黑色
+white	白色
+gray	灰色
+lightgray	浅灰色
+darkgray	深灰色
+pink	粉红
+Gray	灰色
+lightGray	浅灰色
+darkGray	深灰色
+Magenta	品红
+Cyan	青色
+Yellow	黄色
+Orange	橙色
+Pink	粉红
+No properties	无附加属性
+Maximum Memory:	最大内存：
+Parallel Threads for Stacks:	堆栈并行线程数：
+Filled	实心箭头
+Notched	凹口箭头
+Open	打开
+Headless	无箭头
+Bar	横杠
+Hybrid	混合标记
+Cross	十字
+Dot	实点
+Circle	圆圈
+Tiny	极小
+Small	小
+Medium	中
+Large	大
+Extra Large	特大
+XXL	超大
+XXXL	最大
+@Threshold Color/Default	默认
+@Appearance/Automatic	自动
+@Appearance/8-bit (0-255)	8 位（0–255）
+@Appearance/10-bit (0-1023)	10 位（0–1023）
+@Appearance/12-bit (0-4095)	12 位（0–4095）
+@Appearance/14-bit (0-16383)	14 位（0–16383）
+@Appearance/15-bit (0-32767)	15 位（0–32767）
+@Appearance/16-bit (0-65535)	16 位（0–65535）
+Add Image	添加图像
+@Messages/Save changes to {name}?	保存对“{name}”的更改？
+@Messages/Process all {n} images?	处理全部 {n} 张图像？
+@Channels/Channel {n}	通道 {n}
+@Concatenator/Image{n}:	图像 {n}：
+@Messages/List coordinates ({n})	列出坐标（{n}）
+@Messages/List properties ({n})	列出属性（{n}）
+@Overlay Options/Current overlay has {n} elements	当前叠加层包含 {n} 个元素
+@Merge Channels/*None*	*无*
+@Concatenator/-- None --	-- 无 --
+There are no images open	没有打开的图像
+ There is\nno Undo if you select "Yes".	 选择“是”后无法撤销。
+\nWARNING: This image is locked.\nProbably, processing is unfinished (slow or still previewing).	\n提示：此图像已被锁定。\n处理可能仍在进行或预览中。
+Non-RGB image required	需要非 RGB 图像。
+@Status/"More Tools" menu (switch toolsets or add tools)	“更多工具”菜单（切换工具集或添加工具）
+@Status/"More Tools" menu (switch toolsets or add tools) (alt or long click to switch)	“更多工具”菜单（切换工具集或添加工具）（按住 Alt 或长按切换）
+@Status/"More Tools" menu (switch toolsets or add tools) (alt or long click to switch; double click to configure)	“更多工具”菜单（切换工具集或添加工具）（按住 Alt 或长按切换；双击设置）
+@Status/Rectangle, *rounded rect* or rotated rect	矩形、*圆角矩形*或旋转矩形
+@Status/Rectangle, *rounded rect* or rotated rect (alt or long click to switch)	矩形、*圆角矩形*或旋转矩形（按住 Alt 或长按切换）
+@Status/Rectangle, *rounded rect* or rotated rect (alt or long click to switch; double click to configure)	矩形、*圆角矩形*或旋转矩形（按住 Alt 或长按切换；双击设置）
+@Status/Rectangle, rounded rect or *rotated rect*	矩形、圆角矩形或*旋转矩形*
+@Status/Rectangle, rounded rect or *rotated rect* (alt or long click to switch)	矩形、圆角矩形或*旋转矩形*（按住 Alt 或长按切换）
+@Status/Rectangle, rounded rect or *rotated rect* (alt or long click to switch; double click to configure)	矩形、圆角矩形或*旋转矩形*（按住 Alt 或长按切换；双击设置）
+@Status/*Rectangle*, rounded rect or rotated rect	*矩形*、圆角矩形或旋转矩形
+@Status/*Rectangle*, rounded rect or rotated rect (alt or long click to switch)	*矩形*、圆角矩形或旋转矩形（按住 Alt 或长按切换）
+@Status/*Rectangle*, rounded rect or rotated rect (alt or long click to switch; double click to configure)	*矩形*、圆角矩形或旋转矩形（按住 Alt 或长按切换；双击设置）
+@Status/Oval, elliptical or *brush* selections	椭圆、定向椭圆或*选区画笔*
+@Status/Oval, elliptical or *brush* selections (alt or long click to switch)	椭圆、定向椭圆或*选区画笔*（按住 Alt 或长按切换）
+@Status/Oval, elliptical or *brush* selections (alt or long click to switch; double click to configure)	椭圆、定向椭圆或*选区画笔*（按住 Alt 或长按切换；双击设置）
+@Status/Oval, *elliptical* or brush selections	椭圆、*定向椭圆*或选区画笔
+@Status/Oval, *elliptical* or brush selections (alt or long click to switch)	椭圆、*定向椭圆*或选区画笔（按住 Alt 或长按切换）
+@Status/Oval, *elliptical* or brush selections (alt or long click to switch; double click to configure)	椭圆、*定向椭圆*或选区画笔（按住 Alt 或长按切换；双击设置）
+@Status/*Oval*, elliptical or brush selections	*椭圆*、定向椭圆或选区画笔
+@Status/*Oval*, elliptical or brush selections (alt or long click to switch)	*椭圆*、定向椭圆或选区画笔（按住 Alt 或长按切换）
+@Status/*Oval*, elliptical or brush selections (alt or long click to switch; double click to configure)	*椭圆*、定向椭圆或选区画笔（按住 Alt 或长按切换；双击设置）
+@Status/Polygon selections	多边形选区
+@Status/Polygon selections (alt or long click to switch)	多边形选区（按住 Alt 或长按切换）
+@Status/Polygon selections (alt or long click to switch; double click to configure)	多边形选区（按住 Alt 或长按切换；双击设置）
+@Status/Freehand selections	自由手绘选区
+@Status/Freehand selections (alt or long click to switch)	自由手绘选区（按住 Alt 或长按切换）
+@Status/Freehand selections (alt or long click to switch; double click to configure)	自由手绘选区（按住 Alt 或长按切换；双击设置）
+@Status/Straight, segmented or freehand lines, or *arrows*	直线、折线、自由曲线或*箭头*
+@Status/Straight, segmented or freehand lines, or *arrows* (alt or long click to switch)	直线、折线、自由曲线或*箭头*（按住 Alt 或长按切换）
+@Status/Straight, segmented or freehand lines, or *arrows* (alt or long click to switch; double click to configure)	直线、折线、自由曲线或*箭头*（按住 Alt 或长按切换；双击设置）
+@Status/*Straight*, segmented or freehand lines, or arrows	*直线*、折线、自由曲线或箭头
+@Status/*Straight*, segmented or freehand lines, or arrows (alt or long click to switch)	*直线*、折线、自由曲线或箭头（按住 Alt 或长按切换）
+@Status/*Straight*, segmented or freehand lines, or arrows (alt or long click to switch; double click to configure)	*直线*、折线、自由曲线或箭头（按住 Alt 或长按切换；双击设置）
+@Status/Straight, *segmented* or freehand lines, or arrows	直线、*折线*、自由曲线或箭头
+@Status/Straight, *segmented* or freehand lines, or arrows (alt or long click to switch)	直线、*折线*、自由曲线或箭头（按住 Alt 或长按切换）
+@Status/Straight, *segmented* or freehand lines, or arrows (alt or long click to switch; double click to configure)	直线、*折线*、自由曲线或箭头（按住 Alt 或长按切换；双击设置）
+@Status/Straight, segmented or *freehand* lines, or arrows	直线、折线、*自由曲线*或箭头
+@Status/Straight, segmented or *freehand* lines, or arrows (alt or long click to switch)	直线、折线、*自由曲线*或箭头（按住 Alt 或长按切换）
+@Status/Straight, segmented or *freehand* lines, or arrows (alt or long click to switch; double click to configure)	直线、折线、*自由曲线*或箭头（按住 Alt 或长按切换；双击设置）
+@Status/*Multi-point* or point	*多点*或单点
+@Status/*Multi-point* or point (alt or long click to switch)	*多点*或单点（按住 Alt 或长按切换）
+@Status/*Multi-point* or point (alt or long click to switch; double click to configure)	*多点*或单点（按住 Alt 或长按切换；双击设置）
+@Status/*Point* or multi-point	*单点*或多点
+@Status/*Point* or multi-point (alt or long click to switch)	*单点*或多点（按住 Alt 或长按切换）
+@Status/*Point* or multi-point (alt or long click to switch; double click to configure)	*单点*或多点（按住 Alt 或长按切换；双击设置）
+@Status/Wand (tracing) tool	魔棒（轮廓追踪）工具
+@Status/Wand (tracing) tool (alt or long click to switch)	魔棒（轮廓追踪）工具（按住 Alt 或长按切换）
+@Status/Wand (tracing) tool (alt or long click to switch; double click to configure)	魔棒（轮廓追踪）工具（按住 Alt 或长按切换；双击设置）
+@Status/Text tool (double-click to configure)	文字工具（双击设置）
+@Status/Text tool (double-click to configure) (alt or long click to switch)	文字工具（双击设置）（按住 Alt 或长按切换）
+@Status/Text tool (double-click to configure) (alt or long click to switch; double click to configure)	文字工具（双击设置）（按住 Alt 或长按切换；双击设置）
+@Status/Magnifying glass (or "+" and "-" keys; alt or long click for menu)	缩放工具（也可按 + 和 -；按住 Alt 或长按打开菜单）
+@Status/Magnifying glass (or "+" and "-" keys; alt or long click for menu) (alt or long click to switch)	缩放工具（也可按 + 和 -；按住 Alt 或长按打开菜单）（按住 Alt 或长按切换）
+@Status/Magnifying glass (or "+" and "-" keys; alt or long click for menu) (alt or long click to switch; double click to configure)	缩放工具（也可按 + 和 -；按住 Alt 或长按打开菜单）（按住 Alt 或长按切换；双击设置）
+@Status/Scrolling tool (or press space bar and drag)	平移工具（也可按住空格拖动）
+@Status/Scrolling tool (or press space bar and drag) (alt or long click to switch)	平移工具（也可按住空格拖动）（按住 Alt 或长按切换）
+@Status/Scrolling tool (or press space bar and drag) (alt or long click to switch; double click to configure)	平移工具（也可按住空格拖动）（按住 Alt 或长按切换；双击设置）
+@Status/Color picker	取色器
+@Status/Color picker (alt or long click to switch)	取色器（按住 Alt 或长按切换）
+@Status/Color picker (alt or long click to switch; double click to configure)	取色器（按住 Alt 或长按切换；双击设置）
+@Status/Angle tool	角度工具
+@Status/Angle tool (alt or long click to switch)	角度工具（按住 Alt 或长按切换）
+@Status/Angle tool (alt or long click to switch; double click to configure)	角度工具（按住 Alt 或长按切换；双击设置）
+@ROI Manager/Save the {n} displayed ROIs as an overlay?	将显示的 {n} 个 ROI 保存为叠加层？
+No Image	没有图像
+Color Thresholder	颜色阈值工具
+8-bit image required.	需要 8 位图像。
+8-bit binary (0 and 255) image required.	需要 8 位二值图像（像素为 0 或 255）。
+RGB image required.	需要 RGB 图像。
+Font	字体
+Fonts	字体
+# v0.8 ImageJ built-in dialogs and tools
+New Image	新建图像
+Fill with:	填充内容：
+New Hyperstack	新建超堆栈
+Display mode:	显示模式：
+Label images	标注图像
+Import>Raw	导入原始数据
+Image type:	图像类型：
+Offset to first image:	首幅图像偏移：
+Number of images:	图像数量：
+Gap between images:	图像间隔：
+White is zero	零值显示为白色
+Little-endian byte order	小端字节序
+Open all files in folder	打开文件夹中的全部文件
+Use virtual stack	使用虚拟堆栈
+Use Virtual Stack	使用虚拟堆栈
+Import Image Sequence	导入图像序列
+Dir:	目录：
+drag and drop target	可将文件夹拖放到此处
+enclose regex in parens	正则表达式请用括号括起
+Filter:	筛选：
+Start:	起始位置：
+Count:	数量：
+Step:	步长：
+Scale:	缩放比例：
+Sort names numerically	按名称中的数字排序
+Open as separate images	打开为独立图像
+Save Image Sequence	保存图像序列
+Format:	格式：
+Start At:	起始编号：
+Digits (1-8):	编号位数（1–8）：
+Use slice labels as file names	使用切片标签作为文件名
+Save as AVI	保存为 AVI
+Compression:	压缩方式：
+Frame Rate:	帧率：
+@Save as AVI/Uncompressed	不压缩
+@Save as AVI/None	不压缩
+AVI Reader	AVI 读取器
+AVI:	AVI 文件：
+Convert to Grayscale	转换为灰度
+Flip Vertical	垂直翻转
+First:	起始帧：
+Last:	结束帧：
+* Leave empty or set to 0 for reading to the end.\n   Also accepts e.g. -5 to skip last 5 frames.	* 留空或设为 0 可读取至末尾。\n  也可输入 -5 等负数，跳过末尾 5 帧。
+Open Stack From List	从列表打开堆栈
+Images to Stack	图像合成为堆栈
+Method:	方法：
+Title contains:	标题包含：
+Bicubic interpolation	双三次插值
+Use titles as labels	使用标题作为切片标签
+Make Montage	创建拼版
+Columns:	列数：
+Rows:	行数：
+Scale factor:	缩放系数：
+First slice:	首张切片：
+Last slice:	末张切片：
+Increment:	步长：
+Border width:	边框宽度：
+Label slices	标注切片
+Use foreground color	使用前景色
+Stack Maker	拼版转换为堆栈
+Reslice	重新切片
+Start at:	起始边：
+Slice count:	切片数量：
+Flip vertically	垂直翻转
+Rotate 90 degrees	旋转 90 度
+Avoid interpolation	避免插值
+(use 1 pixel spacing)	（使用 1 像素间距）
+3D Projection	三维投影
+Projection method:	投影方式：
+Axis of rotation:	旋转轴：
+Initial angle (0-359 degrees):	初始角度（0–359 度）：
+Total rotation (0-359 degrees):	总旋转角度（0–359 度）：
+Rotation angle increment:	旋转角度步长：
+Lower transparency bound:	透明度阈值下限：
+Upper transparency bound:	透明度阈值上限：
+Surface depth-cueing (0-100%):	表面深度衰减（0–100%）：
+Interior depth-cueing (0-100%):	内部深度衰减（0–100%）：
+All time points	所有时间点
+Animation Options	动画选项
+Speed (0.1-1000 fps):	速度（0.1–1000 帧/秒）：
+First Frame:	起始帧：
+Last Frame:	结束帧：
+Loop Back and Forth	往返播放
+Start Animation	开始播放
+Set Position	设置位置
+Channel:	通道：
+Slice:	切片：
+Frame:	时间帧：
+Set Slice	指定切片
+Combiner	组合堆栈
+Stack1:	堆栈 1：
+Stack2:	堆栈 2：
+Combine vertically	垂直组合
+Stack Inserter	插入堆栈
+Source:	来源：
+Destination:	目标：
+X Location:	X 位置：
+Y Location:	Y 位置：
+Reduce Size	缩减堆栈
+Reduction Factor:	缩减倍数：
+Reduce in Z-Dimension	沿 Z 维缩减
+Subhyperstack Maker	提取子超堆栈
+Channels:	通道范围：
+Frames:	时间帧范围：
+Label Stacks	标注堆栈
+Starting value:	起始数值：
+Interval:	间隔：
+Text:	文字：
+Use overlay	使用叠加层
+Use text tool font	使用文字工具字体
+Image Shrink	图像分箱缩小
+X shrink factor:	X 缩小倍数：
+Y shrink factor:	Y 缩小倍数：
+Z shrink factor:	Z 缩小倍数：
+Bin Method:	分箱方法：
+This command supports Undo	此命令支持撤销
+Reduce	缩减维度
+Create image with:	创建图像时保留：
+Convert to RGB	转换为 RGB
+Create RGB image with:	创建 RGB 图像时保留：
+Keep source	保留源图像
+Multi Measure	多项测量
+One row per slice	每张切片一行
+Append results	追加结果
+Multi Crop	多项裁剪
+Interpolate ROIs	插值生成 ROI
+Scale Selection	缩放选区
+Rotate Selection	旋转选区
+Enter negative angle to \nrotate counter-clockwise	输入负角度可逆时针旋转
+Enlarge Selection	扩大选区
+Enlarge by	扩大距离
+Enter negative number to shrink	输入负数可缩小选区
+Make Band	创建环带选区
+Band Size:	环带宽度：
+Specify	指定选区
+X coordinate:	X 坐标：
+Y coordinate:	Y 坐标：
+Oval	椭圆
+Constrain square/circle	限定为正方形或圆形
+Straightener	拉直选区
+Line Width:	线宽：
+Process Entire Stack	处理整个堆栈
+Adjust interval to match	调整间隔以匹配长度
+X offset:	X 偏移：
+Y offset:	Y 偏移：
+Overlay only	仅变换叠加层
+Value:	数值：
+Gamma	伽马校正
+Expression Evaluator	表达式计算
+Code:	代码：
+v=pixel value, x,y&z=pixel coordinates, w=image width,\nh=image height, a=angle, d=distance from center\n	v 为像素值，x、y、z 为像素坐标，w 为图像宽度，\nh 为图像高度，a 为角度，d 为到中心的距离。
+FFT Options	FFT 选项
+Display:	显示：
+FFT ("FFT of...") window	FFT 结果窗口
+Raw power spectrum	原始功率谱
+Fast Hartley Transform	快速哈特利变换
+Complex Fourier Transform	复数傅里叶变换
+Reuse "FFT of..." window	复用 FFT 结果窗口
+Do forward transform	执行正变换
+FFT Math	频域运算
+Result:	结果名称：
+Do inverse transform	执行逆变换
+FFT Filter	FFT 自定义滤波
+Find Maxima	查找极大值
+Gray Value	灰度值
+Prominence >	突出度大于
+Strict	严格模式
+Exclude edge maxima	排除边缘极大值
+Above lower threshold	仅处理阈值下限以上的像素
+Output type:	输出类型：
+Preview point selection	预览极大值选区
+Gaussian Noise	高斯噪声
+Standard Deviation:	标准差：
+Light Background	浅色背景
+Don't subtract (grayscale open)	仅生成灰度开运算结果
+Separate colors	分别处理颜色通道
+Page Setup	页面设置
+Draw border	绘制边框
+Center on page	页面居中
+Print title	打印标题
+Selection only	仅打印选区
+Rotate 90°	旋转 90 度
+Print actual size	按实际尺寸打印
+Function:	函数：
+Unit:	单位：
+Global calibration	全局标定
+Show plot	显示曲线
+Fractal Box Counter	分形盒计数
+Box Sizes:	盒尺寸：
+Black Background	黑色背景
+Surface Plotter	表面绘图
+Polygon Multiplier (10-200%):	多边形密度（10–200%）：
+Draw Wireframe	绘制线框
+Shade	着色
+Draw Axis	绘制坐标轴
+Source Background is Lighter	源图像背景较亮
+Fill Plot Background with Black	以黑色填充绘图背景
+One Polygon Per Line	每行一个多边形
+Smooth	平滑
+Histogram	直方图
+Bins:	分组数：
+Use pixel value range	使用像素值范围
+or use:	或指定：
+X min:	X 最小值：
+X max:	X 最大值：
+Y max:	Y 最大值：
+Distribution	分布统计
+Parameter:	参数：
+Automatic binning	自动分组
+or specify bins:	或指定组数：
+and range:	及数值范围：
+Curve Fitter	曲线拟合
+*User-defined*	*用户自定义*
+Fit	拟合
+Show settings	显示拟合设置
+Formula	公式
+Formula:	公式：
+Simplex Fitting Options	单纯形拟合选项
+Function name:	函数名称：
+Maximum iterations:	最大迭代次数：
+Number of restarts:	重新开始次数：
+Error tolerance [1*10^(-x)]:	误差容限 [1×10^(-x)]：
+Recorder	宏录制器
+Record:	录制类型：
+@Recorder/Name:	文件名：
+@Recorder/Macro	ImageJ 宏
+@Recorder/Plugin	Java 插件
+Create	创建
+Run	运行
+Install	安装
+Editor	编辑器
+Enter Interactive Mode	进入交互模式
+Enter mode that supports interactive\nediting and running of macros and scripts?	进入可交互编辑并运行宏和脚本的模式？
+Enter	进入
+Find	查找
+Find:	查找内容：
+Case Sensitive	区分大小写
+Whole Words	全字匹配
+Go to Line	跳转到行
+Go to line number:	目标行号：
+Detab	制表符转换
+Spaces per tab:	每个制表符的空格数：
+Tab key inserts spaces:	Tab 键插入空格：
+List	列出数据
+Copy	复制
+Log	对数
+@Histogram Window/Log	对数纵轴
+@Histogram Window/RGB	RGB 通道
+@Plot Window/Live	实时更新
+Paste Control	粘贴控制
+Transfer Mode:	混合模式：
+Line Width	线宽
+Spline fit	样条拟合
+Synchronize Windows	同步窗口
+Sync cursor	同步光标
+Sync z-slices	同步 Z 切片
+Sync channels	同步通道
+Sync t-frames	同步时间帧
+Image coordinates	使用图像坐标
+Image scaling	同步图像缩放
+Synchronize All	同步全部窗口
+Unsynchronize All	取消全部同步
+Commands	命令
+Edit	编辑
+LUT Editor	查找表编辑器
+Level:	中心值：
+Window:	窗宽：
+W&L	窗宽与窗位
+Set W&L	设置窗宽与窗位
+Window Center (Level):	窗位（中心值）：
+Window Width:	窗宽：
+Propagate to all open images	同步到全部打开的图像
+Batch Process	批量处理
+Output format:	输出格式：
+Add macro code:	添加宏代码：
+File name contains:	文件名包含：
+Process	处理
+Input...	输入…
+Output...	输出…
+Test	测试
+Batch Convert	批量转换
+Convert	转换
+Grid	网格
+Grid type:	网格类型：
+Area per point:	每个网格点的面积：
+Center grid on image	将网格置于图像中心
+Random offset	随机偏移
+Calibration Bar	灰度标定条
+Gel Analyzer	凝胶分析
+Vertical scale factor:	纵向缩放系数：
+Horizontal scale factor:	横向缩放系数：
+Label with percentages	标注百分比
+Invert peaks	反转峰形
+Add Shortcut	添加快捷键
+Shortcut:	快捷键：
+Command:	命令：
+Remove all	全部移除
+Shortcuts are not removed\nuntil ImageJ is restarted.	快捷键将在 ImageJ 重启后移除。
+Reset:	重置：
+New Text Window	新建文本窗口
+Menu Bar	菜单栏
+Monospaced Font	等宽字体
+Enter a URL	输入网络地址
+Enter URL of an image, macro or web page	输入图像、宏或网页的网络地址
+URL:	网络地址：
+Delayed Capture	延时截屏
+Delay (seconds):	延迟（秒）：
+Set Zoom	设置缩放
+Zoom:	缩放比例：
+X center:	中心 X 坐标：
+Y center:	中心 Y 坐标：
+MedianCut	中位切分量化
+Number of Colors (2-256):	颜色数量（2–256）：
+Number of Colors:	颜色数量：
+Scale Using:	缩放依据：
+Arrange Channels	调整通道顺序
+New channel order:	新的通道顺序：
+Coordinates	坐标
+Point Coordinates	点坐标
+Left:	左：
+Right:	右：
+Top:	上：
+Bottom:	下：
+Front:	前：
+Back:	后：
+X unit:	X 单位：
+Y unit:	Y 单位：
+Z unit:	Z 单位：
+Profiler	剖面分析
+Profile	剖面
+Save XY Coordinates	保存 XY 坐标
+Background value:	背景值：
+Invert y coordinates off (0 at top of image)	不反转 Y 坐标（图像顶部为 0）
+Suppress Log output	不输出日志
+Process all	处理全部
+Overlay Brush Options	叠加层画笔选项
+Brush width:	画笔宽度：
+Transparency:	透明度：
+SHIFT for horizontal or vertical lines\nALT to draw in background color\n	按住 Shift 绘制水平或垂直线；\n按住 Alt 使用背景色绘制。
+Pixel Inspector Prefs	像素查看器选项
+Grayscale readout:	灰度显示：
+RGB readout:	RGB 显示：
+Copy to clipboard:	复制到剪贴板：
+Use arrow keys to move red outline.\nPress 'c' to copy data to clipboard.	用方向键移动红色边框。\n按 c 将数据复制到剪贴板。
+Paint on overlay	在叠加层上绘制
+Selection Brush	选区画笔
+Enable selection brush	启用选区画笔
+Angle Tool	角度工具
+Measure reflex angle	测量优角
+Browse	浏览
+Red:	红色：
+Green:	绿色：
+Blue:	蓝色：
+Show point counts (shortcut: alt+y)	显示点计数（快捷键 Alt+Y）
+New Overlay	新建叠加层
+Keep	保留
+Replace	替换
+Sort Table	表格排序
+Column:	列：
+Disable Global Calibration	禁用全局标定
+Disable these Messages	不再显示这些提示
+The calibration of this image conflicts\nwith the current global calibration.	此图像的标定与当前全局标定不一致。
+Convert Stack to Binary	将堆栈转换为二值图
+Calculate threshold for each image	为每幅图像分别计算阈值
+Only convert current image	仅转换当前图像
+Black background (of binary masks)	二值掩膜使用黑色背景
+List thresholds	列出阈值
+Create new stack	创建新堆栈
+Make Binary	转换为二值图
+Thresholded pixels to foreground color	将阈值内像素设为前景色
+Remaining pixels to background color	将其余像素设为背景色
+Black foreground, white background	黑色前景、白色背景
+Z Project	Z 投影
+Group size:	每组切片数：
+Valid factors:	可用因数：
+Set Axis Limit	设置坐标轴范围
+X From	X 起点
+Y From	Y 起点
+Fix X Range While Live	实时更新时固定 X 范围
+Fix Y Range While Live	实时更新时固定 Y 范围
+Log X Axis  **	对数 X 轴 **
+Log Y Axis  **	对数 Y 轴 **
+Major Ticks	主刻度
+Minor Ticks	次刻度
+Ticks if Logarithmic	对数轴刻度
+Numbers	刻度数值
+X Axis	X 轴
+Y Axis	Y 轴
+Distance (pixels)	距离（像素）
+Distance ( )	距离（单位）
+X Axis Label	X 轴标签
+Y Axis Label	Y 轴标签
+*   Leave empty for automatic range	* 留空可自动设置范围
+** Requires limits > 0 and max/min > 3	** 需要上下限大于 0，且上限/下限大于 3
+Label supports !!sub-!! and ^^superscript^^	标签支持 !!下标!! 和 ^^上标^^
+Labels support !!sub-!! and ^^superscript^^	标签支持 !!下标!! 和 ^^上标^^
+Number Font Size	数值字号
+Label Font Size	标签字号
+Enter Labels for the datasets, one per line.\n	为每组数据输入标签，每行一个。
+Legend position	图例位置
+Font Size	字号
+Bottom-to-top	从下到上
+Template Plot	模板图
+Copy From Template:	从模板复制：
+Scale factor	缩放系数
+Disable anti-aliased text	禁用文字抗锯齿
+Empty Plot	空白绘图
+Item:	项目：
+Select Plot:	选择绘图：
+Item to Add:	要添加的项目：
+Select Table:	选择表格：
+No Data For Fitting	没有可拟合的数据
+Fit Data Set:	拟合数据集：
+Fit Function:	拟合函数：
+Secondary (fill) color:	次要颜色（填充色）：
+Symbol:	符号：
+Visible	可见
+No image open.	没有打开的图像。
+Image is not a stack.	图像不是堆栈。
+At least two open 2D images required.	至少需要两幅已打开的二维图像。
+At least two windows must be open.	至少需要两个已打开的图像窗口。
+Area selection required	需要面积选区。
+Line, or rotated rectangle, selection required	需要直线或旋转矩形选区。
+A filter (as an open image) is required.	需要一幅已打开的滤波器图像。
+No shortcuts found.	没有找到快捷键。
+@Messages/Frame	时间帧
+@Messages/Slice	切片
+8-bit	8 位
+16-bit	16 位
+32-bit	32 位
+16-bit Signed	16 位有符号整数
+16-bit Unsigned	16 位无符号整数
+32-bit Signed	32 位有符号整数
+32-bit Unsigned	32 位无符号整数
+32-bit Real	32 位浮点数
+64-bit Real	64 位浮点数
+24-bit RGB	24 位 RGB
+24-bit RGB Planar	24 位 RGB 平面排列
+24-bit BGR	24 位 BGR
+24-bit Integer	24 位整数
+32-bit ARGB	32 位 ARGB
+32-bit ABGR	32 位 ABGR
+1-bit Bitmap	1 位位图
+Ramp	灰度渐变
+Noise	随机噪声
+bytes	字节
+degrees	度
+seconds	秒
+@New Image/Slices:	切片数量：
+Copy (center)	居中复制
+Copy (top-left)	左上对齐复制
+Scale (smallest)	缩放到最小尺寸
+Scale (largest)	缩放到最大尺寸
+Correlate	相关运算
+Convolve	卷积
+Deconvolve	反卷积
+X-Axis	X 轴
+Y-Axis	Y 轴
+Z-Axis	Z 轴
+Nearest Point	最近点
+Brightest Point	最亮点
+Mean Value	平均值
+Single Points	单点
+Maxima Within Tolerance	容差范围内的极大值
+Segmented Particles	分割粒子
+Point Selection	点选区
+Count	计数
+Lines	线条
+Horizontal Lines	水平线
+Crosses	十字
+Points	点
+Circles	圆圈
+Separate Image	单独图像
+Sum	求和
+Average	平均值
+Min	最小值
+Max	最大值
+Add Border	添加边框
+Crop	裁剪
+Invert	反相
+Label	标签
+Timestamp	时间戳
+Max Dimension	最大尺寸
+Print Index and Title	打印编号与标题
+Show File Info	显示文件信息
+Top	上方
+Bottom	下方
+Prepend	添加到前面
+Delete current	删除当前维度
+channel	通道
+slice	切片
+frame	时间帧
+Plot Range	绘图范围
+Axis Options	坐标轴选项
+Add Legend	添加图例
+High-Resolution Plot	高分辨率绘图
+Use Template	使用模板
+X Left	X 左界
+X Right	X 右界
+Y Bottom	Y 下界
+Y Top	Y 上界
+No Legend	不显示图例
+X Range	X 范围
+Y Range	Y 范围
+Axis Style	坐标轴样式
+Legend	图例
+Contents Style	内容样式
+Extra Objects (Curves...)	附加对象（曲线等）
+Window Size	窗口尺寸
+Plot Contents Style	绘图内容样式
+Add From Plot	从其他绘图添加
+Plot From Table	根据表格绘图
+Add Plot Data	添加绘图数据
+Add Fit	添加拟合曲线
+X Error:	X 误差：
+Y Error:	Y 误差：
+Data »	数据 »
+Histogram Window	直方图窗口
+Plot Window	绘图窗口
+Log & Exponentials	对数与指数
+@Multi Measure/Measure all {n} slices	测量全部 {n} 张切片
+@Multi Crop/Show {n} cropped images:	显示 {n} 幅裁剪图像：
+@Multi Crop/Save {n} cropped images:	保存 {n} 幅裁剪图像：
+@Properties/Apply changes to all {n} selections?	将更改应用到全部 {n} 个选区？
+@Reslice/Output spacing ({unit}):	输出间距（{unit}）：
+@Reslice/Slice count:	切片数量：
+@3D Projection/Slice spacing ({unit}):	切片间距（{unit}）：
+@Set Slice/Slice (1-{n}):	切片（1–{n}）：
+@Add Shortcut/Add Shortcut ({n})	添加快捷键（{n}）
+@Images to Stack/The {n} images differ in size (smallest={small}, largest={large}). They will be converted to a stack using the specified method.	{n} 幅图像的尺寸不同（最小 {small}，最大 {large}），\n将按所选方法转换为堆栈。
+Python	Python 设置
+Python environment directory	Python 环境目录
+Conda dependencies	Conda 依赖项
+Pip dependencies	Pip 依赖项
+Build Python environment	构建 Python 环境
+Launch in Python mode	以 Python 模式启动
+Look and Feel	界面风格
+Look & Feel	界面风格
+Windows Classic	Windows 经典风格
+FlatLaf Light	FlatLaf 浅色
+FlatLaf Dark	FlatLaf 深色
+FlatLaf Darcula	FlatLaf Darcula 深色
+FlatLaf IntelliJ	FlatLaf IntelliJ 风格
+ImageJ2 Options	ImageJ2 选项
+Use SCIFIO when opening files (BETA!)	打开文件时使用 SCIFIO（测试功能）
+SciJava log level	SciJava 日志级别
+What is ImageJ2?	什么是 ImageJ2？
+ERROR	错误
+WARN	警告
+INFO	信息
+DEBUG	调试
+TRACE	跟踪
+Search Options	搜索选项
+Search bar style	搜索栏样式
+Mini	精简
+Full	完整
+Embed search results in main window	在主窗口内显示搜索结果
+Pressing L focuses the search bar	按 L 键聚焦搜索栏
+Close search results when performing default action	执行默认操作后关闭搜索结果
+Select search results on mouseover	鼠标悬停时选中搜索结果
+Maximum number of results per category	每类显示的最大结果数
+Task Monitor Options	任务监视选项
+Task Monitor bar	任务监视栏
+@Task Monitor Options/Frame	独立窗口
+Disable	禁用
+Enable	启用
+Ask for confirmation before cancelling	取消任务前请求确认
+Estimate remaining time	估算剩余时间
+Desktop	桌面集成
+Enable web links	启用网页链接
+Icon installation not implemented for this platform ❌	此平台尚不支持安装桌面图标
+Enable file type associations	启用文件类型关联
+Add	相加
+Subtract	相减
+Multiply	相乘
+Divide	相除
+AND	按位与
+OR	按位或
+XOR	按位异或
+Value (binary):	数值（二进制）：
+This command requires a montage	此命令需要拼版图像。
+@Import Image Sequence/default	保持原类型
+Straight Line	直线
+2nd Degree Polynomial	二次多项式
+3rd Degree Polynomial	三次多项式
+4th Degree Polynomial	四次多项式
+5th Degree Polynomial	五次多项式
+6th Degree Polynomial	六次多项式
+7th Degree Polynomial	七次多项式
+8th Degree Polynomial	八次多项式
+Exponential	指数函数
+Power	幂函数
+Gamma Variate	伽马变差函数
+Exponential with Offset	带偏移的指数函数
+Gaussian	高斯函数
+Exponential Recovery	指数恢复
+Pixel Inverter	像素反相
+Uncalibrated OD	未标定光密度
+Raw	原始数据
+Text	文本
+Text Image	文本图像
+8-bit TIFF	8 位 TIFF
+pixels^2	像素²
+Light Gray	浅灰色
+Dark Gray	深灰色
+Label color:	标签颜色：
+Number of labels:	标签数量：
+Zoom factor:	缩放倍数：
+Bold text	粗体文字
+Show unit	显示单位
+Print	打印
+@Messages/Include all {n} images?	包含全部 {n} 幅图像？
+@Reslice/Voxel size: {value}	体素尺寸：{value}
+@Reslice/Output size: {size} ({free} free)	输出大小：{size}（可用内存 {free}）
+@Help/Search Options	<html><b>搜索提示：</b><ul><li>搜索内容以 <code>!</code> 开头，可运行任意语言的代码片段。</li><li>以 <code>#!js</code> 开头，可运行 JavaScript 代码片段。</li></ul></html>
+@Arrow Tool/Open	开放箭头
+@Fiji Script Editor/Python	Python
+@Fiji Script Editor/Macro	ImageJ 宏
+@Script Editor/Macro	ImageJ 宏
+Kill	终止
+REPL	交互模式
+Output+Errors	输出与错误
+Output	输出
+Errors	错误
+Use arrow keys	使用方向键
+Export as JAR...	导出为 JAR…
+Export as JAR (With Source)...	导出为 JAR（包含源码）…
+Lock (Make Read Only)	锁定为只读
+Revert...	还原…
+Show in System Explorer	在系统文件管理器中显示
+Redo	重做
+Copy as Styled Text	复制为带格式文本
+Paste History...	粘贴历史…
+Find/Replace...	查找与替换…
+Find Previous	查找上一个
+Go To:	跳转：
+Go to Matching Bracket	跳转到配对括号
+Go to Type...	跳转到类型…
+Bookmarks:	书签：
+Next Bookmark	下一个书签
+Previous Bookmark	上一个书签
+Toggle Bookmark	切换书签
+List Bookmarks...	列出书签…
+Clear Bookmarks...	清空书签…
+Utilities:	实用工具：
+Toggle Comment	切换注释
+Insert Time Stamp	插入时间戳
+Remove Trailing Whitespace	移除行尾空白
+Zap Gremlins	清除异常字符
+Language	语言
+ImageJ Macro	ImageJ 宏
+Templates	模板
+Run Selected Code	运行所选代码
+Compile	编译
+Auto-save Before Compiling	编译前自动保存
+Next Error	下一个错误
+Previous Error	上一个错误
+Clear Marked Errors	清除错误标记
+Kill Running Script...	终止运行中的脚本…
+Command Palette...	命令面板…
+Imports:	导入：
+Add Import...	添加导入语句…
+Auto-import (Deprecated)	自动导入（已弃用）
+Remove Unused Imports	移除未使用的导入语句
+Sort Imports	排序导入语句
+Source & APIs:	源码与 API：
+Extract Source Jar...	提取源码 JAR…
+Open Java File for Class...	打开类的 Java 源文件…
+Script Editor Macros:	编辑器宏：
+Start/Resume Macro Recording	开始或继续录制宏
+Pause Macro Recording...	暂停录制宏…
+Stop/Save Recording...	停止并保存录制…
+Clear Recorded Macro...	清空已录制的宏…
+Run Recorded Macro	运行已录制的宏
+Grep...	搜索文件内容…
+Panes:	面板：
+Side Pane	侧边面板
+Reset Layout...	重置布局…
+Tabs:	标签页：
+Next Tab	下一个标签页
+Previous Tab	上一个标签页
+Decrease Font Size	缩小字号
+Increase Font Size	增大字号
+Indentation:	缩进：
+Indent Using Spaces	使用空格缩进
+Tab Width	制表符宽度
+Other...	其他…
+Replace Spaces With Tabs	将空格替换为制表符
+Replace Tabs With Spaces	将制表符替换为空格
+View:	视图：
+Mark Occurences	标记重复出现的词
+Show Indent Guides	显示缩进参考线
+Show Margin Line	显示页边距参考线
+Show Whitespace	显示空白字符
+Wrap Lines	自动换行
+Theme	主题
+@Fiji Script Editor/Default	默认
+Code Completions:	代码补全：
+Enable Autocompletion	启用自动补全
+Show Completions Without Ctrl+Space	自动显示补全列表
+Use Java Completions as Fallback	使用 Java 补全作为后备
+Key Bindings:	快捷键：
+Vim Mode	Vim 模式
+Save Preferences	保存首选项
+Offline Help:	离线帮助：
+List Shortcuts...	列出快捷键…
+List Recordable Actions...	列出可录制操作…
+Task Tags How-To...	任务标签使用说明…
+Contextual Help:	上下文帮助：
+Open Help for Class...	打开类帮助…
+Open Help for Class (With Frames)...	打开类帮助（含导航框架）…
+Lookup Class or Package...	查找类或包…
+Open Help on Macro Function(s)...	打开宏函数帮助…
+Online Resources:	在线资源：
+Image.sc Forum	Image.sc 论坛
+ImageJ Search Portal	ImageJ 搜索入口
+SciJava Javadoc Portal	SciJava Javadoc 入口
+SciJava Maven Repository	SciJava Maven 仓库
+Fiji on GitHub	Fiji 的 GitHub 项目
+SciJava on GitHub	SciJava 的 GitHub 项目
+ImageJ Macro Functions	ImageJ 宏函数
+ImageJ Docs: Development	ImageJ 开发文档
+ImageJ Docs: Scripting	ImageJ 脚本文档
+ImageJ Notebook Tutorials	ImageJ Notebook 教程
+Power (linear regression)	幂函数（线性回归）
+Exponential (linear regression)	指数函数（线性回归）
+Exponential Recovery (no offset)	指数恢复（无偏移）
+Gaussian (no offset)	高斯函数（无偏移）
+Error Function	误差函数
+Inverse Rodbard	Rodbard 反函数
+Blend	混合
+Difference	差值
+Transparent-white	白色透明
+Transparent-zero	零值透明
+@Fiji Script Editor/Other ({n})...	其他（{n}）…
+@Fiji Script Editor/{n} pt	{n} 磅
+Built-in Functions	内置函数
+Insert	插入
+Info	信息
+Select Foreground Color	选择前景色
+Select Background Color	选择背景色
+Color Picker	取色器
+@Help/Point Tool	<html><h1>点工具</h1><ul><li>拖动已有点可移动它。</li><li>按住 Alt 或 Ctrl 单击可删除点；按住 Alt 创建面积选区可删除多个点。</li><li>按 Alt+Y 可显示各计数器的点数；按 M 可列出每个点的计数器和堆栈位置。</li><li>要测量部分点，可先移到叠加层，再创建选区并使用“图像 → 叠加层 → 测量叠加层”。</li><li>可通过 TIFF 或选区文件保存点及其计数；按 F 可合并为 RGB 图像导出。</li><li>按住 Shift 放置的点会对齐到水平或垂直方向。</li><li>“编辑 → 选区 → 不选”可删除多点选区；切换到多点工具后可用“恢复选区”恢复。</li></ul></html>
+@Help/Channels	<html><h1>多通道显示模式</h1><ul><li><b>合成（Composite）</b>：按各通道查找表生成 RGB 颜色并相加，结果超过 255 时会截断，可能出现饱和。</li><li><b>合成最大值（Composite Max）</b>：对各通道的红、绿、蓝分量分别取最大值。</li><li><b>合成最小值（Composite Min）</b>：分别取各颜色分量的最小值，需要反相的白色背景查找表。</li><li><b>反相合成（Composite Invert）</b>：从 255 中减去各通道颜色分量，低于 0 时截断；使用反相查找表。</li></ul><h1>更多菜单</h1><ul><li>创建合成图像：将 RGB 图像转换为三通道合成图像。</li><li>创建 RGB 图像：生成多通道图像的 RGB 副本。</li><li>拆分/合并通道：在独立图像与多通道图像之间转换。</li><li>显示查找表：绘制当前通道的查找表；“列出”可查看其 256 项 RGB 数值。</li><li>反转查找表：在黑色和白色背景之间切换线性单色查找表。</li><li>红、绿、蓝、青、品红、黄、灰度：更改当前通道的查找表。</li></ul><p>合成最小值和反相合成都要求反相查找表；线性单色非反相查找表会自动反转。非线性或多色查找表不受“反转查找表”影响。</p><p>可打开“Neuron (5 channel)”示例比较普通合成与最大值合成。普通合成是 ImageJ 原有的合成显示模式。</p><p>Pete Bankhead 的《Introduction to Bioimage Analysis》中“Channels &amp; Colors”章节介绍多通道图像和查找表：https://bioimagebook.github.io</p><p>反转查找表使用的宏：http://wsr.imagej.net/macros/Invert_All_LUTs.txt。示例宏 http://wsr.imagej.net/macros/CompositeProjection.ijm 使用 Invert LUTs、RGB Stack、Z Project 和 Invert 命令重现四种合成模式。</p></html>
+@Help/Channels Tool	<html><h1>通道工具</h1><p>选择合成、彩色或灰度显示；勾选通道可控制其可见性。“更多”菜单提供通道拆分、合并和查找表操作。</p></html>
+
+Color Thresholder\n \nModification of Bob Dougherty's BandPass2 plugin by G.Landini\nto threshold 24 bit RGB images based on HSB, RGB, CIE Lab \nor YUV components.\n \n[Pass]: Everything within range is thresholded, otherwise,\neverything outside range is thresholded.\n \n[Default] [Huang] [Intermodes] [etc.]: Selects the automatic\nthresholding method.\n \n[Red] [White] [Black] [B&W]: Selects the threshold color.\n \n[Dark background]: Auto-thresholding methods assume\nlight features and dark background.\n \n[Original]: Shows the original image and updates the buffer\nwhen switching to another image.\n \n[Filtered]: Shows the filtered image.\n \n[Stack]: Processes the rest of the slices in the stack (if any)\nusing the current settings.\n \n[Macro]: Creates a macro based on the current settings which\nis sent to the macro Recorder window, if open.\n \n[Sample]: (experimental) Sets the ranges of the filters based\non the pixel value components in a user-defined ROI.\n \n[HSB] [RGB] [CIE Lab] [YUV]: Selects the color space.\n \n	颜色阈值工具\n \n由 G. Landini 基于 Bob Dougherty 的 BandPass2 插件修改，\n根据 HSB、RGB、CIE Lab 或 YUV 分量筛选 24 位 RGB 图像。\n \n[通过范围内像素]：选中时筛选范围内的像素；未选中时筛选范围外的像素。\n \n[Default]、[Huang]、[Intermodes] 等：选择自动阈值算法。\n \n[红色]、[白色]、[黑色]、[黑白]：选择阈值标记颜色。\n \n[深色背景]：自动阈值算法假定目标较亮、背景较暗。\n \n[原图]：显示原始图像，切换到其他图像时更新缓冲区。\n \n[筛选结果]：显示筛选后的图像。\n \n[处理堆栈]：按当前设置处理堆栈中其余切片。\n \n[生成宏]：根据当前设置生成宏；若宏录制器已打开，则将宏发送到录制器。\n \n[选区采样]：实验性功能，根据用户选区内的像素分量设置筛选范围。\n \n[HSB]、[RGB]、[CIE Lab]、[YUV]：选择颜色空间。
+@Recorder/Python	Python 脚本
+@Multi Measure/Enabling both options will result in a table with {n} columns.	同时启用这两个选项后，结果表将包含 {n} 列。
+@Multi Measure/Enabling this option will result in a table with {n} columns.	启用此选项后，结果表将包含 {n} 列。
+@Fiji Script Editor/Outline	代码大纲
+File Explorer	文件浏览器
+Pixel units	使用像素单位
+Don't set Mac menu bar	不设置 macOS 菜单栏
+Label:	标签：
+"Overlay>Add" requires a selection.	添加到叠加层需要选区。
+Remove existing overlay	移除现有叠加层
+Propagation of RGB images not supported. As a work-around,\nconvert images to multi-channel composite color.	不支持同步 RGB 图像。\n可先将图像转换为多通道合成图像。
+Convert to multichannel composite image?	转换为多通道合成图像？
+X Scale:	X 缩放系数：
+Y Scale:	Y 缩放系数：
+Z Scale:	Z 缩放系数：
+Add to ROI Manager	添加到 ROI 管理器
+Upgrade To:	升级到：
+@ImageJ Updater/You are currently running v{version}. If you click "OK", ImageJ will quit and you will be running the upgraded version after you restart ImageJ.	当前运行版本为 v{version}。\n\n点击“确定”后 ImageJ 将退出，\n重启后会使用升级版本。
+data points	个数据点
+Prepend index plus dual underscore (e.g. '1__MyLabel' )\nto control legend order and to hide non-indexed labels	在标签前添加编号和两个下划线（如 1__MyLabel），\n可调整图例顺序，并隐藏未编号的标签。
+\nRestore using Edit>Selection>Restore Selection.	\n可使用 编辑 > 选区 > 恢复选区 恢复。
+To avoid this dialog, enable\n"Show all filename extensions"\nin Finder Preferences.	如需跳过此对话框，请在 Finder 首选项中\n启用“显示所有文件扩展名”。
+# v0.9 Dynamic errors and progress; placeholders preserve original data.
+@Messages/Directory not found: {path}	没有找到目录：{path}
+@Messages/Image is locked: "{name}"	图像已锁定：“{name}”
+@Messages/Unable to open ROI at {path}	无法打开此处的 ROI：{path}
+@Messages/Unable to save coordinates: {detail}	无法保存坐标：{detail}
+@Messages/Error saving coordinates: {detail}	保存坐标时出错：{detail}
+@Messages/Incorrect file path: "{path}"	文件路径不正确：“{path}”
+@Messages/Incorrect file path: {path}	文件路径不正确：{path}
+@Messages/Unable to create directory: {path}	无法创建目录：{path}
+@Messages/Unable to update the file "{path}". "{detail}"	无法更新文件“{path}”。\n{detail}
+@Messages/Command not found: "{command}"	未找到命令：“{command}”
+@Messages/The command "{command}" is already installed.	命令“{command}”已经安装。
+@Messages/The "{key}" shortcut is in use.	快捷键“{key}”已被占用。
+@Messages/Remove all {n} shortcuts?	移除全部 {n} 个快捷键？
+@Messages/More than {digits} digits are required to generate unique file names for {n} images.	为 {n} 幅图像生成互不重复的文件名，需要超过 {digits} 位编号。
+@Messages/No particles detected. The assumed threshold ({range}) may not be correct.	未检测到粒子。推定阈值（{range}）可能不正确。
+@Messages/No particles detected. The threshold ({range}) may not be correct.	未检测到粒子。阈值（{range}）可能不正确。
+@Messages/Row {row} is not the same length as the first row	第 {row} 行的长度与第一行不一致。
+@Messages/Kernel must have odd width and height. This one is {size}.	卷积核的宽和高必须为奇数；当前尺寸为 {size}。
+@Messages/Kernel must be square with odd width. This one is {size}.	卷积核必须为奇数边长的正方形；当前尺寸为 {size}。
+@Messages/Kernel must be square with odd width. This one is {size}	卷积核必须为奇数边长的正方形；当前尺寸为 {size}。
+@Messages/Kernel width or height not odd ({size})	卷积核的宽或高不是奇数（{size}）。
+@Messages/Unable to interpolate slice {n}. More intermediate ROIs needed.	无法插值生成第 {n} 张切片，需要更多中间位置的 ROI。
+@Messages/The first file on the list does not exist: {path}	列表中的第一个文件不存在：{path}
+@Messages/Image "{name}" not found or no images are open.	未找到图像“{name}”，或当前没有打开的图像。
+@Messages/"{command}" requires an image of type: {types}	“{command}”需要以下类型的图像：\n{types}
+@Messages/"{name}" not found	未找到“{name}”
+@Messages/File is too large: {path}	文件过大：{path}
+@Messages/File not found: {path}	未找到文件：{path}
+@Messages/The new {n}MB limit will take effect after ImageJ is restarted.	重启 ImageJ 后，新的 {n} MB 内存上限将生效。
+@Messages/Apply brightness and contrast settings to all {n} slices in the stack? NOTE: There is no Undo for this operation.	将亮度与对比度设置应用到堆栈中的全部 {n} 张切片？\n\n提示：此操作无法撤销。
+@Messages/This folder does not appear to contain any TIFF, JPEG, BMP, DICOM, GIF, FITS or PGM files. "{path}"	此文件夹似乎不包含 TIFF、JPEG、BMP、DICOM、GIF、FITS 或 PGM 文件：\n“{path}”
+@Messages/An error occured writing the file. {detail}	写入文件时出错。\n{detail}
+@Messages/Unable to save because file is write-protected. {path}	文件受写保护，无法保存。\n{path}
+@Messages/Data error: Bad number at {line}: {value}	数据错误：第 {line} 行的数值无效：{value}
+@Messages/Curve Fitting Error: {detail}	曲线拟合错误：\n{detail}
+Stack required.	需要图像堆栈。
+This command requires a selection	此命令需要选区。
+This command requires a stack	此命令需要堆栈。
+This command requires a stack.	此命令需要堆栈。
+This command requires a stack or virtual stack.	此命令需要堆栈或虚拟堆栈。
+Multichannel image required	需要多通道图像。
+8-bit binary image (0 and 255) required.	需要 8 位二值图像（像素值为 0 和 255）。
+8-bit binary (0 and 255 only) image required.	需要仅包含 0 和 255 的 8 位二值图像。
+RGB images must be thresholded using\nImage>Adjust>Color Threshold.	RGB 图像必须通过 图像 > 调整 > 颜色阈值 设置阈值。
+A threshold has not been set using the\nImage->Adjust->Threshold tool or the \nsetThreshold(min,max) macro function.	尚未设置阈值。请使用 图像 > 调整 > 阈值 工具，\n或调用 setThreshold(min,max) 宏函数。
+"Remove NaNs" requires a 32-bit image	“去除非数值”需要 32 位图像。
+Offset is invalid.	偏移值无效。
+Value is invalid.	数值无效。
+Binary number required	需要二进制数值。
+Gamma must be between 0.05 and 5.0	伽马值必须介于 0.05 和 5.0 之间。
+Virtual stacks cannot be saved in place.	虚拟堆栈无法覆盖保存到原位置。
+An error occured writing the file.	写入文件时出错。
+RGB images do not have LUTs.	RGB 图像没有查找表。
+RGB images do not use LUTs	RGB 图像不使用查找表。
+ROI required	需要 ROI 选区。
+Grayscale or pseudo-color image required	需要灰度或伪彩色图像。
+Thresholded 32-bit float image required:	需要已设置阈值的 32 位浮点图像。
+No non-backround pixels found.	未找到非背景像素。
+Please choose an input folder	请选择输入文件夹。
+Input does not exist or is not a folder	输入路径不存在，或不是文件夹。
+Output does not exist or is not a folder	输出路径不存在，或不是文件夹。
+There is no macro code in the text area	文本框中没有宏代码。
+The file path list is empty	文件路径列表为空。
+No directory specified.	未指定目录。
+Please populate the ROI Manager with at least two ROIs	请先向 ROI 管理器中添加至少两个 ROI。
+ROIs are all on the same slice, nothing to interpolate	所有 ROI 都位于同一张切片上，无需插值。
+The source and destination must be the same type.	源图像和目标图像必须具有相同类型。
+The source and destination must be different.	源图像和目标图像必须是不同图像。
+The source and destination must have the same dimensions.	源图像和目标图像必须具有相同尺寸。
+Images must be the same size	图像尺寸必须一致。
+Images must be a power of 2 size (256x256, 512x512, etc.)	图像宽高必须为 2 的幂，例如 256×256 或 512×512。
+The shortcut must be a single character or F1-F24.	快捷键必须是单个字符或 F1–F24 功能键。
+One or more files will be overwritten if you click "OK".	点击“确定”将覆盖一个或多个已有文件。
+Overwrite files?	覆盖文件？
+Unable to save because file is write-protected.	文件受写保护，无法保存。
+Cannot revert, no file	无法还原：没有对应文件。
+Restart ImageJ to resize "ImageJ" window	重启 ImageJ 后应用主窗口尺寸。
+Restart ImageJ to use the new font size	重启 ImageJ 后使用新字号。
+The "Use inverting lookup table" option is set. Newly opened\n8-bit images will use an inverting LUT (white=0, black=255).	已启用“使用反相查找表”。新打开的 8 位图像将使用反相查找表\n（白色为 0，黑色为 255）。
+Equalization of 32-bit images not supported.	不支持对 32 位图像进行直方图均衡化。
+No pixels have been set to 0 (black) or\n255 (white) so filtering will not be done.	没有像素被设为 0（黑色）或 255（白色），因此不会执行滤波。
+A macro cannot be created until at least\none command has been recorded.	至少录制一条命令后才能创建宏。
+Data error: min. two (x,y) pairs needed	数据错误：至少需要两对 (x,y) 数据。
+Bad formula; should be:\n   y = function(x, a, ...)	公式无效，应采用以下形式：\n   y = function(x, a, ...)
+Error: fit yields Not-a-Number	错误：拟合结果为非数值（NaN）。
+"Area per Point" too small	“每个网格点的面积”过小。
+The display range must first be updated\nusing Image>Adjust>Brightness/Contrast\nor threshold levels defined using\nImage>Adjust>Threshold.	请先通过 图像 > 调整 > 亮度与对比度 更新显示范围，\n或通过 图像 > 调整 > 阈值 设置阈值范围。
+The selection list is empty.	选区列表为空。
+The list is empty	列表为空。
+More than one item must be selected, or none	请选择多个项目，或取消所有选择。
+LUT must have 256 entries	查找表必须包含 256 项。
+No windows to select.	没有可选择的图像窗口。
+@Status/Getting sorted maxima...	正在排序极大值…
+@Status/Analyzing  maxima...	正在分析极大值…
+@Status/Segmenting (Esc to cancel)	正在分割（按 Esc 取消）
+@Status/Converting threshold to selection	正在将阈值转换为选区
+@Status/Converting threshold to selection...	正在将阈值转换为选区…
+@Status/Rotate: Enlarging...	旋转：正在扩大画布…
+@Status/Rotating...	正在旋转…
+@Status/... press ESC to cancel	…按 Esc 可取消
+@Status/Gamma must be between 0.05 and 5.0	伽马值必须介于 0.05 和 5.0 之间
+@Status/ROIs interpolated	ROI 插值完成
+@Status/Clipboard reset	剪贴板已重置
+@Status/Undo reset	撤销缓冲区已重置
+@Status/Converting to mask	正在转换为掩膜
+@Status/Converting to byte	正在转换为 8 位图像
+@Status/Auto-thresholding	正在自动设置阈值
+@Status/Fitting ellipse	正在拟合椭圆
+@Status/No image	没有图像
+@Status/No selection	没有选区
+@Status/Has calibration bar	图像包含标定条
+@Status/"Composite" mode images cannot be thresholded	合成显示模式的图像无法设置阈值
+@Status/RGB images cannot be thresholded	RGB 图像无法用灰度阈值工具设置阈值
+@Status/No shortcuts removed	没有移除快捷键
+@Status/Color picker closed	取色器已关闭
+@Status/Log window closed; EventListener stopped	日志窗口已关闭；事件监听器已停止
+@Status/Download in progress	正在下载
+@Status/Press Ctrl-Z to undo	按 Ctrl+Z 可撤销
+@Status/No invalid characters found	未找到异常字符
+@Status/Calculating median...	正在计算中值…
+@Status/Converting to float	正在转换为浮点图像
+@Status/Transform image1	正在变换图像 1
+@Status/Transform image2	正在变换图像 2
+@Status/Complex conjugate multiply	正在执行复共轭相乘
+@Status/Fourier domain multiply	正在执行频域乘法
+@Status/Fourier domain divide	正在执行频域除法
+@Status/Swap quadrants	正在交换象限
+@Status/Display image	正在显示图像
+@Status/Power spectrum	功率谱
+@Status/Opening system clipboard...	正在打开系统剪贴板…
+@Status/Decoding TIFF header...	正在解析 TIFF 文件头…
+@Status/Z Scaling...	正在缩放 Z 维…
+@Status/T Scaling...	正在缩放时间维…
+@Status/Reslice... (press 'Esc' to abort)	正在重新切片…（按 Esc 中止）
+@Status/Exiting scale to fit mode (resize with 'alt' key to scale to fit)	已退出适应窗口缩放模式（按住 Alt 调整窗口可重新适应）
+@Status/Resize window to scale (use 'alt' key as shortcut)	调整窗口尺寸可缩放图像（可用 Alt 键快速切换）
+@Status/Error writing file!	写入文件时出错！
+@Status/Unable to convert image on system clipboard	无法转换系统剪贴板上的图像
+@Status/<<Drag and Drop>>	<<拖放文件>>
+@Status/<<Open as virtual stack or text image>>	<<打开为虚拟堆栈或文本图像>>
+@Status/Standard "Results" table always has row numbers	标准“Results”结果表始终包含行号
+@Status/done	完成
+@Status/done (errors)	完成（有错误）
+@Status/{name} INTERRUPTED	{name} 已中断
+@Status/Image is locked: "{name}"	图像已锁定：“{name}”
+@Status/"{name}" is not locked	“{name}”未被锁定
+@Status/"{name}" is now unlocked	“{name}”已解锁
+@Status/writing: {name}	正在写入：{name}
+@Status/Opening: {name}	正在打开：{name}
+@Status/FFT Filter: {current}/{total}	FFT 滤波：{current}/{total}
+@Status/FFT: {current}/{total}	FFT：{current}/{total}
+@Status/Convolve: {width}x{height} kernel	卷积：{width}×{height} 卷积核
+@Status/Downloading {name}	正在下载 {name}
+@Status/Connecting to {url}	正在连接 {url}
+@Status/Writing PNM {path}...	正在写入 PNM {path}…
+@Status/Save as Gif: {path}	保存为 GIF：{path}
+@Status/Slicing: {current}/{total}	正在重新切片：{current}/{total}
+@Status/Scale: {current}/{total}	正在缩放：{current}/{total}
+@Status/Duplicating: {current}/{total}	正在复制：{current}/{total}
+@Status/Delayed capture: {current}/{total}	延时截屏：{current}/{total}
+@Status/ZProjection {method}: {current}/{total}	Z 投影 {method}：{current}/{total}
+@Status/Projections of {name}: {current}/{total}	{name} 的投影：{current}/{total}
+@Status/Drawing slice {n}... ({percent}% done)	正在绘制第 {n} 张切片…（已完成 {percent}%）
+@Status/Done in {n} msec.	已完成，用时 {n} 毫秒。
+@Status/Plotting {n} lanes	正在绘制 {n} 条泳道
+@Status/Lane {n} selected	已选择第 {n} 条泳道
+@Status/Lane 1 selected (vertical lanes)	已选择第 1 条泳道（纵向泳道）
+@Status/Lane 1 selected (horizontal lanes)	已选择第 1 条泳道（横向泳道）
+@Status/{n} files converted in {seconds} seconds	已转换 {n} 个文件，用时 {seconds} 秒
+@Status/{n} invalid characters converted to spaces	已将 {n} 个异常字符转换为空格
+@Status/{n} pixel values copied to clipboard	已将 {n} 个像素值复制到剪贴板
+@Status/{n} chars saved to {path}	已将 {n} 个字符保存到 {path}
+@Status/{n} macros installed	已安装 {n} 个宏
+@Status/{n} macro installed	已安装 {n} 个宏
+@Status/{n} shortcuts removed; ImageJ restart required	已移除 {n} 个快捷键；需要重启 ImageJ
+@Status/{n} shortcut removed; ImageJ restart required	已移除 {n} 个快捷键；需要重启 ImageJ
+@Status/Optimization: Iteration {n}	正在优化：第 {n} 次迭代
+@Status/Data error: Bad number at {line}: {value}	数据错误：第 {line} 行的数值无效：{value}
+@Status/Saving {n} ROIs to {path}	正在将 {n} 个 ROI 保存到 {path}
+@Status/{seconds} seconds, {n} ROIs, {bytes} bytes	用时 {seconds} 秒，{n} 个 ROI，{bytes} 字节
+@Status/Line {line}	第 {line} 行
+@Status/Font settings saved (size={size}, monospaced={mono})	字体设置已保存（字号={size}，等宽={mono}）
+@Status/Overlay Brush width: {width}	叠加层画笔宽度：{width}
+@Status/Pencil width: {width}	铅笔宽度：{width}
+@Status/Brush width: {width}	画笔宽度：{width}
+@Status/compiling {file}	正在编译 {file}
+@Status/Converting to {type}...	正在转换为 {type}…
+@Status/Running command {command}	正在运行命令 {command}
+@Status/Menus updated: {commands} commands, {macros} macros	菜单已更新：{commands} 个命令，{macros} 个宏
+@HelpMatch/SaveBatchOutput	<html><h1>虚拟堆栈批处理</h1><p>此命令对虚拟堆栈中的每幅图像运行宏代码。处理结果按所选格式保存到输出文件夹，因此可以再次作为虚拟堆栈打开。</p><p>点击“处理”前，请确认输出文件夹为空。</p><p>宏中预先定义了 <code>i</code>（切片索引）和 <code>n</code>（堆栈大小）。调用 <code>setOption('SaveBatchOutput',false)</code> 可阻止当前图像被保存，相当于从输出虚拟堆栈中移除此图像。</p></html>
+@HelpMatch/pixelWidth	<html><h1>图像 → 调整 → 坐标</h1><p>此命令可设置选区边界或整幅图像的角点坐标，并修改图像标定中的 <code>pixelWidth</code>、<code>pixelHeight</code>、<code>xOrigin</code> 和 <code>yOrigin</code>。</p><p>如果选择的是单个点，可指定该点坐标；此时只修改 <code>xOrigin</code> 和 <code>yOrigin</code>。</p><p>X 和 Y 方向的单位也可以分别选择。</p></html>
+@HelpMatch/Macro Equations for Results Tables	<html><h1>结果表的宏运算</h1><ul><li>宏代码或选中的代码会逐行应用到表格。</li><li>以大写字母开头的新变量会创建新列；以小写字母开头的新变量为临时变量。</li><li>预定义变量 <code>row</code> 表示当前行索引。</li><li>字符串操作仅支持 <code>Label</code> 列；可通过 分析 → 设置测量项 → 显示标签 启用该列。</li><li>点击“运行”或按 Ctrl+R（macOS 为 Command+R）可执行一行宏代码。</li><li>点击“重置”可恢复表格的初始版本。</li><li>点击“确定”时，代码会保存到 <code>macros/TableMacro.ijm</code>，并录制“Apply Macro”命令。</li><li>所有 <code>Table.</code> 宏函数（如 <code>Table.size</code>）默认操作当前最前面的表格；指定表格名称时例外。</li></ul></html>
+@HelpMatch/Alphabetic scroll	<html><h2>命令查找快捷键</h2><ul><li>↑ / ↓：选择项目。</li><li>Enter：打开所选项目。</li><li>A–Z：按字母跳转。</li><li>Backspace：激活搜索框。</li></ul></html>
+@Messages/This keyboard shortcut is already in use: {keys}	此快捷键已被占用：{keys}
+@Messages/These keyboard shortcuts are already in use: {keys}	这些快捷键已被占用：{keys}
+@Messages/Duplicate keyword: Command: "{command}" Keyword: "{keyword}" Value: {value} Add an underscore to the corresponding label in the dialog to make the first word unique.	参数键重复：\n命令：“{command}”\n参数键：“{keyword}”\n数值：{value}\n\n请在对话框相应标签中添加下划线，使首个单词互不重复。
+@Messages/Unable to open "{path}".	无法打开“{path}”。
+@Messages/Cannot open "{path}".	无法打开“{path}”。
+@Messages/Unable to open: {path}	无法打开：{path}
+@Messages/Unable to read {path}	无法读取 {path}
+@Messages/Unable to save {path}	无法保存 {path}
+@Messages/"{path}" already exists. Do you want to replace it?	“{path}”已经存在。是否替换？
+@Replace File?/"{path}" already exists. Do you want to replace it?	“{path}”已经存在。是否替换？
+@Messages/To use less memory, use a rectanguar selection, reduce "Total Rotation", and/or increase "Angle Increment".	如需减少内存占用，可使用矩形选区、减小“总旋转角度”，\n或增大“旋转角度步长”。
+@Messages/This ZIP archive does not contain ".roi" files: {path}	此 ZIP 压缩包不包含 .roi 文件：{path}
+@Messages/Unable to remove edge particles	无法移除边缘粒子。
+@Messages/Argument missing or undefined: {argument}	参数缺失或未定义：{argument}
+@Messages/File name must end with ".txt" or ".ijm" .	文件名必须以 .txt 或 .ijm 结尾。
+@Messages/This does not appear to be a FITS file.	此文件似乎不是 FITS 文件。
+@Messages/Unable to decode DICOM header.	无法解析 DICOM 文件头。
+@Messages/This does not appear to be a valid DICOM file. It does not have the characters 'DICM' at offset 128.	此文件似乎不是有效的 DICOM 文件：\n偏移 128 处没有 DICM 标识。
+@Messages/Unable to measure area because shift key is down.	Shift 键正被按住，无法测量面积。
+@Messages/Plugins without an underscore in their name will not be automatically installed when ImageJ is restarted.	名称中不含下划线的插件不会在 ImageJ 重启时自动安装。
+@Messages/For best results, use 32-bit images.	使用 32 位图像可获得更好的结果。
+@Status/Bad formula; should be: y = function(x, a, ...)	公式无效，应采用 y = function(x, a, ...) 的形式
+@Status/Data error: min. two (x,y) pairs needed	数据错误：至少需要两对 (x,y) 数据
+@Status/Error: fit yields Not-a-Number	错误：拟合结果为非数值（NaN）
+@Status/Curve Fitting Error: {detail}	曲线拟合错误：{detail}
+@Status/Regex error: {detail}	正则表达式错误：{detail}
+@Status/No file {path}	没有文件 {path}
+Click "Create" to open the recorded commands\nin an Editor window.\n \nClick "Run" to execute the selected text or the line\ncontaining the cursor. Type ctrl+r as a shortcut.\n \nIn the Editor, after running "Create":\n \n    Type ctrl+R (Macros>Run Macro) to\n    run the macro or script.\n \n    Use File>Save As to save it and\n    ImageJ's Open command to open it.\n \n    To create a command, save the macro or script in\n    the plugins folder and run Help>Refresh Menus.\n	点击“创建”可在编辑器中打开已录制的命令。\n\n点击“运行”可执行所选文本或光标所在行；快捷键为 Ctrl+R。\n\n创建后在编辑器中：\n\n按 Ctrl+R（宏 > 运行宏）可运行宏或脚本。\n\n使用 文件 > 另存为 保存代码，使用 ImageJ 的“打开”命令重新打开。\n\n若要创建菜单命令，请将宏或脚本保存到 plugins 文件夹，\n再运行 帮助 > 刷新菜单。
+This plugin displays a panel with ImageJ commands in a hierarchical tree structure.\n \nUsage:\n \n     Click on a leaf node to launch the corresponding ImageJ command (or plugin)\n     (double-click on X Window Systems)\n \n     Double-click on a tree branch node (folder) to expand or collapse it\n \n     Click and drag on a tree branch node (folder) to display its descendants,\n     in a separate (child) panel ("tear-off" mock-up)\n \n     In a child panel, use the "Show Parent" menu item to re-open the parent panel\n     if it was accidentally closed\n \nAuthor: Cezar M. Tigaret (c.tigaret@ucl.ac.uk)\nThis code is in the public domain.	控制面板以层级树展示 ImageJ 命令。\n\n用法：\n单击叶节点可运行对应命令或插件（X Window 系统下需双击）。\n\n双击树分支节点（文件夹）可展开或折叠。\n\n按住并拖动分支节点，可在独立子面板中显示其下级项目。\n\n如果父面板被意外关闭，可在子面板菜单中选择“Show Parent”重新打开。\n\n作者：Cezar M. Tigaret（c.tigaret@ucl.ac.uk）。\n此代码属于公有领域。
+Use this drop down menu to switch to alternative\nmacro toolsets or to load additional plugin tools.\nThe toolsets listed in the menu are located\nin the ImageJ/macros/toolsets folder and the\nplugin tools are the ones installed in the\nPlugins>Tools submenu.\n \nHold the shift key down while selecting a\ntoolset to view its source code.\n \nMore macro toolsets are available at\n  <http://imagej.net/ij/macros/toolsets/>\n \nPlugin tools can be downloaded from\nthe Tools section of the Plugins page at\n  <http://imagej.net/ij/plugins/>\n	使用此下拉菜单可切换宏工具集或加载插件工具。\n工具集位于 ImageJ/macros/toolsets 文件夹，\n插件工具对应 插件 > 工具 子菜单中的项目。\n\n选择工具集时按住 Shift 可查看其源码。\n\n更多宏工具集：http://imagej.net/ij/macros/toolsets/\n\n插件工具可从插件页面的 Tools 区域下载：\nhttp://imagej.net/ij/plugins/

@@ -1,0 +1,487 @@
+# Plugin-specific display vocabulary. English models, macro keys and data remain intact.
+@Plugin/Bio-Formats/Bio-Formats Plugins Configuration	Bio-Formats 插件配置
+@Plugin/Bio-Formats/General	常规
+@Plugin/Bio-Formats/Formats	文件格式
+@Plugin/Bio-Formats/Libraries	依赖库
+@Plugin/Bio-Formats/Log	日志
+@Plugin/Bio-Formats/Loading...	正在加载…
+@Plugin/Bio-Formats/Automatically check for new versions of the Bio-Formats plugins	自动检查 Bio-Formats 插件新版本
+@Plugin/Bio-Formats/Slice Label Pattern	切片标签格式
+@Plugin/Bio-Formats/Set	设置
+@Plugin/Bio-Formats/Reset	重置
+@Plugin/Bio-Formats/Extensions	扩展名
+@Plugin/Bio-Formats/Enabled	启用
+@Plugin/Bio-Formats/Windowless	无窗口模式
+@Plugin/Bio-Formats/Type	类型
+@Plugin/Bio-Formats/Status	状态
+@Plugin/Bio-Formats/Version	版本
+@Plugin/Bio-Formats/Path	路径
+@Plugin/Bio-Formats/License	许可证
+@Plugin/Bio-Formats/Notes	备注
+@Plugin/Bio-Formats/Merge	合并
+@Plugin/Bio-Formats/Combine lifetime bins to intensity	将寿命时间段合并为强度
+@Plugin/Bio-Formats/Chunkmap	数据块索引表
+@Plugin/Bio-Formats/Use chunkmap table to read image offsets	使用数据块索引表读取图像偏移
+@Plugin/Bio-Formats/Physical size	物理尺寸
+@Plugin/Bio-Formats/Ensure physical pixel sizes are compatible with versions <= 5.3.2	使物理像素尺寸与 5.3.2 及更早版本兼容
+@Plugin/Bio-Formats/<html>Customize the slice label by specifying a pattern string:<br>%s - series index<br>%n - series name<br>%c - channel index<br>%w - channel name<br>%z - Z index<br>%t - T index<br>%A - acquisition timestamp</html>	<html>使用格式字符串自定义切片标签：<br>%s — 序列编号<br>%n — 序列名称<br>%c — 通道编号<br>%w — 通道名称<br>%z — Z 编号<br>%t — 时间编号<br>%A — 采集时间戳</html>
+@Plugin/Bio-Formats/Bio-Formats Exporter	Bio-Formats 导出
+@Plugin/Bio-Formats/Bio-Formats Exporter - Multiple Files	Bio-Formats 导出多个文件
+@Plugin/Bio-Formats/Bio-Formats Exporter Options	Bio-Formats 导出选项
+@Plugin/Bio-Formats/Write each Z section to a separate file	将各 Z 切片分别写入文件
+@Plugin/Bio-Formats/Write each timepoint to a separate file	将各时间点分别写入文件
+@Plugin/Bio-Formats/Write each channel to a separate file	将各通道分别写入文件
+@Plugin/Bio-Formats/Use zero padding for filename indexes	文件编号使用前导零补齐
+@Plugin/Bio-Formats/Do not save lookup tables	不保存颜色查找表
+@Plugin/Bio-Formats/Compression type:	压缩类型：
+@Plugin/Bio-Formats/Export ROIs	导出 ROI
+@Plugin/Coloc 2/List	列表
+@Plugin/Coloc 2/Copy	复制
+@Plugin/Coloc 2/Log	日志
+@Messages/Pixel type not supported by this format.	该格式不支持当前像素类型。
+@Messages/Pixel type ({type}) not supported by this format.	该格式不支持像素类型（{type}）。
+@Messages/The file {path} already exists. \nWould you like to replace it?	文件 {path} 已存在。\n是否替换？
+@Messages/Some files already exist. \nWould you like to replace them?	部分文件已存在。\n是否替换？
+@Messages/Some files already exist; delete them and try again.	部分文件已存在，请先处理这些文件后重试。
+@Messages/Unable to copy to Clipboard.	无法复制到剪贴板。
+@Status/Saving plane {current}/{total}	正在保存图像平面 {current}/{total}
+@Status/Saving image	正在保存图像
+@Status/Copying histogram values...	正在复制直方图数值…
+@Plugin/Bio-Formats/Bio-Formats Import Options	Bio-Formats 导入选项
+@Plugin/Bio-Formats/Stack viewing	堆栈显示
+@Plugin/Bio-Formats/Dataset organization	数据集组织
+@Plugin/Bio-Formats/Color options	颜色选项
+@Plugin/Bio-Formats/Metadata viewing	元数据显示
+@Plugin/Bio-Formats/Memory management	内存管理
+@Plugin/Bio-Formats/Split into separate windows	拆分为独立窗口
+@Plugin/Bio-Formats/Information	说明
+@HelpMatch/Plugin/Bio-Formats/Select an option for a detailed explanation	<html><p>选择一个选项即可查看中文说明。</p><p>原始说明由 Glen MacDonald 和 Curtis Rueden 编写。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Autoscale	<html><b>自动调整显示范围</b><p>按整个堆栈中各通道的最小、最大强度设置显示范围，不修改像素值。</p><p>关闭时按图像的有效数字位深设置范围，可能小于文件位深，例如 16 位文件可存储 12 位（0–4095）数据。无论是否启用，都可用亮度与对比度调整显示，并从直方图查看范围。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Color mode	<html><b>颜色模式</b><ul><li>默认：尽可能使用文件中的显示方式。</li><li>复合通道：按元数据合并显示；无元数据时依次使用红、绿、蓝、灰、青、品红、黄。</li><li>伪彩色：各通道作为独立平面，按上述颜色显示。</li><li>灰度：各通道作为独立灰度平面。</li><li>自定义：手动指定各通道的颜色。</li></ul><p>ImageJ 最多合成 7 个通道；更多通道时部分模式可能无法使用。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Concatenate series when compatible	<html><b>兼容时串接序列</b><p>将兼容的图像序列首尾相接，例如连续采集的两段时间序列。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Crop on import	<html><b>导入时裁剪</b><p>导入时仅保留指定区域以节省内存。后续窗口可设置裁剪区域左上角 X、Y 坐标和宽、高，单位为像素。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Group files with similar names	<html><b>将相似文件名分组</b><p>将同一文件夹中具有相似名称的文件解释为同一数据集的不同平面。导入前会显示检测到的文件名模式，供核对和修改。</p><p>例如 12 个时间点、每个文件有 9 个焦平面时，启用后可导入全部 108 个平面；关闭时只导入所选文件的 9 个平面。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Open files individually	<html><b>逐个打开文件</b><p>将每个文件独立处理，不与属于同一较大数据集的其他文件分组。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Open all series	<html><b>打开全部序列</b><p>跳过带缩略图的序列选择窗口，直接打开数据集中所有序列，等同于选中全部序列。宏中无法预先知道序列数时也可使用。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Display metadata	<html><b>显示原始元数据</b><p>读取文件中的原始元数据，可通过元数据窗口的文件或编辑菜单保存、复制。内容和结构取决于源文件格式。导入后也可按 i（图像 → 显示信息）查看。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Display OME-XML metadata	<html><b>显示 OME-XML 元数据</b><p>以 OME 标准树结构显示元数据。不同文件格式采用相同结构，填充的信息量可能不同。</p><p>图像名称位于 OME → Image → Name；采集时间见 CreationDate；物理像素尺寸见 Pixels 中的 PhysicalSizeX、PhysicalSizeY、PhysicalSizeZ。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Display ROIs	<html><b>显示 ROI</b><p>将文件中存储的 ROI 导入 ImageJ。</p></html>
+@HelpMatch/Plugin/Bio-Formats/ROI Import Mode	<html><b>ROI 导入模式</b><p>将 ROI 导入 ROI 管理器或图像叠加层。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Specify range for each series	<html><b>指定各序列导入范围</b><p>仅打开指定范围的图像平面。分析数据维度后会打开范围设置窗口。例如仅导入包含目标结构的 Z 切片可节省内存。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Split focal planes	<html><b>拆分焦平面</b><p>将每个焦平面分别打开为独立堆栈。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Split timepoints	<html><b>拆分时间点</b><p>将每个时间点分别打开为独立堆栈。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Split channels	<html><b>拆分通道</b><p>将每个通道打开为独立堆栈，并保留位深。适合后续手动安排通道合并顺序。</p></html>
+@HelpMatch/Plugin/Bio-Formats/View stack with	<html><b>堆栈查看方式</b><p>选择图像查看器。仅查看元数据时不打开图像；标准 ImageJ 使用普通堆栈，超堆栈分别管理通道、Z 和时间维度。其他查看器需要相应插件。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Stack order	<html><b>堆栈维度顺序</b><p>指定图像平面在堆栈中的排列顺序。维度字母靠前表示该维度索引变化更快；默认顺序由文件读取器确定。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Swap dimensions	<html><b>交换维度</b><p>重新指定文件中各轴的维度含义。例如自动识别文件编号对应的维度有误时，可交换 Z、通道和时间等维度。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Use virtual stack	<html><b>使用虚拟堆栈</b><p>每次仅将一个图像平面读入内存，切换平面时再从数据源读取。适合无法全部装入内存的大型数据集。</p></html>
+@HelpMatch/Plugin/Bio-Formats/Stitch tiles	<html><b>拼接图像块</b><p>使用载物台坐标进行简单拼接，假定重叠率为 0%。适合快速预览，正式拼接应使用专门的 Stitching 插件。</p></html>
+@Plugin/Bio-Formats/Autoscale	自动调整显示范围
+@Plugin/Bio-Formats/Color mode:	颜色模式：
+@Plugin/Bio-Formats/Concatenate series when compatible	兼容时串接图像序列
+@Plugin/Bio-Formats/Crop on import	导入时裁剪
+@Plugin/Bio-Formats/Group files with similar names	将相似文件名分组
+@Plugin/Bio-Formats/Open files individually	逐个打开文件
+@Plugin/Bio-Formats/Open all series	打开全部图像序列
+@Plugin/Bio-Formats/Quiet mode	静默模式
+@Plugin/Bio-Formats/Display metadata	显示原始元数据
+@Plugin/Bio-Formats/Display OME-XML metadata	显示 OME-XML 元数据
+@Plugin/Bio-Formats/Display ROIs	显示 ROI
+@Plugin/Bio-Formats/ROIs Import Mode:	ROI 导入模式：
+@Plugin/Bio-Formats/Specify range for each series	指定各序列的导入范围
+@Plugin/Bio-Formats/Split focal planes	拆分焦平面
+@Plugin/Bio-Formats/Split timepoints	拆分时间点
+@Plugin/Bio-Formats/Split channels	拆分通道
+@Plugin/Bio-Formats/View stack with:	堆栈查看方式：
+@Plugin/Bio-Formats/Stack order:	堆栈维度顺序：
+@Plugin/Bio-Formats/Swap dimensions	交换维度
+@Plugin/Bio-Formats/Use virtual stack	使用虚拟堆栈
+@Plugin/Bio-Formats/Stitch tiles	拼接图像块
+@Plugin/Bio-Formats/Default	默认
+@Plugin/Bio-Formats/Composite	复合通道
+@Plugin/Bio-Formats/Colorized	伪彩色
+@Plugin/Bio-Formats/Grayscale	灰度
+@Plugin/Bio-Formats/Custom	自定义
+@Plugin/Bio-Formats/Metadata only	仅查看元数据
+@Plugin/Bio-Formats/Standard ImageJ	标准 ImageJ
+@Plugin/Bio-Formats/Hyperstack	超堆栈
+@Plugin/Bio-Formats/Data Browser	数据浏览器
+@Plugin/Bio-Formats/ROI manager	ROI 管理器
+@Plugin/Bio-Formats/Overlay	叠加层
+@Plugin/Bio-Formats/Local machine	本机
+@Plugin/Bio-Formats/Internet	互联网
+@Plugin/Bio-Formats/Bio-Formats Dataset Location	Bio-Formats 数据集位置
+@Plugin/Bio-Formats/Bio-Formats Series Options	Bio-Formats 图像序列选项
+@Plugin/Bio-Formats/Bio-Formats Range Options	Bio-Formats 导入范围
+@Plugin/Bio-Formats/Bio-Formats Crop Options	Bio-Formats 裁剪选项
+@Plugin/Bio-Formats/Bio-Formats Dimension Swapper	Bio-Formats 维度交换
+@Plugin/Bio-Formats/Bio-Formats Color Options	Bio-Formats 颜色选项
+@Plugin/Bio-Formats/Bio-Formats Custom Colorization	Bio-Formats 自定义通道颜色
+@Plugin/Bio-Formats/Dimension swapping options	维度交换选项
+@Plugin/Bio-Formats/C Begin	通道起点
+@Plugin/Bio-Formats/C End	通道终点
+@Plugin/Bio-Formats/C Step	通道步长
+@Plugin/Bio-Formats/Z Begin	Z 起点
+@Plugin/Bio-Formats/Z End	Z 终点
+@Plugin/Bio-Formats/Z Step	Z 步长
+@Plugin/Bio-Formats/T Begin	时间起点
+@Plugin/Bio-Formats/T End	时间终点
+@Plugin/Bio-Formats/T Step	时间步长
+@Plugin/Bio-Formats/X Coordinate	X 坐标
+@Plugin/Bio-Formats/Y Coordinate	Y 坐标
+@Plugin/Bio-Formats/Bio-Formats File Stitching	Bio-Formats 文件分组
+@Plugin/Bio-Formats/Bio-Formats Memory Usage	Bio-Formats 内存用量
+@Plugin/Coloc 2/Coloc 2	Coloc 2 共定位分析
+@Plugin/Coloc 2/Channel 1	通道 1
+@Plugin/Coloc 2/Channel 2	通道 2
+@Plugin/Coloc 2/ROI or mask	ROI 或掩膜
+@Plugin/Coloc 2/Threshold regression	阈值回归方法
+@Plugin/Coloc 2/Show Save PDF Dialog	显示 PDF 保存对话框
+@Plugin/Coloc 2/Display Images in Result	在结果中显示图像
+@Plugin/Coloc 2/Display Shuffled Images	显示随机打乱的图像
+@Plugin/Coloc 2/Algorithms:	分析算法：
+@Plugin/Coloc 2/Li Histogram Channel 1	通道 1 的 Li 直方图
+@Plugin/Coloc 2/Li Histogram Channel 2	通道 2 的 Li 直方图
+@Plugin/Coloc 2/Li ICQ	Li 强度相关商（ICQ）
+@Plugin/Coloc 2/Spearman's Rank Correlation	Spearman 秩相关
+@Plugin/Coloc 2/Manders' Correlation	Manders 相关系数
+@Plugin/Coloc 2/Kendall's Tau Rank Correlation	Kendall τ 秩相关
+@Plugin/Coloc 2/2D Intensity Histogram	二维强度直方图
+@Plugin/Coloc 2/Costes' Significance Test	Costes 显著性检验
+@Plugin/Coloc 2/PSF	点扩散函数（PSF）
+@Plugin/Coloc 2/Costes randomisations	Costes 随机化次数
+@Plugin/Coloc 2/Bisection	二分法
+@Plugin/Coloc 2/<None>	〈无〉
+@Plugin/Coloc 2/ROI(s) in channel 1	通道 1 中的 ROI
+@Plugin/Coloc 2/ROI(s) in channel 2	通道 2 中的 ROI
+@Plugin/Stitching/Grid/Collection stitching	网格／图像集合拼接
+@Plugin/Stitching/Type	排列类型
+@Plugin/Stitching/Pairwise Stitching of Images	两幅图像配准
+@Plugin/Stitching/First image (reference)	第一幅图像（参考）
+@Plugin/Stitching/Second image (to register)	第二幅图像（待配准）
+@Plugin/Stitching/Pairwise Stitching	两幅图像拼接
+@Plugin/Stitching/Check peaks	检查峰值数
+@Plugin/Stitching/Ignore zero values when fusing	融合时忽略零值
+@Plugin/Stitching/Fused image name:	融合后图像名称：
+@Plugin/Stitching/Compute overlap	计算重叠区域
+@Plugin/Stitching/Intensity of random input tile	随机输入图像块的强度
+@Plugin/Stitching/Add tiles as ROIs	将图像块添加为 ROI
+@Plugin/Stitching/Compute overlap (otherwise use approximate grid coordinates)	计算重叠区域（否则使用近似网格坐标）
+@Plugin/Stitching/Compute overlap (otherwise apply coordinates from layout file)	计算重叠区域（否则使用布局文件坐标）
+@Plugin/Stitching/Compute overlap (otherwise trust coordinates in the file)	计算重叠区域（否则使用文件中的坐标）
+@Plugin/Stitching/Invert X coordinates	反转 X 坐标
+@Plugin/Stitching/Ignore Z stage position	忽略载物台 Z 坐标
+@Plugin/Stitching/Display fusion	显示融合结果
+@Plugin/Stitching/Use virtual input images (Slow! Even slower when combined with subpixel accuracy during fusion!)	使用虚拟输入图像（速度较慢，融合时结合亚像素精度会更慢）
+@Plugin/Stitching/Save memory (but be slower)	节省内存（速度较慢）
+@Plugin/Stitching/Save computation time (but use more RAM)	节省计算时间（占用更多内存）
+@Plugin/Stitching/This Plugin is developed by Stephan Preibisch\nhttp://fly.mpi-cbg.de/preibisch	本插件由 Stephan Preibisch 开发。\nhttp://fly.mpi-cbg.de/preibisch
+@Plugin/Stitching/Please note that the Stitching is\nbased on a publication. If you use\nit for your research please be so\nkind to cite us:\nPreibisch et al., Bioinformatics (2009)	使用此拼接插件开展研究时，请引用：\nPreibisch et al., Bioinformatics (2009)
+@Plugin/Stitching/Order	排列顺序
+@Plugin/Stitching/Grid: row-by-row	网格：逐行
+@Plugin/Stitching/Grid: column-by-column	网格：逐列
+@Plugin/Stitching/Grid: snake by rows	网格：逐行蛇形
+@Plugin/Stitching/Grid: snake by columns	网格：逐列蛇形
+@Plugin/Stitching/Filename defined position	文件名指定位置
+@Plugin/Stitching/Unknown position	未知位置
+@Plugin/Stitching/Positions from file	从文件读取位置
+@Plugin/Stitching/Sequential Images	连续图像
+@Plugin/Stitching/Right & Down	向右、向下
+@Plugin/Stitching/Left & Down	向左、向下
+@Plugin/Stitching/Right & Up	向右、向上
+@Plugin/Stitching/Left & Up	向左、向上
+@Plugin/Stitching/Down & Right	向下、向右
+@Plugin/Stitching/Down & Left	向下、向左
+@Plugin/Stitching/Up & Right	向上、向右
+@Plugin/Stitching/Up & Left	向上、向左
+@Plugin/Stitching/Defined by filename	由文件名指定
+@Plugin/Stitching/All files in directory	目录中的全部文件
+@Plugin/Stitching/Defined by TileConfiguration	由 TileConfiguration 指定
+@Plugin/Stitching/Defined by image metadata	由图像元数据指定
+@Plugin/Stitching/Grid size x	网格列数 X
+@Plugin/Stitching/Grid size y	网格行数 Y
+@Plugin/Stitching/Tile overlap [%]	图像块重叠率 [%]
+@Plugin/Stitching/Tile overlap x [%]	X 方向重叠率 [%]
+@Plugin/Stitching/Tile overlap y [%]	Y 方向重叠率 [%]
+@Plugin/Stitching/First file index i	首个文件编号 i
+@Plugin/Stitching/First file index x	首个文件编号 x
+@Plugin/Stitching/First file index y	首个文件编号 y
+@Plugin/Stitching/Directory	输入目录
+@Plugin/Stitching/File names for tiles	图像块文件名模式
+@Plugin/Stitching/Output textfile name	输出位置文件名
+@Plugin/Stitching/Fusion method	融合方法
+@Plugin/Stitching/Regression threshold	回归阈值
+@Plugin/Stitching/Max/avg displacement threshold	最大／平均位移阈值
+@Plugin/Stitching/Absolute displacement threshold	绝对位移阈值
+@Plugin/Stitching/Subpixel accuracy	亚像素精度
+@Plugin/Stitching/Downsample tiles	对图像块降采样
+@Plugin/Stitching/Computation parameters	计算参数
+@Plugin/Stitching/Image output	图像输出
+@Plugin/Stitching/Fuse and display	融合并显示
+@Plugin/Stitching/Write to disk	写入磁盘
+@Plugin/Stitching/Linear Blending	线性混合
+@Plugin/Stitching/Average Intensity	平均强度
+@Plugin/Stitching/Median Intensity	中值强度
+@Plugin/Stitching/Max. Intensity	最大强度
+@Plugin/Stitching/Min. Intensity	最小强度
+@Plugin/Stitching/Do not fuse images (only write TileConfiguration)	不融合图像，仅输出位置文件
+@Plugin/Weka/Train classifier	训练分类器
+@Plugin/Weka/Toggle overlay	切换叠加显示
+@Plugin/Weka/Create result	生成分割结果
+@Plugin/Weka/Get probability	生成概率图
+@Plugin/Weka/Plot result	绘制评估结果
+@Plugin/Weka/Apply classifier	应用分类器
+@Plugin/Weka/Create new class	创建新类别
+@Plugin/Weka/Load classifier	加载分类器
+@Plugin/Weka/Save classifier	保存分类器
+@Plugin/Weka/Load data	加载训练数据
+@Plugin/Weka/Save data	保存训练数据
+@Plugin/Weka/Training	训练
+@Plugin/Weka/Settings	设置
+@Plugin/Weka/Choose	选择
+@Plugin/Weka/Save feature stack	保存特征堆栈
+@Plugin/Weka/Gaussian blur	高斯模糊
+@Plugin/Weka/Sobel filter	Sobel 边缘滤波
+@Plugin/Weka/Difference of gaussians	高斯差分
+@Plugin/Weka/Membrane projections	膜投影
+@Plugin/Weka/Variance	方差
+@Plugin/Weka/Anisotropic diffusion	各向异性扩散
+@Plugin/Weka/Bilateral	双边滤波
+@Plugin/Weka/Derivatives	导数
+@Plugin/Weka/Laplacian	拉普拉斯算子
+@Plugin/Weka/Structure	结构张量
+@Plugin/Weka/Entropy	熵
+@Plugin/Weka/Neighbors	邻域像素
+@Plugin/Weka/Add to {name}	添加到 {name}
+@Plugin/Weka/Class {n}	类别 {n}
+@Plugin/Weka/Trainable Weka Segmentation {version}	Weka 可训练分割 {version}
+@Plugin/Weka/Options	选项
+@Plugin/Weka/Labels	类别标签
+@Plugin/Weka/STOP	停止
+@Plugin/Weka/Segmentation settings	分割设置
+@Plugin/Weka/Training features:	训练特征：
+@Plugin/Weka/Membrane thickness:	膜厚度：
+@Plugin/Weka/Membrane patch size:	膜区域尺寸：
+@Plugin/Weka/Minimum sigma:	最小 σ：
+@Plugin/Weka/Maximum sigma:	最大 σ：
+@Plugin/Weka/Classifier options:	分类器选项：
+@Plugin/Weka/Class names:	类别名称：
+@Plugin/Weka/Advanced options:	高级选项：
+@Plugin/Weka/Balance classes	平衡类别样本
+@Plugin/Weka/Result overlay opacity	结果叠加层不透明度
+@Plugin/Weka/Start training the classifier	开始训练分类器
+@Plugin/Weka/Generate result image	生成分割结果图像
+@Plugin/Weka/Generate current probability maps	生成当前概率图
+@Plugin/Weka/Display settings dialog	打开设置窗口
+@Plugin/Weka/Toggle between current segmentation and original image	切换当前分割结果与原始图像
+@Plugin/Weka/Plot result based on different metrics	按不同指标绘制结果
+@Plugin/Weka/Apply current classifier to a single image or stack	将当前分类器应用于单幅图像或堆栈
+@Plugin/Weka/Add one more label to mark different areas	新增类别标签以标记不同区域
+@Plugin/Weka/Launch Weka GUI chooser	打开 Weka 图形界面选择器
+@Plugin/TrackMate/Next	下一步
+@Messages/At least 2 images must be open!	请先打开至少两幅图像。
+@Messages/You need at least two open images.	请先打开至少两幅图像。
+@Messages/An error occured, could not colocalize!	发生错误，无法完成共定位分析。
+@Messages/No data available yet to display results	尚无可显示的结果数据。
+@Messages/No data available yet to plot results: you need to trace\nsome training samples or load data from file.	尚无可绘制的结果数据：请先标记训练样本或从文件加载数据。
+@Messages/Sorry, maximum number of classes has been reached	类别数量已达到上限。
+@Messages/Please input a new label name	请输入新的类别标签名称。
+@Messages/Some images are 2d, some are 3d ... cannot proceed	输入图像同时包含二维和三维数据，无法继续。
+@Messages/Number of channels per image changes ... cannot proceed	各幅图像的通道数量不一致，无法继续。
+@Messages/Number of timepoints per image changes ... cannot proceed	各幅图像的时间点数量不一致，无法继续。
+@Messages/Filename is empty!	文件名为空。
+@Status/Calculating probability maps...	正在计算概率图…
+@Status/Evaluating current data...	正在评估当前数据…
+@Status/Fusing stitched image...	正在融合拼接图像…
+@Status/Generating ROIs from image tiles...	正在从图像块生成 ROI…
+@Status/Adding ROIs...	正在添加 ROI…
+@Status/ROIs generated.	ROI 已生成。
+@Plugin/TrackMate/Set filters on spots	设置斑点筛选条件
+@Plugin/TrackMate/Set filters on tracks	设置轨迹筛选条件
+@Plugin/TrackMate/Selected spots: {selected} out of {total}	已选择斑点：{selected}／{total}
+@Plugin/TrackMate/Above	高于
+@Plugin/TrackMate/Below	低于
+@Plugin/TrackMate/auto	自动
+@Plugin/TrackMate/min	最小
+@Plugin/TrackMate/max	最大
+@Plugin/TrackMate/Spots	斑点
+@Plugin/TrackMate/Tracks	轨迹
+@Plugin/TrackMate/as ROIs	作为 ROI
+@Plugin/TrackMate/time-points	时间点
+@Plugin/TrackMate/Color spots by:	斑点着色依据：
+@Plugin/TrackMate/Color tracks by:	轨迹着色依据：
+@Plugin/TrackMate/Display options	显示选项
+@Plugin/TrackMate/Display spot names:	显示斑点名称：
+@Plugin/TrackMate/Display spots	显示斑点
+@Plugin/TrackMate/Display tracks	显示轨迹
+@Plugin/TrackMate/Edit settings	编辑设置
+@Plugin/TrackMate/Fade range:	渐隐范围：
+@Plugin/TrackMate/Fade tracks in time:	轨迹随时间渐隐：
+@Plugin/TrackMate/Launch spot editor	打开斑点编辑器
+@Plugin/TrackMate/Limit drawing Z depth	限制绘制的 Z 深度
+@Plugin/TrackMate/Spot display radius ratio:	斑点显示半径比例：
+@Plugin/TrackMate/<html><a href=https://doi.org/10.1038/s41592-022-01507-1>link to paper</a></html>	<html><a href=https://doi.org/10.1038/s41592-022-01507-1>论文链接</a></html>
+@Plugin/TrackMate/<html><p align="justify">Set here a threshold on the quality feature to restrict the number of spots before calculating other features and rendering. This step can help save time in the case of a very large number of spots. <br/> Warning: the spot filtered here will be discarded: they will not be saved and cannot be retrieved by any other means than re-doing the detection step.</html>	<html><p>先按质量指标设置阈值，再计算其他特征并显示结果；斑点数量很大时可节省时间。</p><p>此步骤排除的斑点会被丢弃，不予保存；只有重新检测才能恢复。</p></html>
+@Plugin/TrackMate/<html><p align="justify">This tracker is identical to the sparse LAP tracker present in this trackmate, except that it proposes fewer tuning options. Namely, only gap closing is allowed, based solely on a distance and time condition. Track splitting and merging are not allowed, resulting in having non-branching tracks. </html>	<html><p>此追踪器基于稀疏 LAP 追踪器，提供较少的调节选项。仅按距离和时间条件连接缺失帧，不允许轨迹分裂或合并，输出无分支轨迹。</p></html>
+@Plugin/TrackMate/Target image: {name}	目标图像：{name}
+@Plugin/TrackMate/TrackMate on {name}	TrackMate：{name}
+@Plugin/TrackMate/<html>Select a <b>detector</b></html>	<html>选择<b>检测器</b></html>
+@Plugin/TrackMate/<html>Select a <b>tracker</b></html>	<html>选择<b>追踪器</b></html>
+@Plugin/TrackMate/LoG detector	LoG 斑点检测器
+@Plugin/TrackMate/DoG detector	DoG 斑点检测器
+@Plugin/TrackMate/Manual annotation	手工标注
+@Plugin/TrackMate/Thresholding detector	阈值分割检测器
+@Plugin/TrackMate/Mask detector	掩膜检测器
+@Plugin/TrackMate/Label image detector	标签图像检测器
+@Plugin/TrackMate/Target channel	目标通道
+@Plugin/TrackMate/Diameter	直径
+@Plugin/TrackMate/Median filtering	中值滤波
+@Plugin/TrackMate/Sub-pixel localization	亚像素定位
+@Plugin/TrackMate/Initial thresholding	初始阈值筛选
+@Plugin/TrackMate/Filter spots	筛选斑点
+@Plugin/TrackMate/Filter tracks	筛选轨迹
+@Plugin/TrackMate/Configure views	配置显示
+@Plugin/TrackMate/Select an action	选择操作
+@Plugin/TrackMate/Simple LAP tracker	简单 LAP 追踪器
+@Plugin/TrackMate/LAP tracker	LAP 追踪器
+@Plugin/TrackMate/Nearest-neighbor tracker	最近邻追踪器
+@Plugin/TrackMate/Resume	继续
+@Plugin/TrackMate/DisplayConfig	显示设置
+@Plugin/TrackMate/Z/T swapped?	Z 与 T 维度是否颠倒？
+@Plugin/TrackMate/to	至
+@Plugin/TrackMate/Segment in channel:	分割通道：
+@Plugin/TrackMate/Settings for detector:	检测器设置：
+@Plugin/TrackMate/Spot diameter to use:	斑点直径：
+@Plugin/TrackMate/Intensity threshold:	强度阈值：
+@Plugin/TrackMate/Simplify contours.	简化轮廓。
+@Plugin/TrackMate/Auto	自动
+@Plugin/TrackMate/Previous	上一步
+@Plugin/TrackMate/Back	返回
+@Plugin/TrackMate/Log	日志
+@Plugin/TrackMate/Save	保存
+@Plugin/TrackMate/Load	加载
+@Plugin/TrackMate/Calibration settings:	图像标定：
+@Plugin/TrackMate/Crop settings (in pixels, 0-based):	裁剪范围（像素，从 0 开始）：
+@Plugin/TrackMate/Refresh ROI	刷新 ROI
+@Plugin/TrackMate/Time interval:	时间间隔：
+@Plugin/TrackMate/Select a detector	选择检测器
+@Plugin/TrackMate/Select a tracker	选择追踪器
+@Plugin/TrackMate/Estimated blob diameter:	估计斑点直径：
+@Plugin/TrackMate/Threshold:	阈值：
+@Plugin/TrackMate/Do sub-pixel localization	启用亚像素定位
+@Plugin/TrackMate/Median filter	中值滤波
+@Plugin/TrackMate/Preview	预览
+@Plugin/TrackMate/Settings	设置
+@Plugin/TrackMate/Linking max distance:	最大连接距离：
+@Plugin/TrackMate/Gap-closing max distance:	跨帧连接最大距离：
+@Plugin/TrackMate/Gap-closing max frame gap:	允许缺失的最大帧数：
+@Plugin/TrackMate/Toggle linking	切换连接模式
+@Plugin/TrackMate/Zoom in 2x	放大两倍
+@Plugin/TrackMate/Zoom out 2x	缩小两倍
+@Plugin/TrackMate/Reset zoom	重置缩放
+@Plugin/TrackMate/Layout	布局
+@Plugin/TrackMate/Re-arrange the tracks.	重新排列轨迹。
+@Plugin/TrackMate/Export to...	导出到…
+@Plugin/TrackMate/Style:	样式：
+@Plugin/TrackMate/Select whole track	选择整条轨迹
+@Plugin/TrackMate/Select track downwards	向后选择轨迹
+@Plugin/TrackMate/Select track upwards	向前选择轨迹
+@Plugin/TrackMate/Edit spot name	编辑斑点名称
+@Plugin/TrackMate/Clear manual color of selection	清除所选项目的手动颜色
+@Plugin/TrackMate/Remove spots and links	移除斑点及连接
+@Plugin/TrackMate/Remove only links	仅移除连接
+@Plugin/TrackMate/Re-apply current style after model changes.	模型变化后重新应用当前样式。
+@Plugin/TrackMate/Capture undecorated TrackScheme (zoom=1).	截取不带装饰的 TrackScheme（缩放比例 1）。
+@Plugin/TrackMate/Capture TrackScheme with decorations.	截取带装饰的 TrackScheme。
+@Plugin/TrackMate/Loop display decorations.	循环切换显示装饰。
+@Plugin/TrackMate/Allow track splitting	允许轨迹分裂
+@Plugin/TrackMate/Allow track merging	允许轨迹合并
+@Plugin/TrackMate/Allow gap closing	允许跨缺失帧连接
+@Plugin/TrackMate/Linking	连接
+@Plugin/TrackMate/Gap closing	跨缺失帧连接
+@Plugin/TrackMate/Track splitting	轨迹分裂
+@Plugin/TrackMate/Track merging	轨迹合并
+@Plugin/Weka/Open...	打开…
+@Plugin/Weka/Save...	保存…
+@Plugin/Weka/OK	确定
+@Plugin/Weka/Cancel	取消
+@Plugin/Weka/Capabilities	适用数据类型
+@Plugin/Weka/More	详细说明
+@Plugin/Weka/About	关于
+@Plugin/Weka/Property	属性
+@Plugin/Weka/Value	数值
+@Plugin/Weka/Name	名称
+@Plugin/Weka/Help	帮助
+@Plugin/Weka/Close	关闭
+@Plugin/Weka/Copy	复制
+@Plugin/Weka/Select a classifier	选择分类器
+@Plugin/Weka/Generic object editor	对象参数编辑器
+@Plugin/Weka/Delete	删除
+@Plugin/Weka/Remove	移除
+@Plugin/Weka/Add	添加
+@Plugin/Bio-Formats/Uncompressed	不压缩
+@Plugin/Stitching/Grid stitching: Grid: row-by-row	网格拼接：网格：逐行
+@Plugin/Stitching/Grid stitching: Grid: row-by-row, Right & Down	网格拼接：网格：逐行，向右、向下
+@Plugin/Stitching/Grid stitching: Grid: row-by-row, Left & Down	网格拼接：网格：逐行，向左、向下
+@Plugin/Stitching/Grid stitching: Grid: row-by-row, Right & Up	网格拼接：网格：逐行，向右、向上
+@Plugin/Stitching/Grid stitching: Grid: row-by-row, Left & Up	网格拼接：网格：逐行，向左、向上
+@Plugin/Stitching/Grid stitching: Grid: column-by-column	网格拼接：网格：逐列
+@Plugin/Stitching/Grid stitching: Grid: column-by-column, Right & Down	网格拼接：网格：逐列，向右、向下
+@Plugin/Stitching/Grid stitching: Grid: column-by-column, Left & Down	网格拼接：网格：逐列，向左、向下
+@Plugin/Stitching/Grid stitching: Grid: column-by-column, Right & Up	网格拼接：网格：逐列，向右、向上
+@Plugin/Stitching/Grid stitching: Grid: column-by-column, Left & Up	网格拼接：网格：逐列，向左、向上
+@Plugin/Stitching/Grid stitching: Grid: snake by rows	网格拼接：网格：逐行蛇形
+@Plugin/Stitching/Grid stitching: Grid: snake by rows, Right & Down	网格拼接：网格：逐行蛇形，向右、向下
+@Plugin/Stitching/Grid stitching: Grid: snake by rows, Left & Down	网格拼接：网格：逐行蛇形，向左、向下
+@Plugin/Stitching/Grid stitching: Grid: snake by rows, Right & Up	网格拼接：网格：逐行蛇形，向右、向上
+@Plugin/Stitching/Grid stitching: Grid: snake by rows, Left & Up	网格拼接：网格：逐行蛇形，向左、向上
+@Plugin/Stitching/Grid stitching: Grid: snake by columns	网格拼接：网格：逐列蛇形
+@Plugin/Stitching/Grid stitching: Grid: snake by columns, Right & Down	网格拼接：网格：逐列蛇形，向右、向下
+@Plugin/Stitching/Grid stitching: Grid: snake by columns, Left & Down	网格拼接：网格：逐列蛇形，向左、向下
+@Plugin/Stitching/Grid stitching: Grid: snake by columns, Right & Up	网格拼接：网格：逐列蛇形，向右、向上
+@Plugin/Stitching/Grid stitching: Grid: snake by columns, Left & Up	网格拼接：网格：逐列蛇形，向左、向上
+@Plugin/Stitching/Grid stitching: Filename defined position	网格拼接：文件名指定位置
+@Plugin/Stitching/Grid stitching: Filename defined position, Right & Down	网格拼接：文件名指定位置，向右、向下
+@Plugin/Stitching/Grid stitching: Filename defined position, Left & Down	网格拼接：文件名指定位置，向左、向下
+@Plugin/Stitching/Grid stitching: Filename defined position, Right & Up	网格拼接：文件名指定位置，向右、向上
+@Plugin/Stitching/Grid stitching: Filename defined position, Left & Up	网格拼接：文件名指定位置，向左、向上
+@Plugin/Stitching/Grid stitching: Unknown position	网格拼接：未知位置
+@Plugin/Stitching/Grid stitching: Unknown position, Right & Down	网格拼接：未知位置，向右、向下
+@Plugin/Stitching/Grid stitching: Unknown position, Left & Down	网格拼接：未知位置，向左、向下
+@Plugin/Stitching/Grid stitching: Unknown position, Right & Up	网格拼接：未知位置，向右、向上
+@Plugin/Stitching/Grid stitching: Unknown position, Left & Up	网格拼接：未知位置，向左、向上
+@Plugin/Stitching/Grid stitching: Positions from file	网格拼接：从文件读取位置
+@Plugin/Stitching/Grid stitching: Positions from file, Right & Down	网格拼接：从文件读取位置，向右、向下
+@Plugin/Stitching/Grid stitching: Positions from file, Left & Down	网格拼接：从文件读取位置，向左、向下
+@Plugin/Stitching/Grid stitching: Positions from file, Right & Up	网格拼接：从文件读取位置，向右、向上
+@Plugin/Stitching/Grid stitching: Positions from file, Left & Up	网格拼接：从文件读取位置，向左、向上
+@Plugin/Stitching/Grid stitching: Sequential Images	网格拼接：连续图像
+@Plugin/Stitching/Grid stitching: Sequential Images, Right & Down	网格拼接：连续图像，向右、向下
+@Plugin/Stitching/Grid stitching: Sequential Images, Left & Down	网格拼接：连续图像，向左、向下
+@Plugin/Stitching/Grid stitching: Sequential Images, Right & Up	网格拼接：连续图像，向右、向上
+@Plugin/Stitching/Grid stitching: Sequential Images, Left & Up	网格拼接：连续图像，向左、向上
+@Plugin/Weka/weka.gui.GenericObjectEditor	分类器属性
+@Plugin/Weka/Class for constructing a forest of random trees.	用于构建由随机决策树组成的森林。
+@Plugin/Weka/batchSize	批处理大小
+@Plugin/Weka/computeImportances	计算特征重要性
+@Plugin/Weka/debug	调试输出
+@Plugin/Weka/doNotCheckCapabilities	跳过适用性检查
+@Plugin/Weka/maxDepth	最大树深度
+@Plugin/Weka/numDecimalPlaces	结果小数位数
+@Plugin/Weka/numFeatures	随机选取的特征数
+@Plugin/Weka/numThreads	线程数
+@Plugin/Weka/numTrees	决策树数量
+@Plugin/Weka/seed	随机种子
+@Plugin/Weka/True	是
+@Plugin/Weka/False	否
+@Plugin/Coloc 2/<html><center>Channel {n}<br>({name})</center>	<html><center>通道 {n}<br>({name})</center>
+@Plugin/Weka/The number of trees to be generated	要生成的决策树数量
+@Plugin/Weka/The number of trees to be generated.	要生成的决策树数量。
+@Plugin/Weka/The number of attributes to be used in random selection (see RandomTree2)	随机选取的特征数量（参见 RandomTree2）
+@Plugin/Weka/The number of attributes to be used in random selection (see RandomTree2).	随机选取的特征数量（参见 RandomTree2）。
+@Plugin/Weka/The random number seed to be used	使用的随机数种子
+@Plugin/Weka/The random number seed to be used.	使用的随机数种子。
+@Plugin/Weka/The maximum depth of the trees, 0 for unlimited	树的最大深度，0 表示不限制
+@Plugin/Weka/The maximum depth of the trees, 0 for unlimited.	树的最大深度，0 表示不限制。
+@Plugin/Weka/Number of simultaneous threads to use in computation (0 = autodetect)	并行计算线程数（0 表示自动检测）
+@Plugin/Weka/Number of simultaneous threads to use in computation (0 = autodetect).	并行计算线程数（0 表示自动检测）。

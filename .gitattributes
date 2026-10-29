@@ -1,0 +1,4 @@
+* text=auto
+*.cmd text eol=crlf
+# Spaces are literal parts of padded AWT captions in this dictionary.
+locales/dialogs.zh_CN.tsv whitespace=-blank-at-eol
