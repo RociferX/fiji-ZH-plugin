@@ -9,7 +9,7 @@ New-Item -ItemType Directory -Path $dist -Force | Out-Null
 $stage = Join-Path $dist ([guid]::NewGuid().ToString('N'))
 $root = Join-Path $stage $name
 New-Item -ItemType Directory -Path $root -Force | Out-Null
-foreach ($file in @('README.md', 'CHANGELOG.md')) {
+foreach ($file in @('README.md', 'CHANGELOG.md', 'LICENSE')) {
     Copy-Item -LiteralPath $file -Destination $root
 }
 Copy-Item -LiteralPath 'docs' -Destination $root -Recurse

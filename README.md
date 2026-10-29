@@ -1,5 +1,7 @@
 # Fiji ZH Plugin — Fiji 中文显示插件
 
+本项目采用 [MIT 许可证](LICENSE)，Copyright © 2026 Xuanfeng Li。Fiji 及第三方依赖适用各自上游许可证。
+
 **当前版本：0.13。将一个 JAR 复制到 Fiji 的 `plugins` 目录，正常启动 Fiji，再点击 `Plugins → Chinese Interface → Use Chinese`，即可启用中文；之后自动记住上次选择的语言。** 不需要单独启动器，也不需要修改启动参数。
 
 - [下载最新版](https://github.com/RociferX/fiji-ZH-plugin/releases/latest)
