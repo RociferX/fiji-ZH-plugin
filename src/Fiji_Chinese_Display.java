@@ -4,15 +4,38 @@ import java.io.*;
 import java.net.JarURLConnection;
 import java.nio.file.*;
 import java.util.concurrent.TimeUnit;
+import java.util.Properties;
 
 /** Installs embedded dictionaries and attaches to this running Fiji. */
 public final class Fiji_Chinese_Display implements PlugIn {
-    private static final String VERSION = "0.12";
+    private static final String VERSION = "0.13";
     private static final Object LOCK = new Object();
     public void run(String argument) {
         // Attach initializes AWT on the EDT; never block that thread here.
         new Thread(() -> {
-            try { enable(!"en".equals(argument)); }
+            try {
+                synchronized (LOCK) {
+                    Path settings = installedJar().getParent().resolve("Fiji_Chinese_Display/settings.properties");
+                    boolean restore = "restore".equals(argument);
+                    boolean chinese = !"en".equals(argument);
+                    if (restore) {
+                        Properties saved = new Properties();
+                        if (Files.exists(settings)) try (InputStream input = Files.newInputStream(settings)) { saved.load(input); }
+                        chinese = "zh".equals(saved.getProperty("language", "en"));
+                        if (!chinese) return;
+                    }
+                    enable(chinese);
+                    if (!restore) {
+                        Properties saved = new Properties(); saved.setProperty("language", chinese ? "zh" : "en");
+                        try {
+                            Files.createDirectories(settings.getParent());
+                            try (OutputStream output = Files.newOutputStream(settings)) { saved.store(output, "Fiji Chinese display language"); }
+                        } catch (IOException exception) {
+                            IJ.showMessage("中文界面", "语言已切换，但无法保存设置：" + exception.getMessage());
+                        }
+                    }
+                }
+            }
             catch (Exception exception) {
                 Throwable cause = exception instanceof java.lang.reflect.InvocationTargetException && exception.getCause() != null ? exception.getCause() : exception;
                 IJ.log("[Fiji 中文] " + cause);
@@ -26,8 +49,7 @@ public final class Fiji_Chinese_Display implements PlugIn {
             Class<?> agent = agent();
             if (agent == null || !Boolean.TRUE.equals(agent.getMethod("isActive").invoke(null))) {
                 if (!chinese) return;
-                JarURLConnection resource = (JarURLConnection) Fiji_Chinese_Display.class.getResource("Fiji_Chinese_Display.class").openConnection();
-                Path jar = Paths.get(resource.getJarFileURL().toURI());
+                Path jar = installedJar();
                 Path root = jar.getParent().resolve("Fiji_Chinese_Display").resolve(VERSION);
                 Files.createDirectories(root.resolve("locales"));
                 Files.createDirectories(root.resolve("build"));
@@ -60,5 +82,10 @@ public final class Fiji_Chinese_Display implements PlugIn {
     private static Class<?> agent() {
         try { return Class.forName("org.fiji.zh.MenuDisplayAgent", false, ClassLoader.getSystemClassLoader()); }
         catch (ClassNotFoundException absent) { return null; }
+    }
+
+    private static Path installedJar() throws Exception {
+        JarURLConnection resource = (JarURLConnection) Fiji_Chinese_Display.class.getResource("Fiji_Chinese_Display.class").openConnection();
+        return Paths.get(resource.getJarFileURL().toURI());
     }
 }

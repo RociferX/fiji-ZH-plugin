@@ -1,6 +1,6 @@
 # Fiji ZH Plugin — Fiji 中文显示插件
 
-**当前版本：0.12。将一个 JAR 复制到 Fiji 的 `plugins` 目录，正常启动 Fiji，再点击 `Plugins → Chinese Interface → Use Chinese`，即可启用中文。** 不需要单独启动器，也不需要修改启动参数。
+**当前版本：0.13。将一个 JAR 复制到 Fiji 的 `plugins` 目录，正常启动 Fiji，再点击 `Plugins → Chinese Interface → Use Chinese`，即可启用中文；之后自动记住上次选择的语言。** 不需要单独启动器，也不需要修改启动参数。
 
 - [下载最新版](https://github.com/RociferX/fiji-ZH-plugin/releases/latest)
 - [安装、升级、卸载与故障排查](docs/INSTALL.md)
@@ -13,7 +13,7 @@
 3. 正常双击 Fiji 原来的启动器。
 4. 点击 `Plugins → Chinese Interface → Use Chinese`。首次启用会提取内置词典并加载显示适配层，需要等待几秒。
 
-中文状态下通过 `插件 → 中文界面 → 使用英文 / 使用中文` 切换。本版每次启动 Fiji 后手动启用中文；首次启用前已经打开的通用参数窗口、帮助窗口请关闭后重新打开。
+中文状态下通过 `插件 → 中文界面 → 使用英文 / 使用中文` 切换。切换后立即记住选择，下次正常启动 Fiji 自动沿用。首次安装默认英文，选过一次中文后无需每次手动启用；首次启用前已经打开的通用参数窗口、帮助窗口请关闭后重新打开。
 
 已验证环境：Windows x64，2026-10-23 Fiji Latest 下载包，ImageJ 1.54p99、Java 21.0.7。运行时加载使用 Fiji 附带的 JDK；其他 Fiji/JDK 版本、macOS 和 Linux 尚未验证。
 
@@ -46,7 +46,9 @@
 
 Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经加载的 `GenericDialog`、`HTMLDialog` 和 `MultiLineLabel`。中文菜单和控件使用显示副本、绘制视图及专用 AWT 中文字体；原始控件文字、事件命令、下拉模型和英文文档保留原值。磁盘上的 Fiji 核心 JAR 和第三方插件 JAR 不改写。
 
-首次启用后，词典与诊断输出位于插件 JAR 旁的 `Fiji_Chinese_Display/0.12/`：
+语言选择保存在 JAR 旁的 `Fiji_Chinese_Display/settings.properties`，独立于版本词典目录；选择英文后，下次启动直接保持英文并跳过 agent 加载。启动恢复通过 Fiji 的 SciJava UI 显示事件触发，支持普通桌面启动。
+
+首次启用后，词典与诊断输出位于插件 JAR 旁的 `Fiji_Chinese_Display/0.13/`：
 
 - `locales/menus.zh_CN.tsv`：菜单译文。
 - `locales/dialogs.zh_CN.tsv`：核心窗口、帮助、消息与状态译文。
@@ -65,7 +67,7 @@ Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经
 .\package.ps1 -SkipBuild
 ```
 
-构建使用 Fiji 附带的 JDK、ImageJ、JNA 5.14.0、JNA Platform 5.14.0 和 ASM 9.8。输出 `build/fiji-zh-plugin.jar`，并安装到 `Fiji/plugins/Fiji_Chinese_Display.jar`。分发包在 `dist/`，包含可直接安装的 JAR、安装文档和 SHA-256 校验文件，不含 Fiji、Java 或第三方插件。
+构建使用 Fiji 附带的 JDK、ImageJ、JNA 5.14.0、JNA Platform 5.14.0、ASM 9.8 和 SciJava Common（启动服务及插件元数据处理器）。输出 `build/fiji-zh-plugin.jar`，并安装到 `Fiji/plugins/Fiji_Chinese_Display.jar`。分发包在 `dist/`，包含可直接安装的 JAR、安装文档和 SHA-256 校验文件，不含 Fiji、Java 或第三方插件。
 
 `python tools/download_fiji.py` 可下载上游 Windows ZIP，但不自动解压；Latest 链接随上游更新，版本信息记录在 `downloads/fiji-download.json`。源码以 Java 11 字节码编译，实际运行验证环境为上述 Java 21。
 
@@ -73,7 +75,13 @@ Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经
 
 ## 验证
 
-默认增量验证。0.12 重点验证原始启动器启动、无 `-javaagent` 参数、运行时加载、已加载类重新转换、菜单与既有 ROI 管理器、核心参数窗口、原始事件和像素、用户自建窗口排除，以及重复中英文切换。
+默认增量验证。0.13 通过三次无启动宏的普通 Fiji 桌面启动，验证首次英文、选择中文后重启自动恢复、切回英文后重启保持英文。测试结束还原原有语言设置。
+
+```powershell
+.\verify-preferences.ps1
+```
+
+0.12 重点验证原始启动器启动、无 `-javaagent` 参数、运行时加载、已加载类重新转换、菜单与既有 ROI 管理器、核心参数窗口、原始事件和像素、用户自建窗口排除，以及重复中英文切换。
 
 ```powershell
 .\verify-runtime.ps1
@@ -84,4 +92,4 @@ Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经
 
 `verify.ps1` 是显式的历史完整检查入口。`verify-core.ps1`、`verify-expanded.ps1`、`verify-messages.ps1` 和 `verify-plugins.ps1` 提供相关专项检查。未变化的处理算法和词典覆盖复用已有通过结果；实现变化或发现回归时再扩大范围。
 
-菜单覆盖检查为 `python tools/menu_coverage.py`，需要先生成清单。插件模式清单位于 `Fiji/plugins/Fiji_Chinese_Display/0.12/build/`；可把该清单路径作为工具的第一个参数；默认读取源码启动方式生成的根目录 `build/menu-inventory.tsv`。
+菜单覆盖检查为 `python tools/menu_coverage.py`，需要先生成清单。插件模式清单位于 `Fiji/plugins/Fiji_Chinese_Display/0.13/build/`；可把该清单路径作为工具的第一个参数；默认读取源码启动方式生成的根目录 `build/menu-inventory.tsv`。
