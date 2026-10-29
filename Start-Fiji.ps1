@@ -9,7 +9,7 @@ $configurator = Join-Path $PSScriptRoot 'Fiji/config/jaunch/jaunch-windows-x64.e
 foreach ($required in @($launcher, $configurator)) {
     if (!(Test-Path -LiteralPath $required)) { throw "Missing $required. See docs/INSTALL.md for the supported Fiji layout." }
 }
-$agent = Join-Path $PSScriptRoot 'build/fiji-zh-display-0.11.jar'
+$agent = Join-Path $PSScriptRoot 'build/fiji-zh-display-0.12.jar'
 if (!(Test-Path -LiteralPath $agent)) { & (Join-Path $PSScriptRoot 'build.ps1') }
 
 # Ask Fiji's own configurator for its runtime, classpath and main class.

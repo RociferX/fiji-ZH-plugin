@@ -1,222 +1,87 @@
-# Fiji ZH Plugin — Fiji 中文显示包
+# Fiji ZH Plugin — Fiji 中文显示插件
 
-为 Windows x64 Fiji 提供可切换的中文界面，保留英文命令、宏、参数模型和结果字段。
+**当前版本：0.12。将一个 JAR 复制到 Fiji 的 `plugins` 目录，正常启动 Fiji，再点击 `Plugins → Chinese Interface → Use Chinese`，即可启用中文。** 不需要单独启动器，也不需要修改启动参数。
 
-**当前安装形式是 Java agent + Fiji 语言切换插件 + 外部词典 + 启动脚本。** 需要通过本项目启动器加载 agent；仅将 `fiji-zh-plugin.jar` 放入 `plugins` 目录只能增加切换入口，不能独立启用汉化。磁盘上的 Fiji 核心 JAR 和第三方插件 JAR 保持原样。
+- [下载最新版](https://github.com/RociferX/fiji-ZH-plugin/releases/latest)
+- [安装、升级、卸载与故障排查](docs/INSTALL.md)
+- [版本记录](CHANGELOG.md)
 
-- [下载安装与卸载](docs/INSTALL.md)：预编译包、源码构建、目录布局与常见问题。
-- [版本记录](CHANGELOG.md)。
-- [下载中文显示包](https://github.com/RociferX/fiji-ZH-plugin/releases)。发布 ZIP 不含 Fiji、Java 或第三方插件。
+## 安装
 
-已验证环境：Windows x64，2026-10-23 Fiji Latest 下载包，ImageJ 1.54p99、Java 21.0.7。macOS、Linux 和其他 Fiji/JDK 版本尚未验证；原生 AWT 显示适配使用 Windows JDK 内部接口。
+1. 下载 Release 中的 `Fiji_Chinese_Display.jar`。
+2. 关闭 Fiji，将 JAR 放入 `Fiji/plugins/`。升级时替换同名旧文件，避免安装多个副本。
+3. 正常双击 Fiji 原来的启动器。
+4. 点击 `Plugins → Chinese Interface → Use Chinese`。首次启用会提取内置词典并加载显示适配层，需要等待几秒。
 
-当前版本：0.11 常用插件扩展中文显示版。Windows x64 Fiji Latest 下载包更新于 2026-10-23，ImageJ 1.54p99，附带 Java 21.0.7。
+中文状态下通过 `插件 → 中文界面 → 使用英文 / 使用中文` 切换。本版每次启动 Fiji 后手动启用中文；首次启用前已经打开的通用参数窗口、帮助窗口请关闭后重新打开。
 
-已覆盖 8 个顶层菜单及其全部子菜单：1,199 个固定条目，外部词典共 1,167 条译文（含新增窗口弹出菜单）。插件菜单入口也包含在内。文件名、最近打开记录和窗口中的用户内容保持原样。
+已验证环境：Windows x64，2026-10-23 Fiji Latest 下载包，ImageJ 1.54p99、Java 21.0.7。运行时加载使用 Fiji 附带的 JDK；其他 Fiji/JDK 版本、macOS 和 Linux 尚未验证。
 
-Java 菜单标签、命令、快捷键、宏和结果字段继续使用原始英文。
+## 中文覆盖
 
-0.10–0.11 覆盖五个已安装插件的主要界面显示映射，独立词典为 `locales/plugins.zh_CN.tsv`，目前有 486 条译文：
-
-| 插件版本 | 中文显示范围 |
+| 范围 | 当前内容 |
 | --- | --- |
-| Bio-Formats 8.5.0 | 导入选项与上下文帮助；插件配置的常规、格式、依赖库和日志页；导出拆分、压缩与 ROI 选项 |
-| TrackMate 8.1.6 | 主向导、标定与裁剪、检测/追踪/筛选/显示设置；TrackScheme 常用工具、菜单与悬浮提示 |
-| Trainable Weka Segmentation 4.0.0 | 训练窗口、类别操作、分割设置与特征选项；默认 FastRandomForest 分类器属性、简介与常用参数提示 |
-| Coloc 2（Colocalisation Analysis 3.1.0） | 通道与 ROI/掩膜选择、统计方法、随机化、显示/保存选项；结果页按钮、通道说明及报告标题 |
-| Stitching 3.1.10 | 网格类型和方向、动态参数窗口标题、配准/融合、内存与输出选项、两幅图像拼接的主要字段 |
+| 主菜单 | 8 个顶层菜单及全部子菜单，1,199 个固定条目；菜单词典 1,167 条 |
+| 工具栏 | 20 种内置工具变体的中文名称、用途与操作悬浮提示 |
+| 核心窗口 | 常用图像创建、导入导出、阈值、显示范围、测量、粒子分析、滤波、二值化、FFT、卷积、比例尺与几何操作 |
+| ROI、通道与堆栈 | ROI 管理器及附属操作、叠加层、通道工具、合并通道、颜色阈值、子堆栈、超堆栈、投影、拼版、重新切片等 |
+| 设置与编辑器 | 18 项 ImageJ 首选项、6 个官方扩展设置页，以及宏录制器、ImageJ 编辑器和 Fiji 脚本编辑器的常用菜单与按钮 |
+| 帮助与消息 | 部分内置帮助、常见确认框、错误消息、状态栏提示与进度 |
 
-保留算法专名、模型与特征标识、结果表字段、用户图像/类别名称、路径和输入内容。中文显示通过原有绘制适配层实现，不修改插件 JAR。外部网页帮助仍使用网页原文；其他第三方插件暂不纳入。
+第三方插件词典有 486 条，覆盖以下主要界面：
 
-0.11 新增插件所属附属窗口的来源继承、分组边框与 Bio-Formats 页签显示映射，并将扩展后的窗口限制在屏幕工作区内。Weka 算法简介使用独立绘制视图，英文文档和属性名保持原值。长篇算法帮助、其他分类器的专属属性和罕见报错仍按后续实际窗口补充。
+| 插件 | 已验证版本 | 中文范围 |
+| --- | --- | --- |
+| Bio-Formats | 8.5.0 | 导入选项、上下文帮助、配置页与导出选项 |
+| TrackMate | 8.1.6 | 主向导、检测、追踪、筛选、显示设置和 TrackScheme 常用菜单与提示 |
+| Trainable Weka Segmentation | 4.0.0 | 训练、类别、分割、特征设置，以及默认 FastRandomForest 分类器常用属性和简介 |
+| Coloc 2 | Colocalisation Analysis 3.1.0 | 通道、ROI、统计、随机化、显示保存选项、结果按钮和报告标题 |
+| Stitching | 3.1.10 | 网格类型、方向、配准、融合、内存、输出和双图拼接参数 |
 
-工具栏新增中文悬浮提示，覆盖 20 个内置工具变体：矩形、圆角矩形、旋转矩形、椭圆、旋转椭圆、选区画笔、多边形、自由选区、直线、箭头、折线、自由曲线、角度、单点、多点、魔棒、文字、放大镜、抓手和取色器。
-
-0.8 修复主窗口底部状态文字闪烁：静止内容不再每隔 500 毫秒强制重绘，内容变化和中英文切换时才请求更新。状态文字仍由原有 Swing 标签绘制，`ImageJ.getStatusBarText()` 保留英文原值。
-
-0.9 新增坐标设置、虚拟堆栈批处理、结果表宏运算、命令查找器、宏录制器、控制面板和工具切换器的帮助正文。批处理的非模态帮助继承原参数窗口的核心来源识别。中文视图与英文原文可以切换，代码示例、链接和原始文档保留。
-
-动态错误补充文件/目录、保存与导入、图像锁定、命令与快捷键冲突、ROI 插值、卷积核尺寸及参数数量等提示；状态栏补充打开/保存、ROI 数量、FFT 与卷积、切片绘制、耗时、分割、泳道、剪贴板和曲线拟合等进度与提示。文件名、路径、命令名、数值和进度由英文消息原值插入中文显示；未知消息继续显示原文。
-
-0.8 补充范围：
-
-- 新建图像/超堆栈、原始数据与图像序列导入、图像序列和 AVI 导出参数、页面设置。
-- 拼版、重新切片、三维投影、动画、切片位置、组合/插入/缩减堆栈及标签等内置参数窗口。
-- ROI 多项测量、多项裁剪、扩大、环带、指定、缩放、旋转和平移等附属窗口。
-- 数学运算、FFT 选项/频域运算/自定义滤波、查找极大值、灰度标定、表面绘图、网格、标定条、凝胶和批处理参数。
-- 宏录制器、ImageJ 编辑器、Fiji 脚本编辑器的常用按钮与菜单、曲线拟合、直方图、曲线窗口和同步窗口控制。
-- Python、界面风格、ImageJ2、搜索栏、任务监视栏、桌面集成六个官方设置页，以及搜索提示和部分内置工具帮助。
-
-ImageJ 参数窗口按创建者所属的核心 JAR 识别；五个受支持插件按创建者或自定义界面类识别，用户宏自建窗口及其他第三方 GenericDialog 不参与自动扩展。Swing 设置页保留控件原始文字、下拉模型、动作命令和输入内容，通过显示视图翻译。脚本源码、输出日志、用户图像/文件/选区名称、图表数据和算法专名保留原文。脚本模板目录包含第三方示例，保留原样；外部网页帮助沿用网页原文。
-
-## 启动与切换
-
-- 双击根目录 `Fiji-Chinese.cmd` 启动中文显示版。
-- 双击 `Fiji-English.cmd` 启动英文显示版。
-- 运行中通过 `插件 → 中文界面 → 使用中文 / 使用英文` 切换。
-- 直接运行 `Fiji/fiji-windows-x64.exe` 使用 Fiji 原始启动方式，不加载显示映射。
-
-## 常用参数窗口
-
-0.1–0.6 已覆盖 23 类参数窗口：高斯模糊、减去背景、设置测量项、设置比例尺、粒子分析、阈值、亮度与对比度、设置显示范围、Z 投影、调整图像尺寸、旋转、画布尺寸、复制图像、图像属性、增强对比度、比例尺标注、中值滤波、均值滤波、最小值滤波、最大值滤波、方差滤波、锐化蒙版和二值化选项；另含“设置阈值范围”附属窗口。翻译覆盖窗口标题、字段说明、按钮、复选框及已收录的下拉选项。阈值算法专名（如 Otsu、Huang）保留英文。
-
-0.6 新增五种邻域滤波的半径与预览，锐化蒙版的半径和权重，以及二值化的迭代次数、邻域计数、黑色背景、腐蚀边界、欧氏距离图输出和形态学操作。二值化选项在未打开图像时也支持中文显示。
-
-0.7 新增以下五类范围，已逐个打开核对 40 个窗口：
-
-| 范围 | 已接入的窗口与控件 |
-| --- | --- |
-| ROI 与选区 | ROI 管理器及“更多”弹出菜单、选区属性、添加选区、添加图像、叠加层选项、标签；ROI 管理器关闭确认 |
-| 通道与颜色 | 通道工具及“更多”弹出菜单、合并通道、颜色阈值 |
-| 堆栈 | 子堆栈范围与步长、串接图像与堆栈、转换为超堆栈 |
-| 图像处理 | 图像计算器、三维高斯及均值/中值/最小值/最大值/方差滤波、去除离群值、FFT 带通滤波、卷积 |
-| 首选项与提示 | ImageJ 内置 18 项首选项、常用保存/堆栈处理确认、已收录的错误信息、工具栏状态提示与处理进度文字 |
-
-首选项包括外观、箭头、颜色、编译器、类型转换、DICOM、字体、输入输出、线宽、内存与线程、其他选项、绘图、点工具、代理服务器、ROI 默认值、圆角矩形、启动宏和魔棒工具。六个官方扩展设置页已在 0.8 加入；第三方插件设置继续按其原有语言显示。
-
-合并通道、串接、图像计算器和叠加图像的选择列表保留用户图像名；即使图像名为 `Area`、`Mean`，也不会被当作界面词翻译。卷积核、启动宏文本框、ROI 名称、输出图像标题和原始错误消息模型保留原值。
-
-确认框的多行正文通过运行时绘制适配显示中文，状态栏通过独立绘制副本显示中文。`ImageJ.getStatusBarText()` 继续返回原始英文。常见消息中的图像名和图像数量按原值插入译文；未收录的消息显示原文。
-
-输入框中的数值、单位和参数字符串保持原值；测量重定向列表中的用户图像标题保持原样。粒子分析中的中文“轮廓”仍向 Fiji 返回英文 `Outlines`。语言切换同时应用于打开的受支持窗口。
-
-图像属性窗口沿用用户图像名作为标题，适配层通过固定字段识别窗口，翻译其字段说明。复制图像的新标题、比例尺的单位和图中标注内容保持原值。
-
-`locales/dialogs.zh_CN.tsv` 是 UTF-8 外部词典，按“英文原文、中文显示”两列记录；`@Threshold/Red` 等条目用于窗口专属译文。实际启用范围由适配代码中的窗口名单控制。多行条目用 `\n` 表示换行，`@Status/原文` 用于状态栏，`@Messages/…` 用于动态提示模板。
-
-预览：`build/dialog-filter-median.png`、`build/dialog-unsharp-mask.png`、`build/dialog-binary-options.png`。
-
-## 工具栏悬浮提示
-
-鼠标移到工具栏图标上，停留约 500 毫秒后显示中文名称、英文名称、用途及操作提示。移开、点击或按键后隐藏；提示窗口不抢占焦点，不改变当前工具。中英文提示跟随现有语言切换。
-
-切换同组工具后提示会识别当前变体。未收录的插件工具显示其原始名称。
-
-`locales/toolbar-hints.tsv` 是 UTF-8 外部词典，七列依次为：原始工具键、英文名称、中文名称、英文用途、中文用途、英文操作提示、中文操作提示。以制表符分隔；编辑后自动重新加载。
-
-预览：`build/fiji-toolbar-tooltip.png`。已打开的旧版 Fiji 保持原来的行为；更新后需通过中文启动器打开新版实例。
+命令、快捷键、宏、结果字段、用户图像及类别名称、文件路径、输入内容、算法和模型标识保留原值。其他第三方插件内部界面、部分长篇算法帮助、其他 Weka 分类器专属属性和罕见错误仍显示原文。未收录的文字回退到英文。
 
 ## 工作方式
 
-- `locales/menus.zh_CN.tsv`：UTF-8 外部词典；第一列为英文，第二列为中文，以制表符分隔。
-- 同名条目可用 `@File/Import/条目名称` 指定完整英文路径，优先于通用译文。
-- `src/MenuDisplayAgent.java`：启动时加载的 Java agent，只适配 Windows AWT 原生菜单显示。
-- `src/ToolbarHints.java`：观察原工具栏的鼠标位置和工具名称，使用独立的非焦点窗口显示提示，不修改原始工具标识或拦截点击。
-- `src/DialogDisplayMapper.java` 与 `src/NativePaintBridge.java`：为支持的原生 AWT 控件绘制中文显示副本，输入、焦点和应用程序读取的控件内容继续使用原对象；按钮的异步事件在交给 Fiji 前还原原对象与英文命令。依赖 Fiji 自带 JNA。
-- `src/SwingDisplayMapper.java`：为官方 Swing 设置、脚本编辑器、控件下拉项和帮助页提供显示视图，保留原始文字、事件命令及文档。
-- `src/DisplayTextPainter.java`：为 ImageJ 的多行消息 Canvas 安装运行时绘制入口，并为状态标签提供中文显示副本；使用 Fiji 自带 ASM 9.8，不改写磁盘上的核心 JAR。
-- `locales/fontconfig.zh.properties`：当前 Java 21 的 AWT 中文字体配置，保留拉丁文字的等宽显示；不改变默认文件编码 UTF-8。
-- 保留官网下载 ZIP。开发不修改 Fiji 原始核心 JAR。
-- 词典会自动重新加载。未收录的条目回退为英文。
-- 运行后导出 `build/menu-inventory.tsv`，保留原文、译文、原始命令及快捷键，供逐项核对。
+插件包含显示适配层、加载辅助程序及四份词典及字体配置的默认副本。点击启用后，短暂启动 Fiji 自带的 `javaw.exe` 辅助进程，通过 JDK Attach API 向当前 Fiji 加载 agent。辅助进程完成加载后退出；Fiji 无需重启。
 
-Windows 的 AWT 菜单使用原生自绘，绘制时直接读取 Java 字段。因此适配层为原生 peer 提供显示副本，并将事件转发给原始菜单对象；Fiji 使用的菜单树及其英文标签保持原样。参数控件则只在原生绘制回调期间临时使用显示副本，绘制结束立即恢复原对象。此实现依赖当前 Windows JDK 的 AWT 内部结构，需要随支持的 Fiji/JDK 版本验证。
+Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经加载的 `GenericDialog`、`HTMLDialog` 和 `MultiLineLabel`。中文菜单和控件使用显示副本、绘制视图及专用 AWT 中文字体；原始控件文字、事件命令、下拉模型和英文文档保留原值。磁盘上的 Fiji 核心 JAR 和第三方插件 JAR 不改写。
 
-启动脚本调用 Fiji 自带 Jaunch 配置器生成官方 classpath、运行参数和主类，再通过附带的 `java.exe` 加载 agent。原始核心 JAR 和启动器配置均不修改。字体配置格式参考 [Oracle JDK 21 文档](https://docs.oracle.com/en/java/javase/21/intl/font-configuration-files.html)。
+首次启用后，词典与诊断输出位于插件 JAR 旁的 `Fiji_Chinese_Display/0.12/`：
 
-当前 agent 为 `build/fiji-zh-display-0.11.jar`，语言切换入口单独打包为 `build/fiji-zh-plugin.jar`。
+- `locales/menus.zh_CN.tsv`：菜单译文。
+- `locales/dialogs.zh_CN.tsv`：核心窗口、帮助、消息与状态译文。
+- `locales/plugins.zh_CN.tsv`：五个受支持插件的译文。
+- `locales/toolbar-hints.tsv`：工具栏提示。
+- `build/`：菜单与窗口清单、加载日志及错误诊断。
 
-## 下载与构建
+词典使用 UTF-8 和制表符，修改后自动重新加载；同一版本再次启用不会覆盖用户修改。新版本使用独立目录。`fontconfig.zh.properties` 为可选的启动时加载方式保留；普通插件模式使用私有字体副本，不重建 JVM 全局字体配置，也不改变默认 UTF-8 编码。
+
+## 构建与打包
+
+将受支持的 Fiji 应用目录放在本项目的 `Fiji/` 下，内部应包含 `jars`、`plugins`、`java`、`config` 和 `fiji-windows-x64.exe`。
 
 ```powershell
-python tools/download_fiji.py
-# 将下载的 ZIP 解压后，把含 jars、plugins、java、config 的应用目录放到本项目根目录下的 Fiji/。
 .\build.ps1
+.\package.ps1 -SkipBuild
 ```
 
-下载来源为 Fiji 官网列出的牛津官方镜像。下载信息记录在 `downloads/fiji-download.json`；其中 SHA-256 是本地计算的存档标识。
+构建使用 Fiji 附带的 JDK、ImageJ、JNA 5.14.0、JNA Platform 5.14.0 和 ASM 9.8。输出 `build/fiji-zh-plugin.jar`，并安装到 `Fiji/plugins/Fiji_Chinese_Display.jar`。分发包在 `dist/`，包含可直接安装的 JAR、安装文档和 SHA-256 校验文件，不含 Fiji、Java 或第三方插件。
 
-重新构建同一版本前先关闭使用该版本语言包的 Fiji，避免 Windows 锁定 JAR 文件；升级版本可以保留旧窗口中的数据，完成保存后再关闭旧窗口。构建使用 Fiji 附带的 JDK。
+`python tools/download_fiji.py` 可下载上游 Windows ZIP，但不自动解压；Latest 链接随上游更新，版本信息记录在 `downloads/fiji-download.json`。源码以 Java 11 字节码编译，实际运行验证环境为上述 Java 21。
+
+仓库保留 `Fiji-Chinese.cmd`、`Fiji-English.cmd` 和 `Start-Fiji.ps1`，供需要启动时加载的开发及兼容检查使用；普通插件安装不需要这些文件。
 
 ## 验证
 
-默认采用增量验证，只检查本次修改影响的部分；既有通过结果继续复用。新增词条或发布版本不触发整套菜单、工具栏、参数窗口和图像算法测试。相关实现变化、发现回归或用户要求时再扩大对应范围，此规则已写入项目 `AGENTS.md`。
-
-0.11 的桌面验证使用 Java `Robot` 截图并发送真实鼠标和按键。操作前读取当前控件屏幕坐标；截图由目视检查，原始文本和事件命令另由程序核对。
+默认增量验证。0.12 重点验证原始启动器启动、无 `-javaagent` 参数、运行时加载、已加载类重新转换、菜单与既有 ROI 管理器、核心参数窗口、原始事件和像素、用户自建窗口排除，以及重复中英文切换。
 
 ```powershell
-.\verify-plugin-robot.ps1 -Modes config       # 配置页点击、方向键切换与页签原值
-.\verify-plugin-robot.ps1 -Modes weka-editor  # 分类器选择、属性、简介切换与参数悬停
-.\verify-plugin-robot.ps1 -Modes scheme-tip   # TrackScheme 中文悬浮提示
-.\verify-plugin-robot.ps1 -Modes coloc-report # 结果页标题与原始结果单元格
-.\verify-plugin-robot.ps1 -Modes export,stitch # 本轮导出与拼接窗口
+.\verify-runtime.ps1
+.\verify-plugin-robot.ps1 -Runtime -Modes config,weka-editor,stitch,coloc-report,scheme-tip,export
 ```
 
-本轮报告为 `build/robot-*-result.txt`，截图为 `build/robot-*.png`，窗口原文/译文清单为 `build/robot-*.tsv`。Coloc 结果页使用专用测试数据核对显示层和原始字段，未重复运行其统计算法。已通过且实现未变化的核心检查继续复用。
+第三方插件检查通过原始 Fiji 启动器和运行时加载路径执行，Java Robot 使用当前控件屏幕坐标发送真实鼠标和键盘事件。报告为 `build/runtime-result.txt` 与 `build/robot-*-result.txt`，截图为对应 PNG；这些本地产物不随源码提交。
 
-这些 `build/` 报告、截图和清单是本地运行生成的产物，不随源码仓库分发。复现时按上方命令生成；先运行 `build.ps1`。菜单覆盖工具还需要运行 Fiji 生成 `build/menu-inventory.tsv`。
+`verify.ps1` 是显式的历史完整检查入口。`verify-core.ps1`、`verify-expanded.ps1`、`verify-messages.ps1` 和 `verify-plugins.ps1` 提供相关专项检查。未变化的处理算法和词典覆盖复用已有通过结果；实现变化或发现回归时再扩大范围。
 
-0.10 插件专项检查（可按插件选择）：
-
-```powershell
-.\verify-plugins.ps1 -Modes bio-help    # 导入参数、原始模型与中文帮助
-.\verify-plugins.ps1 -Modes coloc-names # 与固定选项同名的图像
-.\verify-plugins.ps1 -Modes weka        # 训练窗口与分割设置
-.\verify-plugins.ps1 -Modes stitch      # 网格选择与拼接参数
-.\verify-plugins.ps1 -Modes track       # 主窗口及十个向导阶段
-```
-
-本轮检查真实插件窗口、原始控件与选项模型的语言切换、原始英文帮助文档保留，并导出原文/译文。报告为 `build/plugin-*-result.txt`，窗口清单为 `build/plugin-*-windows.txt`，各阶段词条为 `build/plugin-*.tsv`。复用先前已通过的核心菜单、工具栏及图像处理验证。
-
-0.9 的专项检查：
-
-```powershell
-.\verify-messages.ps1                    # 本轮全部帮助、动态错误和状态提示
-.\verify-messages.ps1 -Phase help        # 批处理/结果表/录制器/命令查找器帮助
-.\verify-messages.ps1 -Phase native-help # 控制面板与工具切换器帮助
-```
-
-本轮完成 16 种动态错误、17 种动态状态、真实错误窗口与状态栏检查，以及 7 处新增帮助检查。检查包含用户路径和含花括号的原值、英文消息/文档保留、中文显示、帮助窗口尺寸、关闭行为和静止状态无重复重绘。帮助专项报告为 `build/messages-help-result.txt`、`build/messages-native-help-result.txt`，预览为 `build/messages-*.png`。原有功能测试沿用 0.8 已通过结果。
-
-下列命令显式运行历史完整测试套件：
-
-```powershell
-.\verify.ps1
-```
-
-验证会依次打开专用测试窗口和多个 Fiji 测试实例，完成后关闭测试实例。测试使用鼠标和键盘，运行期间请让测试窗口保持在前台。
-
-- 原生菜单点击、快捷键和复选菜单将事件交给原对象，保持英文命令。
-- 语言切换与动态新增菜单正常；刷新菜单后命令表和原始标签保持不变。
-- 同一组模拟颗粒图像在中英文界面执行高斯模糊、粒子分析，数值及结果列名一致。
-- 宏录制保留 `run("Measure");`。
-- 默认文件编码维持 UTF-8，拉丁文字的等宽字体保持等宽。
-- `python tools/menu_coverage.py` 检查所有固定菜单条目均命中中文词典。
-- 真实鼠标逐项验证 20 个工具变体、延时显示、移开与点击消失、键盘消失、语言切换及未知工具回退；核对悬停期间原工具名称和当前选择保持不变。
-- 原生参数控件的焦点、单次点击、空格、回车、Escape、语言切换及英文下拉返回值正常。
-- 控件持续重绘时连续点击按钮 40 次，检查每次事件均只执行一次，事件来源和命令保持原值。横向测试窗口中的“取消”用于计数，不关闭该窗口。
-- 实际操作 23 类 Fiji 参数窗口，核对比例尺数值与单位、测量选项、两颗粒检测结果、阈值设置与重置、亮度重置，以及高斯模糊、减去背景、Z 投影、调整尺寸和旋转的逐像素英文宏对照。
-- 设置显示范围核对 16 位下拉选项的英文返回值、显示上下限和原始像素；另检查多通道图像的同步提示。录制结果保持英文命令和参数键。
-- 单图与堆栈画布、范围复制和堆栈增强对比度进行英文宏像素对照；图像属性检查单位、体素尺寸、时间、原点和图像名；比例尺检查标定长度、叠加层渲染和移除操作，保留原始像素。
-- 五种邻域滤波与锐化蒙版进行逐像素英文宏对照，检查预览后确认和预览后取消；二值化选项检查英文下拉返回值、原始设置、所选形态学操作的像素结果，以及无图状态下保存设置。录制结果保持英文。
-
-最新真实 Fiji 验证结果：`build/fiji-smoke-result.txt`、`build/dialog-smoke-result.txt`。主窗口预览：`build/fiji-chinese.png`。参数窗口的截图和原文/译文清单保存在 `build/dialog-*.png`、`build/dialog-*.tsv`。
-
-当前验证针对上述固定 Fiji/JDK 版本。主菜单和上述参数窗口已完成首轮覆盖；其他参数窗口及第三方插件内部窗口后续分批增加。
-
-0.7 扩展验证：
-
-```powershell
-.\verify-expanded.ps1             # 原始控件事件驱动的功能与像素检查
-.\verify-expanded.ps1 -Probe      # 逐项打开 40 个窗口并导出原文/译文
-.\verify-expanded.ps1 -NativeInput # Robot 鼠标与键盘操作，需要连接桌面
-```
-
-扩展检查覆盖 ROI 几何与名称、叠加层标志、通道显示模式与像素、合并通道源图像、子堆栈步长、串接顺序与输出名、超堆栈维度、图像计算器浮点结果、六种三维滤波及三种二维处理的英文宏像素对照，并检查首选项数值与英文宏录制。确认框正文和状态栏还使用离屏图形绘制对照，核对原始消息与状态 API 未被修改。
-
-0.7 已通过原生菜单与快捷键、控件重绘期间的 40 次连续点击、20 种工具提示、既有 23 类参数窗口，以及本轮新增工作流的 Robot 鼠标键盘验证。新增图像处理结果与英文宏逐像素一致，保存确认的单次取消、状态 API、用户图像名及英文宏录制均保持原有行为。40 个窗口的中文显示已逐项截图核对；字体窗口标题另经修正和单次关闭验证。
-
-修正了菜单分隔线的映射：分隔线保留原生对象，键盘导航会跳过分隔行。通道工具的“更多”菜单经真实键盘选择验证，中文“红色”仍发送英文 `Red` 命令。
-
-功能报告在 `build/expanded-smoke-result.txt`，窗口清单报告在 `build/expanded-probe-result.txt`，字体窗口报告在 `build/expanded-fonts-result.txt`，宏在 `build/expanded-recorded-macro.txt`。截图保存在 `build/dialog-*.png`；更新后的字体窗口为 `build/dialog-fonts.png`。
-
-0.8 新增验证：
-
-```powershell
-.\verify-core.ps1                    # 状态栏、原生操作、窗口核对、官方设置及编辑器
-.\verify-core.ps1 -Modes @('help')   # 内置中文帮助与英文文档保留检查
-```
-
-状态栏检查连续四次映射刷新均无静止内容重绘，语言切换只请求一次重绘，原始状态 API 和稳定帧像素保持一致。新增功能验证检查 16 位白色图像、原始数据逐像素导入、三张 PNG 导出、拼版英文宏像素对照、重新切片逐体素对应、ROI 多项测量与裁剪，以及宏记录仍为英文。六个官方设置页检查中英文切换保留原始控件文字，两个编辑器保留代码与文件名。窗口及控件原文/译文保存在 `build/dialog-core-*.tsv`、`build/settings-*.tsv`，截图为同名 PNG。
-
-报告：`build/core-status-result.txt`、`build/core-workflows-result.txt`、`build/core-probe-result.txt`、`build/core-settings-result.txt`、`build/core-frames-result.txt`、`build/core-help-result.txt`。
+菜单覆盖检查为 `python tools/menu_coverage.py`，需要先生成清单。插件模式清单位于 `Fiji/plugins/Fiji_Chinese_Display/0.12/build/`；可把该清单路径作为工具的第一个参数；默认读取源码启动方式生成的根目录 `build/menu-inventory.tsv`。

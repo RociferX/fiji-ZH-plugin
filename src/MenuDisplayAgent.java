@@ -31,43 +31,76 @@ public final class MenuDisplayAgent {
     private static volatile boolean enabled = true;
     private static boolean failed;
     private static long dictionaryModified = -1;
+    private static volatile boolean active;
+    private static volatile boolean initialized;
+    private static Runnable uiSetup;
 
     public static void premain(String options, Instrumentation instrumentation) {
         try {
-            Path base = Paths.get(System.getProperty("fiji.zh.home", ".")).toAbsolutePath().normalize();
-            Path fontConfig = base.resolve("locales/fontconfig.zh.properties");
-            if (Files.exists(fontConfig)) System.setProperty("sun.awt.fontconfig", fontConfig.toString());
-            Module desktop = MenuItem.class.getModule();
-            Set<Module> self = Set.of(MenuDisplayAgent.class.getModule());
-            instrumentation.redefineModule(desktop, Set.of(), Map.of("java.awt.peer", self),
-                Map.of("java.awt", self, "sun.awt.windows", self), Set.of(), Map.of());
-            peerField = MenuComponent.class.getDeclaredField("peer");
-            peerField.setAccessible(true);
-            parentField = MenuComponent.class.getDeclaredField("parent");
-            parentField.setAccessible(true);
-            itemsField = Menu.class.getDeclaredField("items");
-            itemsField.setAccessible(true);
-            popupsField = Component.class.getDeclaredField("popups");
-            popupsField.setAccessible(true);
-            targetField = Class.forName("sun.awt.windows.WObjectPeer", false, null).getDeclaredField("target");
-            targetField.setAccessible(true);
-            setLabel = Class.forName("java.awt.peer.MenuItemPeer").getMethod("setLabel", String.class);
-            dictionaryPath = base.resolve("locales/menus.zh_CN.tsv");
-            exportPath = base.resolve("build/menu-inventory.tsv");
-            enabled = !"en".equals(System.getProperty("fiji.zh.language"));
-            instrumentation.addTransformer(new DisplayTextPainter.Transformer());
-            EventQueue.invokeLater(() -> {
-                toolbarHints = new ToolbarHints(base);
-                try { dialogs = new DialogDisplayMapper(base); }
-                catch (Exception exception) { System.err.println("[Fiji 中文] Dialog mapping unavailable: " + exception); }
-                Timer timer = new Timer(500, event -> refresh());
-                timer.setInitialDelay(0);
-                timer.start();
-            });
-            System.out.println("[Fiji 中文] Native menu display mapping enabled; Java labels and commands stay original.");
+            initialize(instrumentation, false);
         } catch (Exception exception) {
             System.err.println("[Fiji 中文] Mapping unavailable: " + exception);
         }
+    }
+
+    public static void agentmain(String options, Instrumentation instrumentation) throws Exception {
+        if (options == null || options.isBlank()) throw new IllegalArgumentException("Missing language-pack directory");
+        System.setProperty("fiji.zh.home", options);
+        initialize(instrumentation, true);
+    }
+
+    private static synchronized void initialize(Instrumentation instrumentation, boolean attached) throws Exception {
+        if (initialized) return;
+        if (attached && !instrumentation.isRetransformClassesSupported())
+            throw new IllegalStateException("This JVM does not support class retransformation");
+        Path base = Paths.get(System.getProperty("fiji.zh.home", ".")).toAbsolutePath().normalize();
+        Files.createDirectories(base.resolve("build"));
+        Path fontConfig = base.resolve("locales/fontconfig.zh.properties");
+        if (!attached && Files.exists(fontConfig)) System.setProperty("sun.awt.fontconfig", fontConfig.toString());
+        Module desktop = MenuItem.class.getModule();
+        Set<Module> self = Set.of(MenuDisplayAgent.class.getModule());
+        instrumentation.redefineModule(desktop, Set.of(), Map.of("java.awt.peer", self),
+            Map.of("java.awt", self, "sun.awt.windows", self, "sun.awt", self), Set.of(), Map.of());
+        peerField = MenuComponent.class.getDeclaredField("peer");
+        peerField.setAccessible(true);
+        parentField = MenuComponent.class.getDeclaredField("parent");
+        parentField.setAccessible(true);
+        itemsField = Menu.class.getDeclaredField("items");
+        itemsField.setAccessible(true);
+        popupsField = Component.class.getDeclaredField("popups");
+        popupsField.setAccessible(true);
+        targetField = Class.forName("sun.awt.windows.WObjectPeer", false, null).getDeclaredField("target");
+        targetField.setAccessible(true);
+        setLabel = Class.forName("java.awt.peer.MenuItemPeer").getMethod("setLabel", String.class);
+        dictionaryPath = base.resolve("locales/menus.zh_CN.tsv");
+        exportPath = base.resolve("build/menu-inventory.tsv");
+        enabled = !"en".equals(System.getProperty("fiji.zh.language"));
+        instrumentation.addTransformer(new DisplayTextPainter.Transformer(), true);
+        if (attached) {
+            for (Class<?> type : instrumentation.getAllLoadedClasses())
+                if (Set.of("ij.gui.GenericDialog", "ij.gui.HTMLDialog", "ij.gui.MultiLineLabel").contains(type.getName()))
+                    instrumentation.retransformClasses(type);
+        }
+        uiSetup = () -> {
+            toolbarHints = new ToolbarHints(base);
+            try { dialogs = new DialogDisplayMapper(base); }
+            catch (Exception exception) { throw new IllegalStateException("Dialog mapping unavailable", exception); }
+            refresh();
+            if (failed) throw new IllegalStateException("Native menu mapping failed; see build/agent-error.log");
+            Timer timer = new Timer(500, event -> refresh());
+            timer.setInitialDelay(0);
+            timer.start();
+            active = true;
+        };
+        if (!attached) EventQueue.invokeLater(uiSetup);
+        initialized = true;
+        System.out.println("[Fiji 中文] Native menu display mapping enabled; Java labels and commands stay original.");
+    }
+
+    /** Called by the Fiji plugin, in Fiji's own AWT AppContext after attach. */
+    public static void activate() throws Exception {
+        if (!initialized) throw new IllegalStateException("Agent not initialized");
+        if (!active) EventQueue.invokeAndWait(uiSetup);
     }
 
     public static void setEnabled(boolean translate) {
@@ -77,7 +110,7 @@ public final class MenuDisplayAgent {
         });
     }
 
-    public static boolean isActive() { return dictionaryPath != null && !failed; }
+    public static boolean isActive() { return active && !failed; }
     public static boolean isEnabled() { return enabled; }
 
     private static void reload() throws IOException {
@@ -154,6 +187,9 @@ public final class MenuDisplayAgent {
             failed = true;
             System.err.println("[Fiji 中文] Native display mapping stopped: " + exception);
             exception.printStackTrace();
+            try (PrintWriter output = new PrintWriter(Files.newBufferedWriter(exportPath.resolveSibling("agent-error.log"), StandardCharsets.UTF_8))) {
+                exception.printStackTrace(output);
+            } catch (IOException ignored) { }
         }
     }
 
@@ -203,7 +239,7 @@ public final class MenuDisplayAgent {
             if (enabled && display.codePoints().anyMatch(c -> c >= 0x4e00 && c <= 0x9fff)) {
                 int size = sourceFont == null ? 13 : sourceFont.getSize();
                 if (item.getParent() instanceof MenuBar) size = Math.min(size, 13);
-                displayFont = new Font("Microsoft YaHei UI", sourceFont == null ? Font.PLAIN : sourceFont.getStyle(), size);
+                displayFont = DisplayFonts.nativeFont(new Font("Microsoft YaHei UI", sourceFont == null ? Font.PLAIN : sourceFont.getStyle(), size));
             }
             if (!Objects.equals(previous.shadow.getFont(), displayFont)) previous.shadow.setFont(displayFont);
             if (!Objects.equals(previous.shadow.getShortcut(), item.getShortcut())) previous.shadow.setShortcut(item.getShortcut());

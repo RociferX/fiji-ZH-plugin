@@ -34,7 +34,7 @@ public class Fiji_Plugin_Robot {
     Component property=null;for(Component c:children(dialog))if(c instanceof weka.gui.PropertyPanel)property=c;
     check(property!=null,"Classifier property panel found");click(property);
     Window editor=waitWindowClass("weka.gui.PropertyDialog");ready(editor);robot.mouseMove(editor.getX()+10,editor.getY()+10);Thread.sleep(500);capture(editor,"properties");
-    String inventory=Files.readString(Paths.get("build/dialog-inventory.tsv"),StandardCharsets.UTF_8);
+    String inventory=Files.readString(Paths.get(System.getProperty("fiji.zh.home", "."), "build/dialog-inventory.tsv"),StandardCharsets.UTF_8);
     check(inventory.contains("numTrees\t决策树数量") && inventory.contains("False\t否"),"Classifier property captions and Boolean choices translated");
     JTextArea description=find(editor,JTextArea.class,null);String english=description.getText();
     check(description.getUI().getClass().getName().contains("MessageAreaUI"),"Classifier description has Chinese display view");
@@ -46,7 +46,7 @@ public class Fiji_Plugin_Robot {
     check(features.getToolTipText()!=null,"Classifier parameter has original tooltip");
     click(editor.getX()+30,editor.getY()+12);robot.mouseMove(editor.getX()-15,editor.getY()-15);Thread.sleep(250);
     Point tipAt=features.getLocationOnScreen();robot.mouseMove(tipAt.x+features.getWidth()/2,tipAt.y+features.getHeight()/2);
-    for(int wait=0;wait<35;wait++){Thread.sleep(100);inventory=Files.readString(Paths.get("build/dialog-inventory.tsv"),StandardCharsets.UTF_8);if(inventory.contains("随机选取的特征数量（参见 RandomTree2）"))break;}
+    for(int wait=0;wait<35;wait++){Thread.sleep(100);inventory=Files.readString(Paths.get(System.getProperty("fiji.zh.home", "."), "build/dialog-inventory.tsv"),StandardCharsets.UTF_8);if(inventory.contains("随机选取的特征数量（参见 RandomTree2）"))break;}
     Rectangle hoverBounds=editor.getBounds();for(Window popup:Window.getWindows())if(popup.isShowing())for(Component c:children(popup))if(c instanceof JToolTip){Point at=c.getLocationOnScreen();hoverBounds=hoverBounds.union(new Rectangle(at.x,at.y,c.getWidth(),c.getHeight()));}
     ImageIO.write(robot.createScreenCapture(hoverBounds),"png",Paths.get("build/robot-weka-editor-tooltip.png").toFile());
     check(inventory.contains("随机选取的特征数量（参见 RandomTree2）"),"Robot hover shows translated classifier parameter help");
@@ -62,8 +62,11 @@ public class Fiji_Plugin_Robot {
    AbstractButton zoom=null;for(Component c:children(w))if(c instanceof AbstractButton && "Zoom in 2x".equals(((JComponent)c).getToolTipText()))zoom=(AbstractButton)c;
    if(zoom==null)throw new AssertionError("Zoom button not found");String tip=zoom.getToolTipText();
    if(mode.equals("scheme-tip")){
-    Point position=zoom.getLocationOnScreen();robot.mouseMove(position.x+zoom.getWidth()/2,position.y+zoom.getHeight()/2);Thread.sleep(1600);
-    String data=Files.readString(Paths.get("build/dialog-inventory.tsv"),StandardCharsets.UTF_8);
+    robot.mouseMove(w.getX()-10,w.getY()-10);Thread.sleep(250);
+    Point position=zoom.getLocationOnScreen();robot.mouseMove(position.x+zoom.getWidth()/2,position.y+zoom.getHeight()/2);
+    String data="";
+    for(int wait=0;wait<35;wait++){Thread.sleep(100);data=Files.readString(Paths.get(System.getProperty("fiji.zh.home", "."), "build/dialog-inventory.tsv"),StandardCharsets.UTF_8);if(data.contains("Zoom in 2x\t放大两倍"))break;}
+    ImageIO.write(robot.createScreenCapture(w.getBounds()),"png",Paths.get("build/robot-scheme-tip-current.png").toFile());
     check(data.contains("Zoom in 2x\t放大两倍"),"Robot hover displays Chinese TrackScheme tooltip");
     check(tip.equals(zoom.getToolTipText()),"Hover keeps original tooltip text");
     Rectangle bounds=w.getBounds();for(Window popup:Window.getWindows())if(popup.isShowing())for(Component c:children(popup))if(c instanceof JToolTip){Point at=c.getLocationOnScreen();bounds=bounds.union(new Rectangle(at.x,at.y,c.getWidth(),c.getHeight()));}
@@ -79,18 +82,18 @@ public class Fiji_Plugin_Robot {
    check(original.contains("Results") && original.contains("0.750"),"Coloc report retains original result names and numbers");
    java.lang.reflect.Field text=pane.getUI().getClass().getDeclaredField("text");text.setAccessible(true);String translated=(String)text.get(pane.getUI());
    check(translated.contains("未出现警告") && translated.contains("结果") && translated.contains("Results"),"Coloc translates headings and preserves result cells");
-   check(Files.readString(Paths.get("build/dialog-inventory.tsv"),StandardCharsets.UTF_8).contains("通道 1<br>(Area)"),"Coloc channel caption translates around original image name");
+   check(Files.readString(Paths.get(System.getProperty("fiji.zh.home", "."), "build/dialog-inventory.tsv"),StandardCharsets.UTF_8).contains("通道 1<br>(Area)"),"Coloc channel caption translates around original image name");
    click(find(display,AbstractButton.class,"List"));check(pane.getText().equals(original),"Robot List keeps original report document");
   }else if(mode.equals("export")){
    async(()->{loci.plugins.LociExporter exporter=new loci.plugins.LociExporter();exporter.setup("outfile=build/robot-export.ome.tif",b);exporter.run(b.getProcessor());});
    Window w=waitWindow("Bio-Formats Exporter - Multiple Files");ready(w);capture(w,"split");Button ok=find(w,Button.class,"OK");click(ok);
    Window options=waitWindow("Bio-Formats Exporter Options");ready(options);capture(options,"compression");
-   check(Files.readString(Paths.get("build/dialog-inventory.tsv"),StandardCharsets.UTF_8).contains("Uncompressed\t不压缩"),"Compression display translated");
+   check(Files.readString(Paths.get(System.getProperty("fiji.zh.home", "."), "build/dialog-inventory.tsv"),StandardCharsets.UTF_8).contains("Uncompressed\t不压缩"),"Compression display translated");
    check(find(options,Choice.class,null).getSelectedItem().equals("Uncompressed"),"Compression model keeps English option");
    Button cancel=find(options,Button.class,"Cancel");click(cancel);check(!options.isShowing(),"Robot Cancel closes exporter options");
   }else{
    async(()->IJ.runPlugIn(mode.equals("stitch")?"plugin.Stitching_Grid":"sc.fiji.coloc.Coloc_2",""));Window w=waitWindow(mode.equals("stitch")?"Grid/Collection stitching":"Coloc 2");ready(w);capture(w,"main");
-   if(mode.equals("stitch")){click(find(w,Button.class,"OK"));Window params=waitWindow("Grid stitching:");ready(params);capture(params,"parameters");check(Files.readString(Paths.get("build/dialog-inventory.tsv"),StandardCharsets.UTF_8).contains("网格拼接：网格：逐行，向右、向下"),"Dynamic stitching title translated");click(find(params,Button.class,"Cancel"));check(!params.isShowing(),"Robot Cancel closes stitching parameters");}
+   if(mode.equals("stitch")){click(find(w,Button.class,"OK"));Window params=waitWindow("Grid stitching:");ready(params);capture(params,"parameters");check(Files.readString(Paths.get(System.getProperty("fiji.zh.home", "."), "build/dialog-inventory.tsv"),StandardCharsets.UTF_8).contains("网格拼接：网格：逐行，向右、向下"),"Dynamic stitching title translated");click(find(params,Button.class,"Cancel"));check(!params.isShowing(),"Robot Cancel closes stitching parameters");}
    else {click(find(w,Button.class,"Cancel"));check(!w.isShowing(),"Robot Cancel closes Coloc parameters");}
   }
  }
@@ -102,7 +105,7 @@ public class Fiji_Plugin_Robot {
  static void ready(Window w)throws Exception{EventQueue.invokeAndWait(()->{w.toFront();w.setAlwaysOnTop(true);w.validate();});Thread.sleep(850);}
  static void click(Component c)throws Exception{Point p=c.getLocationOnScreen();click(p.x+c.getWidth()/2,p.y+c.getHeight()/2);}
  static void click(int x,int y)throws Exception{robot.mouseMove(x,y);robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);robot.waitForIdle();Thread.sleep(700);}
- static void capture(Window w,String stage)throws Exception{Rectangle screen=w.getGraphicsConfiguration().getBounds();check(screen.contains(w.getBounds()),"Window fits screen: "+stage);ImageIO.write(robot.createScreenCapture(w.getBounds()),"png",Paths.get("build/robot-"+mode+"-"+stage+".png").toFile());Files.copy(Paths.get("build/dialog-inventory.tsv"),Paths.get("build/robot-"+mode+"-"+stage+".tsv"),StandardCopyOption.REPLACE_EXISTING);}
+ static void capture(Window w,String stage)throws Exception{Rectangle screen=w.getGraphicsConfiguration().getBounds();check(screen.contains(w.getBounds()),"Window fits screen: "+stage);ImageIO.write(robot.createScreenCapture(w.getBounds()),"png",Paths.get("build/robot-"+mode+"-"+stage+".png").toFile());Files.copy(Paths.get(System.getProperty("fiji.zh.home", "."), "build/dialog-inventory.tsv"),Paths.get("build/robot-"+mode+"-"+stage+".tsv"),StandardCopyOption.REPLACE_EXISTING);}
  static void check(boolean pass,String note){if(!pass)throw new AssertionError(note);report.add("PASS: "+note);System.out.println("PASS: "+note);}
  static void finish(Throwable failure){if(failure!=null){failure.printStackTrace();report.add("FAIL: "+failure);}try{Files.write(Paths.get("build/robot-"+mode+"-result.txt"),report,StandardCharsets.UTF_8);}catch(Exception e){e.printStackTrace();}Runtime.getRuntime().halt(failure==null?0:1);}
 }

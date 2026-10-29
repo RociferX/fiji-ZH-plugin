@@ -14,7 +14,8 @@ for n, line in enumerate((root / 'locales/menus.zh_CN.tsv').read_text(encoding='
     if not value or not any('\u4e00' <= c <= '\u9fff' for c in value):
         raise ValueError(f'Missing Chinese display at line {n}: {key}')
     dictionary[key] = value
-with (root / 'build/menu-inventory.tsv').open(encoding='utf-8', newline='') as stream:
+inventory = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else root / 'build/menu-inventory.tsv'
+with inventory.open(encoding='utf-8', newline='') as stream:
     rows = list(csv.DictReader(stream, delimiter='\t'))
 rows = [row for row in rows if not row['path'].startswith('File/Open Recent/')]
 missing = [r['path'] for r in rows if '@' + r['path'] not in dictionary and r['original'] not in dictionary and r['original'].strip() not in dictionary]

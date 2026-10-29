@@ -125,6 +125,10 @@ final class SwingDisplayMapper {
         }
         if(previous!=null && display.equals(previous.text) && component.getClientProperty(BasicHTML.propertyKey)==previous.view)return false;
         String html=display.startsWith("<html>")?display:"<html>"+display.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace("\n","<br>")+"</html>";
+        if(component instanceof AbstractButton && !display.startsWith("<html>") && !display.contains("\n"))
+            html="<html><nobr>"+html.substring(6,html.length()-7)+"</nobr></html>";
+        html=html.replaceFirst("<html>","<html><font face='Microsoft YaHei UI'>");
+        html=html.endsWith("</html>")?html.substring(0,html.length()-7)+"</font></html>":html+"</font>";
         Object disabled=previous==null?component.getClientProperty("html.disable"):previous.disabled;
         component.putClientProperty("html.disable",Boolean.FALSE);
         BasicHTML.updateRenderer(component,html);
@@ -156,14 +160,15 @@ final class SwingDisplayMapper {
             this.context=context;this.dictionary=dictionary;
         }
         @Override public void paintBorder(Component c,Graphics g,int x,int y,int width,int height){
-            new javax.swing.border.TitledBorder(getBorder(),dictionary.translate(context,getTitle()),getTitleJustification(),getTitlePosition(),getTitleFont(),getTitleColor()).paintBorder(c,g,x,y,width,height);
+            String title=dictionary.translate(context,getTitle());
+            new javax.swing.border.TitledBorder(getBorder(),title,getTitleJustification(),getTitlePosition(),Objects.equals(title,getTitle())?getTitleFont():DisplayFonts.nativeFont(getTitleFont()),getTitleColor()).paintBorder(c,g,x,y,width,height);
         }
     }
     private static final class MessagePaneUI extends BasicEditorPaneUI {
         final TextUI original;final String text;final JEditorPane display;
         MessagePaneUI(JEditorPane source,TextUI original,String text){
             this.original=original;this.text=text;display=new JEditorPane("text/html",text);display.setEditable(false);
-            display.setFont(source.getFont());display.setForeground(source.getForeground());display.setBackground(source.getBackground());
+            display.setFont(DisplayFonts.nativeFont(source.getFont()));display.setForeground(source.getForeground());display.setBackground(source.getBackground());
         }
         @Override protected void paintSafely(Graphics graphics){display.setSize(getComponent().getSize());display.printAll(graphics);}
     }
@@ -172,7 +177,7 @@ final class SwingDisplayMapper {
         MessageAreaUI(JTextArea source,TextUI original,String text){
             this.original=original;this.text=text;display=new JTextArea(text);display.setEditable(false);
             display.setLineWrap(source.getLineWrap());display.setWrapStyleWord(source.getWrapStyleWord());
-            display.setFont(source.getFont());display.setForeground(source.getForeground());display.setBackground(source.getBackground());
+            display.setFont(DisplayFonts.nativeFont(source.getFont()));display.setForeground(source.getForeground());display.setBackground(source.getBackground());
         }
         @Override protected void paintSafely(Graphics graphics){display.setSize(getComponent().getSize());display.printAll(graphics);}
     }
@@ -187,7 +192,7 @@ final class SwingDisplayMapper {
                     String translated=dictionary.translate(context,text);
                     if(!Objects.equals(text,translated)){
                         JLabel copy=new JLabel(translated,label.getIcon(),label.getHorizontalAlignment());
-                        copy.setFont(label.getFont());copy.setForeground(label.getForeground());copy.setBackground(label.getBackground());
+                        copy.setFont(DisplayFonts.nativeFont(label.getFont()));copy.setForeground(label.getForeground());copy.setBackground(label.getBackground());
                         copy.setOpaque(label.isOpaque());copy.setBorder(label.getBorder());copy.setEnabled(label.isEnabled());
                         copy.setVerticalAlignment(label.getVerticalAlignment());return copy;
                     }

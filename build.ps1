@@ -17,19 +17,21 @@ $ij = Get-ChildItem -LiteralPath 'Fiji/jars' -Filter 'ij-*.jar' -ErrorAction Sil
 if (!$ij) { throw 'Missing Fiji/jars/ij-*.jar. Install the supported Fiji distribution before building.' }
 $sources = @('src/MenuDisplayAgent.java', 'src/ToolbarHints.java', 'src/DialogDisplayMapper.java', 'src/NativePaintBridge.java', 'src/DisplayTextPainter.java', 'src/SwingDisplayMapper.java')
 $sources += 'src/PluginDisplaySupport.java'
+$sources += 'src/AttachHelper.java'
+$sources += 'src/DisplayFonts.java'
 if ($ij) { $sources += 'src/Fiji_Chinese_Display.java' }
 & $compiler --release 11 -encoding UTF-8 -cp "$($ij.FullName);Fiji/jars/jna-5.14.0.jar;Fiji/jars/jna-platform-5.14.0.jar;Fiji/jars/asm-9.8.jar" -d build/agent-classes @sources
 if ($LASTEXITCODE -ne 0) { throw 'Java compilation failed' }
 & $compiler --release 11 -encoding UTF-8 -cp build/agent-classes -d build/test-classes tests/MenuPeerDemo.java tests/MenuPeerSmokeTest.java
 if ($LASTEXITCODE -ne 0) { throw 'Test compilation failed' }
 if ($ij) { Copy-Item -LiteralPath 'src/plugins.config' -Destination 'build/agent-classes/plugins.config' }
-@('Manifest-Version: 1.0', 'Premain-Class: org.fiji.zh.MenuDisplayAgent', '') | Set-Content -LiteralPath 'build/MANIFEST.MF' -Encoding ascii
-& $jarTool cfm build/fiji-zh-display-0.11.jar build/MANIFEST.MF -C build/agent-classes org
+@('Manifest-Version: 1.0', 'Premain-Class: org.fiji.zh.MenuDisplayAgent', 'Agent-Class: org.fiji.zh.MenuDisplayAgent', 'Can-Retransform-Classes: true', '') | Set-Content -LiteralPath 'build/MANIFEST.MF' -Encoding ascii
+& $jarTool cfm build/fiji-zh-display-0.12.jar build/MANIFEST.MF -C build/agent-classes org
 if ($LASTEXITCODE -ne 0) { throw 'JAR packaging failed' }
-Write-Output 'Built build/fiji-zh-display-0.11.jar'
+Write-Output 'Built build/fiji-zh-display-0.12.jar'
 if ($ij) {
-    & $jarTool cf build/fiji-zh-plugin.jar -C build/agent-classes Fiji_Chinese_Display.class -C build/agent-classes plugins.config
+    & $jarTool cfm build/fiji-zh-plugin.jar build/MANIFEST.MF -C build/agent-classes org -C build/agent-classes Fiji_Chinese_Display.class -C build/agent-classes plugins.config -C . locales
     if ($LASTEXITCODE -ne 0) { throw 'Plugin packaging failed' }
     try { Copy-Item -LiteralPath 'build/fiji-zh-plugin.jar' -Destination 'Fiji/plugins/Fiji_Chinese_Display.jar' -ErrorAction Stop }
-    catch [System.IO.IOException] { Write-Output 'The running Fiji holds the existing language-switch plugin; its current commands remain compatible.' }
+    catch [System.IO.IOException] { throw 'Close Fiji before replacing the installed Chinese plugin, then rebuild.' }
 }

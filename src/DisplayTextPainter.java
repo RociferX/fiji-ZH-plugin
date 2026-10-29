@@ -67,7 +67,7 @@ public final class DisplayTextPainter {
         if (text == null) return false;
         Graphics2D g = (Graphics2D) graphics.create();
         try {
-            g.setFont(source.getFont()); g.setColor(source.getForeground());
+            g.setFont(MenuDisplayAgent.isEnabled() ? DisplayFonts.nativeFont(source.getFont()) : source.getFont()); g.setColor(source.getForeground());
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             FontMetrics fm = g.getFontMetrics(); String[] rows = text.split("\n", -1);
             int y = fm.getAscent() + Math.max(6, (source.getHeight() - rows.length * fm.getHeight())/2);
@@ -79,7 +79,7 @@ public final class DisplayTextPainter {
     public static Dimension preferred(Component source) {
         String text = messages.get(source);
         if (text == null || source.getFont() == null) return null;
-        FontMetrics fm = source.getFontMetrics(source.getFont()); int width = 0;
+        FontMetrics fm = source.getFontMetrics(MenuDisplayAgent.isEnabled() ? DisplayFonts.nativeFont(source.getFont()) : source.getFont()); int width = 0;
         String[] rows = text.split("\n", -1);
         for (String row : rows) width = Math.max(width, fm.stringWidth(row));
         return new Dimension(width+12, rows.length*fm.getHeight()+12);

@@ -108,6 +108,11 @@ final class DialogDisplayMapper extends EventQueue {
                 // HTMLDialog already constrains its scroll viewport to the screen.
                 // Packing again sizes it to the full document's preferred width.
                 if(!context.startsWith("Help/"))window.pack();
+                if(context.equals("Plugin/TrackMate")) {
+                    Insets frameInsets=window.getInsets();
+                    int toolbarWidth=toolbarWidth(window)+frameInsets.left+frameInsets.right;
+                    if(toolbarWidth>window.getWidth())window.setSize(toolbarWidth,window.getHeight());
+                }
                 if(context.startsWith("Plugin/")){
                     Rectangle screen=window.getGraphicsConfiguration().getBounds();
                     Insets inset=Toolkit.getDefaultToolkit().getScreenInsets(window.getGraphicsConfiguration());
@@ -131,6 +136,8 @@ final class DialogDisplayMapper extends EventQueue {
             Map.Entry<Component, Stamp> entry = entries.next();
             if (!live.contains(entry.getKey())) {
                 originals.remove(entry.getValue().copy);
+                if (peer.get(entry.getKey()) == entry.getValue().peer)
+                    Class.forName("java.awt.peer.ComponentPeer").getMethod("setFont", Font.class).invoke(entry.getValue().peer, entry.getKey().getFont());
                 imageChoices.remove(entry.getKey());
                 entries.remove();
             }
@@ -193,6 +200,21 @@ final class DialogDisplayMapper extends EventQueue {
         if (source instanceof Label) labels.add(((Label) source).getText().trim());
         if (source instanceof Container)
             for (Component child : ((Container) source).getComponents()) collectLabels(child, labels);
+    }
+
+    private static int toolbarWidth(Component source) {
+        int width=source instanceof javax.swing.JToolBar ? source.getPreferredSize().width : 0;
+        if(source instanceof javax.swing.JToolBar){
+            Insets insets=((Container)source).getInsets();
+            int preferred=insets.left+insets.right;
+            for(Component child:((Container)source).getComponents())if(child.isVisible()){
+                preferred+=child.getPreferredSize().width;
+                width=Math.max(width,child.getX()+child.getWidth()+insets.right);
+            }
+            width=Math.max(width,preferred);
+        }
+        if(source instanceof Container)for(Component child:((Container)source).getComponents())width=Math.max(width,toolbarWidth(child));
+        return width;
     }
 
     private void reload() throws IOException {
@@ -376,7 +398,10 @@ final class DialogDisplayMapper extends EventQueue {
                     parent.set(copy, source.getParent());
                 }
                 if (!signature.equals(stamp.signature)) {
-                    FontMetrics metrics = source.getFontMetrics(source.getFont());
+                    Font displayFont = chinese ? DisplayFonts.nativeFont(source.getFont()) : source.getFont();
+                    stamp.displayFont = displayFont;
+                    Class.forName("java.awt.peer.ComponentPeer").getMethod("setFont", Font.class).invoke(stamp.peer, displayFont);
+                    FontMetrics metrics = source.getFontMetrics(displayFont);
                     Dimension minimum = new Dimension(stamp.initialPreferred);
                     int textWidth = metrics.stringWidth(display);
                     if (source instanceof Choice) {
@@ -407,7 +432,8 @@ final class DialogDisplayMapper extends EventQueue {
 
     private com.sun.jna.platform.win32.WinDef.LRESULT render(Stamp stamp, NativePaintBridge.NativeCall delegate) throws Exception {
         Component source = stamp.source, copy = stamp.copy;
-        for (Field field : componentFields) field.set(copy, field.get(source));
+        for (Field field : componentFields)
+            field.set(copy, chinese && field.getName().equals("font") ? stamp.displayFont : field.get(source));
         if (source instanceof Label) labelText.set(copy, translate(stamp.context, (String) labelText.get(source)));
         else if (source instanceof Button) buttonText.set(copy, translate(stamp.context, (String) buttonText.get(source)));
         else if (source instanceof Checkbox) {
@@ -515,6 +541,7 @@ final class DialogDisplayMapper extends EventQueue {
         final boolean preferredExplicit;
         String signature;
         boolean repaintNeeded;
+        volatile Font displayFont;
         Stamp(Component source, Component copy, Object peer, String context) {
             this.source = source; this.copy = copy; this.peer = peer; this.context = context;
             initialPreferred = source.getPreferredSize(); preferredExplicit = source.isPreferredSizeSet();
