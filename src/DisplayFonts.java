@@ -11,6 +11,9 @@ final class DisplayFonts {
     static Font nativeFont(Font original) {
         int style = original == null ? Font.PLAIN : original.getStyle();
         int size = original == null ? 13 : original.getSize();
+        return nativeFont(style, size);
+    }
+    static Font nativeFont(int style, int size) {
         return fonts.computeIfAbsent(style+":"+size, key -> create(style,size));
     }
     private static Font create(int style,int size) {

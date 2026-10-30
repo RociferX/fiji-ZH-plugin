@@ -2,7 +2,7 @@ param([switch]$SkipBuild)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 if (!$SkipBuild) { & (Join-Path $PSScriptRoot 'build.ps1') }
-$version = '0.13'
+$version = '0.14'
 $name = "fiji-zh-plugin-$version-windows-x64"
 $dist = Join-Path $PSScriptRoot 'dist'
 New-Item -ItemType Directory -Path $dist -Force | Out-Null

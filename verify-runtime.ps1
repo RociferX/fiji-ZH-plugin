@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 $compiler = (Get-ChildItem Fiji/java -Recurse -Filter javac.exe | Select-Object -First 1).FullName
-& $compiler -proc:none --release 11 -encoding UTF-8 -cp 'Fiji/jars/*;Fiji/plugins/*' -d build/test-classes tests/Fiji_Runtime_Smoke.java
+& $compiler -proc:none --release 11 -encoding UTF-8 -cp 'Fiji/jars/*;Fiji/plugins/*' -d build/test-classes tests/Fiji_Runtime_Smoke.java tests/Fiji_Tooltip_Smoke.java
 if ($LASTEXITCODE -ne 0) { throw 'Runtime test compilation failed' }
 $settings = Join-Path $PSScriptRoot 'Fiji/plugins/Fiji_Chinese_Display/settings.properties'
 $previous = if (Test-Path -LiteralPath $settings) { [IO.File]::ReadAllBytes($settings) } else { $null }

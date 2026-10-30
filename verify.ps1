@@ -5,9 +5,9 @@ $compiler = Join-Path (Split-Path -Parent $java) 'javac.exe'
 $ij = (Get-ChildItem -LiteralPath 'Fiji/jars' -Filter 'ij-*.jar' | Select-Object -First 1).FullName
 & $compiler --release 11 -encoding UTF-8 -cp "build/agent-classes;$ij" -d build/test-classes tests/MenuPeerSmokeTest.java tests/DialogPeerSmokeTest.java tests/Fiji_Chinese_Smoke.java tests/Fiji_Tooltip_Smoke.java tests/Fiji_Dialog_Smoke.java
 if ($LASTEXITCODE -ne 0) { throw 'Test compilation failed' }
-& $java '-Dfiji.zh.demo=true' "-Dfiji.zh.home=$PSScriptRoot" '-javaagent:build/fiji-zh-display-0.13.jar' -cp 'build/agent-classes;build/test-classes;Fiji/jars/jna-5.14.0.jar;Fiji/jars/jna-platform-5.14.0.jar;Fiji/jars/asm-9.8.jar' org.fiji.zh.MenuPeerSmokeTest
+& $java '-Dfiji.zh.demo=true' "-Dfiji.zh.home=$PSScriptRoot" '-javaagent:build/fiji-zh-display-0.14.jar' -cp 'build/agent-classes;build/test-classes;Fiji/jars/jna-5.14.0.jar;Fiji/jars/jna-platform-5.14.0.jar;Fiji/jars/asm-9.8.jar' org.fiji.zh.MenuPeerSmokeTest
 if ($LASTEXITCODE -ne 0) { throw 'Native AWT menu test failed' }
-& $java '-Dfiji.zh.demo=true' "-Dfiji.zh.home=$PSScriptRoot" '-javaagent:build/fiji-zh-display-0.13.jar' -cp 'build/agent-classes;build/test-classes;Fiji/jars/jna-5.14.0.jar;Fiji/jars/jna-platform-5.14.0.jar;Fiji/jars/asm-9.8.jar' org.fiji.zh.DialogPeerSmokeTest
+& $java '-Dfiji.zh.demo=true' "-Dfiji.zh.home=$PSScriptRoot" '-javaagent:build/fiji-zh-display-0.14.jar' -cp 'build/agent-classes;build/test-classes;Fiji/jars/jna-5.14.0.jar;Fiji/jars/jna-platform-5.14.0.jar;Fiji/jars/asm-9.8.jar' org.fiji.zh.DialogPeerSmokeTest
 if ($LASTEXITCODE -ne 0) { throw 'Native AWT dialog test failed' }
 $testStarted = Get-Date
 & (Join-Path $PSScriptRoot 'Start-Fiji.ps1') -FijiArguments @("--class-path=$PSScriptRoot\build\test-classes", '-macro', "$PSScriptRoot\tests\verify.ijm")

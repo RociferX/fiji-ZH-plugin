@@ -78,6 +78,9 @@ public final class Fiji_Runtime_Smoke {
         check(!gaussian.isAlive() && Arrays.equals(pixels,(byte[])image.getProcessor().getPixels()),"Robot Cancel closes dialog without changing image");
         IJ.run("Channels Tool...");
         Window channels=waitDialog("Channels");
+        // Initial mapping can pack this window; wait before reading click coordinates.
+        for(int i=0;i<30 && !Files.readString(home.resolve("build/dialog-inventory.tsv")).contains("Channels\tTrimmedButton\tHelp\t帮助");i++)Thread.sleep(100);
+        robot.waitForIdle();
         Button help=null;
         for(Component child:children(channels))if(child instanceof Button && ((Button)child).getLabel().trim().equals("Help"))help=(Button)child;
         check(help!=null,"Channels help button retains original label");
@@ -116,6 +119,9 @@ public final class Fiji_Runtime_Smoke {
         check(Boolean.TRUE.equals(agent.getMethod("isEnabled").invoke(null)),"Second activation reuses active agent");
         check(commands.equals(new HashMap<>(Menus.getCommands())),"Repeated switching preserves command registry");
         image.changes=false; image.close(); roi.close();
+        EventQueue.invokeAndWait(() -> { main.toFront(); main.requestFocus(); });
+        Thread.sleep(300);
+        Fiji_Tooltip_Smoke.verify(checks);
     }
     private static Window waitDialog(String title)throws Exception {
         for(int i=0;i<100;i++){

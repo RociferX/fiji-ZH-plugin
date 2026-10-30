@@ -2,7 +2,7 @@ param([ValidateSet('config','weka','weka-editor','scheme','scheme-tip','export',
 $ErrorActionPreference='Stop'
 Set-Location -LiteralPath $PSScriptRoot
 $compiler=(Get-ChildItem Fiji/java -Filter javac.exe -Recurse|Select-Object -First 1).FullName
-& $compiler -proc:none --release 11 -encoding UTF-8 -cp 'Fiji/jars/*;Fiji/plugins/*;build/agent-classes' -d build/test-classes tests/Fiji_Plugin_Robot.java tests/Fiji_Runtime_Smoke.java
+& $compiler -proc:none --release 11 -encoding UTF-8 -cp 'Fiji/jars/*;Fiji/plugins/*;build/agent-classes' -d build/test-classes tests/Fiji_Plugin_Robot.java tests/Fiji_Runtime_Smoke.java tests/Fiji_Tooltip_Smoke.java
 if($LASTEXITCODE -ne 0){throw 'Robot test compilation failed'}
 $settings = Join-Path $PSScriptRoot 'Fiji/plugins/Fiji_Chinese_Display/settings.properties'
 $previous = if (Test-Path -LiteralPath $settings) { [IO.File]::ReadAllBytes($settings) } else { $null }

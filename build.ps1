@@ -30,9 +30,9 @@ if ($LASTEXITCODE -ne 0) { throw 'Startup service compilation failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Test compilation failed' }
 if ($ij) { Copy-Item -LiteralPath 'src/plugins.config' -Destination 'build/agent-classes/plugins.config' }
 @('Manifest-Version: 1.0', 'Premain-Class: org.fiji.zh.MenuDisplayAgent', 'Agent-Class: org.fiji.zh.MenuDisplayAgent', 'Can-Retransform-Classes: true', '') | Set-Content -LiteralPath 'build/MANIFEST.MF' -Encoding ascii
-& $jarTool cfm build/fiji-zh-display-0.13.jar build/MANIFEST.MF -C build/agent-classes org -C . LICENSE
+& $jarTool cfm build/fiji-zh-display-0.14.jar build/MANIFEST.MF -C build/agent-classes org -C . LICENSE
 if ($LASTEXITCODE -ne 0) { throw 'JAR packaging failed' }
-Write-Output 'Built build/fiji-zh-display-0.13.jar'
+Write-Output 'Built build/fiji-zh-display-0.14.jar'
 if ($ij) {
     & $jarTool cfm build/fiji-zh-plugin.jar build/MANIFEST.MF -C build/agent-classes org -C build/agent-classes Fiji_Chinese_Display.class -C build/agent-classes plugins.config -C build/agent-classes META-INF/json -C . locales -C . LICENSE
     if ($LASTEXITCODE -ne 0) { throw 'Plugin packaging failed' }

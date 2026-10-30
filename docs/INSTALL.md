@@ -1,4 +1,4 @@
-# 安装与使用（0.13）
+# 安装与使用（0.14）
 
 ## 安装
 
@@ -17,9 +17,11 @@
 
 其他 Fiji/JDK 版本尚未验证。若 JVM 禁用了 Attach 或动态 agent 加载，插件会提示失败并给出日志路径；需要先在该 JVM 的运行配置中允许动态加载，再重启 Fiji。普通的上述 Java 21 安装无需额外配置。
 
-## 从 0.11 / 0.12 升级
+## 升级
 
-旧版没有记录语言选择，升级后请先选择一次所需语言。
+从 0.13 升级：关闭 Fiji，替换同名 JAR 后正常启动，继续沿用已保存的语言。自定义词典需将修改合并到新版本的词典目录。
+
+0.11 / 0.12 没有记录语言选择，升级后请先选择一次所需语言。
 
 关闭所有 Fiji 窗口，替换 `plugins/Fiji_Chinese_Display.jar`，使用原来的 Fiji 启动器重新启动并点击启用中文。删除重复安装的其他同名或旧版语言切换 JAR，避免重复菜单。0.11 的外部启动脚本和工作区目录不再是普通安装的必要组成。
 
@@ -32,7 +34,7 @@ Fiji/plugins/
   Fiji_Chinese_Display.jar
   Fiji_Chinese_Display/
     settings.properties
-    0.13/
+    0.14/
       locales/...
       build/attach.log
       build/menu-inventory.tsv

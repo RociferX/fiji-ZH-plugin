@@ -8,7 +8,7 @@ import java.util.Properties;
 
 /** Installs embedded dictionaries and attaches to this running Fiji. */
 public final class Fiji_Chinese_Display implements PlugIn {
-    private static final String VERSION = "0.13";
+    private static final String VERSION = "0.14";
     private static final Object LOCK = new Object();
     public void run(String argument) {
         // Attach initializes AWT on the EDT; never block that thread here.

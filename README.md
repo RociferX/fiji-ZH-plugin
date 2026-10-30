@@ -2,7 +2,7 @@
 
 本项目采用 [MIT 许可证](LICENSE)，Copyright © 2026 Xuanfeng Li。Fiji 及第三方依赖适用各自上游许可证。
 
-**当前版本：0.13。将一个 JAR 复制到 Fiji 的 `plugins` 目录，正常启动 Fiji，再点击 `Plugins → Chinese Interface → Use Chinese`，即可启用中文；之后自动记住上次选择的语言。** 不需要单独启动器，也不需要修改启动参数。
+**当前版本：0.14。将一个 JAR 复制到 Fiji 的 `plugins` 目录，正常启动 Fiji，再点击 `Plugins → Chinese Interface → Use Chinese`，即可启用中文；之后自动记住上次选择的语言。** 不需要单独启动器，也不需要修改启动参数。
 
 - [下载最新版](https://github.com/RociferX/fiji-ZH-plugin/releases/latest)
 - [安装、升级、卸载与故障排查](docs/INSTALL.md)
@@ -50,7 +50,7 @@ Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经
 
 语言选择保存在 JAR 旁的 `Fiji_Chinese_Display/settings.properties`，独立于版本词典目录；选择英文后，下次启动直接保持英文并跳过 agent 加载。启动恢复通过 Fiji 的 SciJava UI 显示事件触发，支持普通桌面启动。
 
-首次启用后，词典与诊断输出位于插件 JAR 旁的 `Fiji_Chinese_Display/0.13/`：
+首次启用后，词典与诊断输出位于插件 JAR 旁的 `Fiji_Chinese_Display/0.14/`：
 
 - `locales/menus.zh_CN.tsv`：菜单译文。
 - `locales/dialogs.zh_CN.tsv`：核心窗口、帮助、消息与状态译文。
@@ -77,7 +77,20 @@ Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经
 
 ## 验证
 
-默认增量验证。0.13 通过三次无启动宏的普通 Fiji 桌面启动，验证首次英文、选择中文后重启自动恢复、切回英文后重启保持英文。测试结束还原原有语言设置。
+默认增量验证。0.14 消除主菜单的重复遍历，缓存未变化菜单项的字体计算，并复用已绑定的工具栏。保持 500 毫秒刷新间隔；新增菜单、控件文字变化及词典热加载继续自动生效。基准检查通过原始启动器激活插件，在主窗口和同时打开 ROI 管理器、Bio-Formats 配置、通道工具两种场景下，各预热 30 次、采样 120 次，测量 EDT 刷新耗时和临时内存分配，并验证动态更新与语言切换。
+
+```powershell
+.\verify-refresh.ps1 -Label current
+```
+
+同机对比 0.13 与 0.14 的一次测量如下；耗时为每次刷新中位数，分配为每次刷新均值，具体数值随环境变化。
+
+| 场景 | 耗时：0.13 → 0.14 | 临时分配：0.13 → 0.14 |
+| --- | --- | --- |
+| 主窗口 | 1.515 → 1.036 ms | 2,333.4 → 955.4 KiB |
+| 多窗口 | 2.215 → 1.745 ms | 2,469.3 → 1,081.6 KiB |
+
+报告保存在 `build/refresh-<Label>-result.txt`。运行时检查同时覆盖真实菜单事件及工具栏提示。0.13 的语言记忆检查通过三次无启动宏的普通 Fiji 桌面启动，验证首次英文、选择中文后重启自动恢复、切回英文后重启保持英文。测试结束还原原有语言设置。
 
 ```powershell
 .\verify-preferences.ps1
@@ -94,4 +107,4 @@ Agent 在运行时开放自身所需的 AWT 模块访问，并重新转换已经
 
 `verify.ps1` 是显式的历史完整检查入口。`verify-core.ps1`、`verify-expanded.ps1`、`verify-messages.ps1` 和 `verify-plugins.ps1` 提供相关专项检查。未变化的处理算法和词典覆盖复用已有通过结果；实现变化或发现回归时再扩大范围。
 
-菜单覆盖检查为 `python tools/menu_coverage.py`，需要先生成清单。插件模式清单位于 `Fiji/plugins/Fiji_Chinese_Display/0.13/build/`；可把该清单路径作为工具的第一个参数；默认读取源码启动方式生成的根目录 `build/menu-inventory.tsv`。
+菜单覆盖检查为 `python tools/menu_coverage.py`，需要先生成清单。插件模式清单位于 `Fiji/plugins/Fiji_Chinese_Display/0.14/build/`；可把该清单路径作为工具的第一个参数；默认读取源码启动方式生成的根目录 `build/menu-inventory.tsv`。

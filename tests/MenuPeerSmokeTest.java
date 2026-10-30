@@ -93,6 +93,16 @@ public final class MenuPeerSmokeTest {
         Thread.sleep(700);
         check(Files.readString(Paths.get("build/menu-inventory.tsv")).contains("File/Preview\tPreview\t预览"),
             "New menu items are mapped");
+        Font originalFont = open.getFont();
+        EventQueue.invokeAndWait(() -> open.setFont(new Font("Dialog", Font.BOLD, 17)));
+        Thread.sleep(700);
+        java.lang.reflect.Field peer = MenuComponent.class.getDeclaredField("peer"); peer.setAccessible(true);
+        java.lang.reflect.Field target = Class.forName("sun.awt.windows.WObjectPeer").getDeclaredField("target"); target.setAccessible(true);
+        MenuItem display = (MenuItem) target.get(peer.get(open));
+        check(display.getFont().getSize() == 17 && display.getFont().isBold(), "Cached font follows source font changes");
+        MenuDisplayAgent.setEnabled(false); Thread.sleep(700);
+        check(display.getFont().equals(open.getFont()), "English restores source font after cached Chinese font");
+        EventQueue.invokeAndWait(() -> open.setFont(originalFont));
         EventQueue.invokeAndWait(() -> frame.dispose());
         System.out.println("PASS: Native menus, click dispatch, shortcut, checkbox, language restore, dynamic entries, original Java model.");
         System.exit(0);

@@ -155,15 +155,18 @@ public final class MenuDisplayAgent {
             StringBuilder inventory = new StringBuilder("path\toriginal\tdisplay\taction_command\tshortcut\n");
             StringBuilder secondary = new StringBuilder("window\tpath\toriginal\tdisplay\taction_command\tshortcut\n");
             liveItems = Collections.newSetFromMap(new IdentityHashMap<>());
+            mainMenuBar = null;
             for (Frame frame : Frame.getFrames()) {
                 if (!frame.isDisplayable() || frame.getMenuBar() == null) continue;
                 // Limit application windows: system dialogs and unrelated processes are untouched.
                 if (!frame.getClass().getName().startsWith("ij.") &&
                     !Boolean.getBoolean("fiji.zh.demo")) continue;
                 MenuBar bar = frame.getMenuBar();
-                if (frame.getClass().getName().equals("ij.ImageJ") || Boolean.getBoolean("fiji.zh.demo"))
+                boolean main = frame.getClass().getName().equals("ij.ImageJ") || Boolean.getBoolean("fiji.zh.demo");
+                if (main)
                     mainMenuBar = bar;
-                StringBuilder rows=new StringBuilder();
+                // Generate the main inventory during mapping, without a second traversal.
+                StringBuilder rows = main ? inventory : new StringBuilder();
                 for (int i = 0; i < bar.getMenuCount(); i++) visit(bar.getMenu(i), "", rows);
                 if(!frame.getClass().getName().equals("ij.ImageJ"))for(String row:rows.toString().split("\n"))
                     if(!row.isEmpty())secondary.append(frame.getClass().getName()).append('\t').append(row).append('\n');
@@ -173,8 +176,6 @@ public final class MenuDisplayAgent {
             }
             for (Window window : Window.getWindows()) if (window.isShowing() &&
                 Set.of("ij.plugin.frame.RoiManager", "ij.plugin.frame.Channels", "ij.plugin.frame.Editor", "ij.gui.PlotWindow", "ij.plugin.LUT_Editor").contains(window.getClass().getName())) visitPopups(window);
-            if (mainMenuBar != null)
-                for (int i = 0; i < mainMenuBar.getMenuCount(); i++) visit(mainMenuBar.getMenu(i), "", inventory);
             stamps.keySet().retainAll(liveItems);
             if (mainMenuBar != null && !inventory.toString().equals(lastInventory)) {
                 Files.createDirectories(exportPath.getParent());
@@ -235,15 +236,20 @@ public final class MenuDisplayAgent {
         }
         if (peer != null && previous != null) {
             Font sourceFont = item.getFont();
-            Font displayFont = sourceFont;
-            if (enabled && display.codePoints().anyMatch(c -> c >= 0x4e00 && c <= 0x9fff)) {
-                int size = sourceFont == null ? 13 : sourceFont.getSize();
-                if (item.getParent() instanceof MenuBar) size = Math.min(size, 13);
-                displayFont = DisplayFonts.nativeFont(new Font("Microsoft YaHei UI", sourceFont == null ? Font.PLAIN : sourceFont.getStyle(), size));
+            if (!Objects.equals(previous.sourceFont, sourceFont) || !previous.display.equals(display) || previous.chinese != enabled) {
+                Font displayFont = sourceFont;
+                if (enabled && hasChinese(display)) {
+                    int size = sourceFont == null ? 13 : sourceFont.getSize();
+                    if (item.getParent() instanceof MenuBar) size = Math.min(size, 13);
+                    displayFont = DisplayFonts.nativeFont(sourceFont == null ? Font.PLAIN : sourceFont.getStyle(), size);
+                }
+                if (!Objects.equals(previous.shadow.getFont(), displayFont)) previous.shadow.setFont(displayFont);
+                previous.sourceFont = sourceFont;
+                previous.chinese = enabled;
             }
-            if (!Objects.equals(previous.shadow.getFont(), displayFont)) previous.shadow.setFont(displayFont);
             if (!Objects.equals(previous.shadow.getShortcut(), item.getShortcut())) previous.shadow.setShortcut(item.getShortcut());
-            previous.shadow.setActionCommand(item.getActionCommand());
+            if (!Objects.equals(previous.shadow.getActionCommand(), item.getActionCommand()))
+                previous.shadow.setActionCommand(item.getActionCommand());
             if (previous.shadow.isEnabled() != item.isEnabled()) previous.shadow.setEnabled(item.isEnabled());
             if (item instanceof CheckboxMenuItem &&
                 ((CheckboxMenuItem) previous.shadow).getState() != ((CheckboxMenuItem) item).getState())
@@ -275,10 +281,18 @@ public final class MenuDisplayAgent {
         return value == null ? "" : value.replace('\t', ' ').replace('\n', ' ');
     }
 
+    private static boolean hasChinese(String value) {
+        for (int i = 0; i < value.length(); i++)
+            if (value.charAt(i) >= 0x4e00 && value.charAt(i) <= 0x9fff) return true;
+        return false;
+    }
+
     private static final class Stamp {
         final Object peer;
         final MenuItem shadow;
         String display;
+        Font sourceFont;
+        boolean chinese;
         Stamp(Object peer, MenuItem shadow, String display) {
             this.peer = peer; this.shadow = shadow; this.display = display;
         }

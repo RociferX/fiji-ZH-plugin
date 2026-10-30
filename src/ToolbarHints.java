@@ -62,14 +62,17 @@ final class ToolbarHints extends MouseAdapter implements AWTEventListener {
             modified = Files.getLastModifiedTime(dictionaryPath).toMillis();
             cancel();
         }
-        Component found = null;
-        for (Frame frame : Frame.getFrames()) {
-            if (frame.isShowing() && frame.getClass().getName().equals("ij.ImageJ")) {
-                found = findToolbar(frame);
-                if (found != null) break;
+        // The bound toolbar survives normal refreshes; rediscover only after removal.
+        if (toolbar == null || !toolbar.isDisplayable() || SwingUtilities.getWindowAncestor(toolbar) != owner) {
+            Component found = null;
+            for (Frame frame : Frame.getFrames()) {
+                if (frame.isShowing() && frame.getClass().getName().equals("ij.ImageJ")) {
+                    found = findToolbar(frame);
+                    if (found != null) break;
+                }
             }
+            if (toolbar != found) bind(found);
         }
-        if (toolbar != found) bind(found);
         if (toolbar != null && !toolbar.isShowing()) cancel();
         // A macro or tool palette can change a variant while the pointer stays still.
         if (toolbar != null && currentKey != null) {
